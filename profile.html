@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA - VIP Profile &amp; Settings</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .gold-glow {
+      box-shadow: 0 12px 32px -8px rgba(214, 168, 95, 0.2);
+    }
+    .gold-glow-subtle {
+      box-shadow: 0 0 24px -4px rgba(214, 168, 95, 0.12);
+    }
+    .glass-panel {
+      background: rgba(26, 34, 48, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(41, 49, 61, 0.6);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0c0e13;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #282a2f;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 md:px-margin py-space-md bg-surface/75 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-10">
+<!-- Brand Logo Anchor -->
+<a class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-28px">movie_filter</span>
+        MINDX CINEMA
+      </a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Series</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="watch-list.html">Watchlist</a>
+</nav>
+</div>
+<!-- Right Actions: Search, Notifications, Active VIP Profile -->
+<div class="flex items-center gap-5">
+<!-- Search Input Container -->
+<div class="hidden sm:flex items-center bg-surface-container-low border border-outline-variant/50 rounded-full px-3 py-1.5 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant text-base mr-2">search</span>
+<input class="bg-transparent border-0 p-0 text-xs text-on-surface placeholder:text-outline focus:ring-0 w-44" placeholder="Search archive, auteur, film..." type="text"/>
+</div>
+<!-- Notifications -->
+<button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container/60">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</button>
+<!-- Active VIP Profile Avatar -->
+<div class="flex items-center gap-3 pl-3 border-l border-outline-variant/40">
+<div class="relative group cursor-pointer">
+<div class="w-10 h-10 rounded-full p-[2px] bg-gradient-to-tr from-primary via-secondary to-primary-fixed ring-1 ring-primary/40 shadow-sm transition-transform duration-150 group-hover:scale-105">
+<img alt="User VIP profile avatar with active status badge" class="w-full h-full rounded-full object-cover" data-alt="A distinguished cinematic portrait of Julian Vance, a sophisticated male cinephile in soft ambient amber studio lighting. He has thoughtful, discerning eyes and tailored dark charcoal clothing, captured against an opulent deep obsidian gallery backdrop with subtle warm golden bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5okrMsx3jRCo6Vv8lxEVGqoYF9vzi959FXy14oIntOz_4_y5b07Om89Tv-l8cPLK-5cAqcSKGjgT2M64e2SecZdGs2lJmS10UpRNq8qb0Y2mfgt_9Qscf-0HS3LnHchn22wjInlvRxZm_16HL_X6UUydL_CBwkI3y-jV3DrQR9XOvP-XXnB0YaYbyDdXAX_BNhFTIhzVQBm4_GFA_QrDJeswscr6rzKOooXzvWaQ"/>
+</div>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full ring-2 ring-surface border border-on-primary"></span>
+</div>
+<div class="hidden lg:flex flex-col text-left">
+<span class="font-title-md text-title-md leading-tight text-on-surface">Julian Vance</span>
+<span class="font-label-sm text-label-sm text-primary tracking-widest uppercase">VIP Curator</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="pt-28 pb-20 px-4 md:px-margin max-w-7xl mx-auto space-y-10">
+<!-- Profile Header Banner Component -->
+<section class="relative overflow-hidden rounded-xl border border-outline-variant/40 bg-surface-container-low/90 glass-panel p-6 sm:p-8 md:p-10 gold-glow-subtle">
+<!-- Decorative Atmospheric Glow Backdrop -->
+<div class="absolute -top-32 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+<!-- Left: Identity & Badges -->
+<div class="flex flex-col sm:flex-row items-center sm:items-start lg:items-center gap-6 text-center sm:text-left">
+<!-- Avatar Frame -->
+<div class="relative group shrink-0">
+<div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full p-1 bg-gradient-to-b from-primary via-secondary to-outline-variant gold-glow">
+<img alt="Julian Vance High-res Avatar" class="w-full h-full rounded-full object-cover bg-surface-container-highest" data-alt="High-resolution artistic editorial headshot portrait of Julian Vance, an analytical film archivist with styled dark hair and expressive features, warmly illuminated by cinema projector rim-lighting against a dark velvety atmospheric background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANG4V5JaInqhRKOYyvkhC1gyXvHUJAP7ck6R7vHWz07Q8R6WgwHl5FlkuHwQsCK-6d04ik3HUEKFUo5WINCGQ5sczOGzoMvFFvhoAZ1v87MimkMvxm-idfiOttDFiBLuD8YQoEYitcpmqjhQtfihA7YEP-jbCySBHE1j5SKiU7yhKsc0vjiEbeLVgRDh11M45KgtRukpLqanFjYOhhrLTCBOeDakP5nnAN8vSRoNY"/>
+</div>
+<button class="absolute -bottom-1 -right-1 bg-surface-container hover:bg-primary hover:text-on-primary text-primary transition-all duration-200 border border-primary/40 rounded-full p-2 flex items-center justify-center shadow-lg" title="Edit Avatar">
+<span class="material-symbols-outlined text-sm">photo_camera</span>
+</button>
+</div>
+<!-- Name & Details -->
+<div class="space-y-2">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Julian Vance</h1>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/30 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-xs" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                Tier 1 Curator
+              </span>
+</div>
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">mail</span>
+                julian.vance@cinephile.org
+              </span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">calendar_today</span>
+                Member since 2023
+              </span>
+</div>
+<!-- Streaming Stats Badges Grid -->
+<div class="pt-3 flex flex-wrap items-center justify-center sm:justify-start gap-3">
+<div class="flex items-center gap-2 bg-surface-container-highest/60 border border-outline-variant/40 px-3.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-base" data-weight="fill" style="font-variation-settings: 'FILL' 1;">theaters</span>
+<span class="font-title-md text-title-md text-on-surface">248</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Masterpieces Watched</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-highest/60 border border-outline-variant/40 px-3.5 py-1.5 rounded-lg">
+<span class="material-symbols-outlined text-primary text-base">rate_review</span>
+<span class="font-title-md text-title-md text-on-surface">18</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reviews Written</span>
+</div>
+<div class="flex items-center gap-2 bg-primary/10 border border-primary/30 px-3.5 py-1.5 rounded-lg text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-base">surround_sound</span>
+                4K Dolby Atmos Tier Active
+              </div>
+</div>
+</div>
+</div>
+<!-- Right: Header Actions -->
+<div class="flex items-center w-full lg:w-auto justify-end gap-3 self-stretch lg:self-center border-t lg:border-t-0 pt-4 lg:pt-0 border-outline-variant/30">
+<button class="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-highest hover:bg-surface-variant border border-outline-variant/50 text-on-surface font-title-md text-body-md transition-all duration-200">
+<span class="material-symbols-outlined text-lg">edit</span>
+            Edit Avatar
+          </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-error-container/30 hover:bg-error-container/50 border border-error/30 text-error font-title-md text-body-md transition-all duration-200" title="Logout Session">
+<span class="material-symbols-outlined text-lg">logout</span>
+<span class="hidden sm:inline">Logout</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Profile Navigation Tabs -->
+<nav class="flex overflow-x-auto border-b border-outline-variant/40 gap-2 sm:gap-8 pb-px no-scrollbar">
+<button class="flex items-center gap-2.5 text-primary border-b-2 border-primary pb-3 font-title-md text-title-md whitespace-nowrap">
+<span class="material-symbols-outlined text-xl">badge</span>
+        Personal Information
+      </button>
+<button class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors pb-3 font-title-md text-title-md whitespace-nowrap">
+<span class="material-symbols-outlined text-xl">shield</span>
+        Account Security &amp; Password
+      </button>
+<button class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors pb-3 font-title-md text-title-md whitespace-nowrap">
+<span class="material-symbols-outlined text-xl">tune</span>
+        Streaming &amp; Audio Preferences
+      </button>
+<button class="flex items-center gap-2.5 text-on-surface-variant hover:text-on-surface transition-colors pb-3 font-title-md text-title-md whitespace-nowrap">
+<span class="material-symbols-outlined text-xl">credit_card</span>
+        Subscription &amp; Billing
+      </button>
+</nav>
+<!-- Unified Settings Form Layout (Bento Grid Composition) -->
+<form class="space-y-10" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Left Column: Personal Information & Taste (7 cols) -->
+<div class="lg:col-span-7 space-y-8">
+<!-- Personal Details Panel -->
+<div class="p-6 md:p-8 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-6">
+<div class="border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">person</span>
+                Curator Identity
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Configure your public archive attribution and auteur affiliations.</p>
+</div>
+<div class="space-y-5">
+<!-- Full Name -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="fullName">Full Name</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="fullName" type="text" value="Julian Vance"/>
+<span class="material-symbols-outlined absolute right-3.5 top-3 text-outline text-lg">verified</span>
+</div>
+</div>
+<!-- Cinephile Bio -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="bio">Cinephile Bio</label>
+<span class="font-label-sm text-label-sm text-outline">184 / 300 words</span>
+</div>
+<textarea class="w-full bg-surface border border-outline-variant/60 rounded-lg p-3 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="bio" rows="3">Dedicated to the restoration of mid-century French New Wave and slow cinema movements. Collector of 35mm master prints, advocate for uncompressed natural audio fidelity.</textarea>
+</div>
+<!-- Favorite Director & Masterpiece -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="director">Favorite Director</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="director" type="text" value="Andrei Tarkovsky"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-lg">videocam</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="favoriteFilm">Desert Island Film</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary transition-all outline-none" id="favoriteFilm" type="text" value="Stalker (1979)"/>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline text-lg">star</span>
+</div>
+</div>
+</div>
+<!-- Preferred Genres Tags -->
+<div class="space-y-2">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Preferred Film Movements &amp; Genres</label>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 border border-primary text-primary font-label-md text-label-md cursor-pointer hover:bg-primary/25 transition-colors">
+                    Art House
+                    <span class="material-symbols-outlined text-xs">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 border border-primary text-primary font-label-md text-label-md cursor-pointer hover:bg-primary/25 transition-colors">
+                    Neo-Noir
+                    <span class="material-symbols-outlined text-xs">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 border border-primary text-primary font-label-md text-label-md cursor-pointer hover:bg-primary/25 transition-colors">
+                    French New Wave
+                    <span class="material-symbols-outlined text-xs">close</span>
+</span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/15 border border-primary text-primary font-label-md text-label-md cursor-pointer hover:bg-primary/25 transition-colors">
+                    Slow Cinema
+                    <span class="material-symbols-outlined text-xs">close</span>
+</span>
+<button class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/60 text-on-surface-variant hover:text-primary hover:border-primary font-label-md text-label-md transition-all" type="button">
+<span class="material-symbols-outlined text-sm">add</span>
+                    Add Genre
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Playback & Audio Preferences Section -->
+<div class="p-6 md:p-8 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-6">
+<div class="border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">equalizer</span>
+                Playback &amp; Master Audio Fidelity
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Calibrate bitrate preservation and hardware acoustic decoding.</p>
+</div>
+<div class="space-y-5">
+<!-- Default Stream Quality -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="qualitySelect">Default Stream Quality</label>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer outline-none" id="qualitySelect">
+<option selected="">4K UHD Lossless (HEVC / AV1 Master 80Mbps)</option>
+<option>4K HDR Dynamic (Adaptive Bitrate 45Mbps)</option>
+<option>1080p Cinema Master (ProRes Proxy Archive)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Audio Output Configuration -->
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="audioSelect">Audio Output Stream</label>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer outline-none" id="audioSelect">
+<option selected="">Dolby Atmos Passthrough (Bitstream TrueHD 7.1.4)</option>
+<option>DTS-HD Master Audio 5.1 Uncompressed</option>
+<option>Studio Reference Stereo PCM (24-bit / 96kHz)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Subtitles Selection -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="subtitleLang">Preferred Subtitles</label>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer outline-none" id="subtitleLang">
+<option selected="">English (SDH &amp; Curator Annotations)</option>
+<option>French (Original Theatrical Timing)</option>
+<option>Japanese (Vertical Typography Support)</option>
+<option>Off by default</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">subtitles</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="subFont">Subtitle Font Preset</label>
+<div class="relative">
+<select class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary appearance-none cursor-pointer outline-none" id="subFont">
+<option selected="">Cinema Yellow (Criterion Style 1970s)</option>
+<option>Minimalist White Opacity 85%</option>
+<option>Trophy Gold Serif</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none">font_download</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Account Security & 2FA (5 cols) -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Security Settings Panel -->
+<div class="p-6 md:p-8 rounded-xl bg-surface-container-low border border-outline-variant/40 space-y-6">
+<div class="border-b border-outline-variant/30 pb-4">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">encrypted</span>
+                Account Security
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Manage credential authenticity and 2-factor verification.</p>
+</div>
+<!-- Password Inputs -->
+<div class="space-y-4">
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="currentPassword">Current Password</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="currentPassword" type="password" value="••••••••••••••••"/>
+<button class="absolute right-3.5 top-3 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="newPassword">New Password</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="newPassword" placeholder="At least 12 characters" type="password"/>
+<button class="absolute right-3.5 top-3 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider" for="confirmPassword">Confirm New Password</label>
+<div class="relative">
+<input class="w-full bg-surface border border-outline-variant/60 rounded-lg px-4 py-2.5 text-on-surface font-body-md text-body-md placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none" id="confirmPassword" placeholder="Re-enter password" type="password"/>
+<button class="absolute right-3.5 top-3 text-outline hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Two-Factor Authentication (2FA) Feature Box -->
+<div class="p-4 rounded-lg bg-surface border border-outline-variant/50 space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">phonelink_lock</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Two-Factor Authentication</h3>
+<p class="font-body-sm text-body-sm text-primary">Active via Authenticator App</p>
+</div>
+</div>
+<!-- Custom Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary-container after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-on-primary-container after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Requires 6-digit cryptographic authentication token each time you sign in on new projection hardware.
+              </p>
+</div>
+<!-- Active Sessions & Security Badges -->
+<div class="space-y-3 pt-2">
+<span class="block font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Authorized Projection Hardware</span>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-highest/40 border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-base">tv</span>
+<div>
+<p class="font-semibold text-on-surface">Sony Bravia XR Master 4K</p>
+<p class="text-outline">Living Room Studio • London, UK</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary/15 text-primary text-[10px] font-bold">CURRENT</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-lg bg-surface-container-highest/40 border border-outline-variant/30 text-xs">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant text-base">laptop_mac</span>
+<div>
+<p class="font-semibold text-on-surface">MacBook Pro 16" M3 Max</p>
+<p class="text-outline">Active 3 hours ago</p>
+</div>
+</div>
+<button class="text-error hover:underline text-[11px] font-semibold" type="button">Revoke</button>
+</div>
+</div>
+</div>
+<!-- VIP Membership Mini Card -->
+<div class="p-6 rounded-xl bg-gradient-to-br from-surface-container to-surface-container-high border border-primary/30 relative overflow-hidden">
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">MINDX PATRON PRESTIGE</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface">Annual Master Archivist Pass</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Next automatic VIP renewal on November 14, 2025.</p>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">MasterCard ending in •••• 9104</span>
+<a class="text-primary hover:underline font-semibold" href="index.html">Manage Plan</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Form Bottom Sticky Actions Bar -->
+<div class="sticky bottom-4 z-40 p-4 md:p-5 rounded-xl bg-surface/90 glass-panel border border-outline-variant/50 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-2.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-base">info</span>
+<span>Changes to audio calibration take effect immediately on connected screens.</span>
+</div>
+<div class="flex items-center gap-4 w-full sm:w-auto justify-end">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant/60 hover:border-primary/50 text-on-surface font-title-md text-title-md hover:bg-surface-container transition-all duration-200" type="button">
+            Cancel
+          </button>
+<button class="px-8 py-2.5 rounded-lg bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md font-semibold transition-all duration-200 gold-glow flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-lg" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+            Save Profile Changes
+          </button>
+</div>
+</div>
+</form>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full px-6 md:px-margin py-space-xl flex flex-col gap-space-lg border-t border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<!-- Brand Logo in Footer -->
+<a class="font-headline-lg text-headline-lg tracking-widest text-primary uppercase font-bold" href="index.html">
+        MINDX CINEMA
+      </a>
+<!-- Footer Quick Links -->
+<div class="flex flex-wrap gap-x-8 gap-y-3 font-label-sm text-label-sm tracking-wider">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Curation Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Film Festivals</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">4K Premieres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="register.html">VIP Membership</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Terms of Service</a>
+</div>
+</div>
+<!-- Copyright Divider & Line -->
+<div class="pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-outline">
+<p>© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</p>
+<div class="flex items-center gap-6">
+<span class="flex items-center gap-1.5 text-xs text-primary">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Master Archive Servers Online (Dolby Atmos® Certified)
+        </span>
+</div>
+</div>
+</footer>
+<script src="js/site-navigation.js"></script></body></html>

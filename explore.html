@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA | Explore Curated Archive</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .cinema-card:hover .poster-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .cinema-card:hover .card-img {
+      transform: scale(1.05);
+    }
+    /* Detailed List View Adaptations */
+    .movies-list-view {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1.25rem !important;
+    }
+    .movies-list-view .cinema-card {
+      flex-direction: row !important;
+      height: 190px !important;
+    }
+    .movies-list-view .cinema-card > .aspect-\[2\/3\] {
+      width: 140px !important;
+      min-width: 140px !important;
+      height: 100% !important;
+      aspect-ratio: auto !important;
+    }
+    .movies-list-view .cinema-card .poster-overlay {
+      display: none !important;
+    }
+    .movies-list-view .cinema-card .list-expanded-info {
+      display: flex !important;
+    }
+    .list-expanded-info {
+      display: none;
+    }
+    @keyframes toastFade {
+      0% { opacity: 0; transform: translateY(16px) scale(0.96); }
+      15% { opacity: 1; transform: translateY(0) scale(1); }
+      85% { opacity: 1; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-8px) scale(0.96); }
+    }
+    .toast-anim {
+      animation: toastFade 3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+  </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md antialiased min-h-screen flex flex-col selection:bg-primary selection:text-on-primary relative">
+<!-- ================= TOAST NOTIFICATION CONTAINER ================= -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none" id="toast-container"></div>
+<!-- ================= MODAL PREVIEW DIALOG ================= -->
+<div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden items-center justify-center p-4 transition-all duration-300" id="preview-modal">
+<div class="relative w-full max-w-2xl bg-surface-container-low border border-primary/40 rounded-2xl p-6 md:p-8 shadow-2xl flex flex-col md:flex-row gap-6">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors p-1" id="modal-close" title="Close">
+<span class="material-symbols-outlined text-24">close</span>
+</button>
+<div class="w-full md:w-48 aspect-[2/3] rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img alt="Movie poster" class="w-full h-full object-cover" id="modal-img" src=""/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-label-sm font-label-sm uppercase" id="modal-badge"></span>
+<span class="flex items-center gap-1 text-primary text-label-md font-semibold" id="modal-rating"><span class="text-primary">★</span> 9.0</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2" id="modal-title"></h3>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant mb-4" id="modal-meta"></div>
+<p class="text-body-md text-on-surface-variant leading-relaxed" id="modal-synopsis"></p>
+</div>
+<div class="flex items-center gap-3 mt-6 pt-4 border-t border-outline-variant/30">
+<button class="flex-grow py-2.5 px-4 rounded-lg bg-primary-container text-on-primary font-semibold text-label-md flex items-center justify-center gap-2 hover:bg-primary transition-all" id="modal-play-btn">
+<span class="material-symbols-outlined text-20" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+          Stream Master Edition
+        </button>
+<button class="p-2.5 rounded-lg bg-surface-container border border-outline-variant/40 hover:text-primary transition-colors" id="modal-bookmark-btn" title="Bookmark">
+<span class="material-symbols-outlined text-20">bookmark</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= TOP NAVIGATION BAR (Shared Anchor Component) ================= -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-margin-mobile md:px-margin py-space-md bg-surface/75 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-space-xl">
+<!-- Brand Logo -->
+<a class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold transition-transform duration-150 active:scale-95 flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-28" data-icon="movie_filter">movie_filter</span>
+        MINDX CINEMA
+      </a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-space-lg text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="index.html">Home</a>
+<a class="text-primary border-b-2 border-primary pb-1 shadow-[0_2px_12px_rgba(244,195,119,0.35)]" href="explore.html">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="explore.html">Series</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="watch-list.html">Watchlist</a>
+</nav>
+</div>
+<!-- Search & Trailing Actions -->
+<div class="flex items-center gap-space-md">
+<!-- Search Bar -->
+<div class="relative hidden sm:block w-48 lg:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-18" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/50 rounded-full pl-9 pr-8 py-1.5 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/40 transition-all" id="nav-search-input" placeholder="Search titles, auteurs, awards..." type="text"/>
+<button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors text-16" id="search-clear-btn" title="Clear Search">
+<span class="material-symbols-outlined text-16">close</span>
+</button>
+</div>
+<!-- Trailing Action: Notifications -->
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-colors" onclick="showToast('Notification center: All films up to date.')" title="Notifications">
+<span class="material-symbols-outlined text-20" data-icon="notifications">notifications</span>
+</button>
+<!-- VIP Profile Avatar -->
+<div class="relative group cursor-pointer pl-1" onclick="showToast('VIP Curator profile: Active')">
+<div class="w-9 h-9 rounded-full ring-1 ring-primary/60 p-0.5 transition-transform duration-150 group-hover:scale-105">
+<img alt="User VIP profile avatar with active status badge" class="w-full h-full object-cover rounded-full" data-alt="Editorial close-up portrait of a high-end film curator in a dimly lit studio setting. Cinematic ambient amber backlight grazes their facial profile against an obsidian background. The mood is sophisticated and authoritative, embodying pure luxury cinema culture with deep blacks and subtle gold hues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4IDE6uoVopUiPFbIKNktKzbiRdR5-mPPNLxD5lv5N09eQUOb_lJZcGyTxbQsDKBmAT-9xiZ68y_KyMOtVS9T--6AvAAfhelLD1AXfelmqMvbLogZyprHiSTH5Oy8RYlu4VO4rZWwlvv1CJMeGiR_56tW9jt7-UxcRCXI9mnGAdPxh0Ufl474B2B3mD71_RPVENaJ8e_zXdY5zdHhp-i8jB3ifm8s2Hu6fHKcFsBo"/>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface"></span>
+</div>
+</div>
+</header>
+<!-- ================= MAIN EXPLORE CANVAS ================= -->
+<main class="flex-grow pt-28 pb-space-xl px-margin-mobile md:px-margin max-w-[1600px] w-full mx-auto">
+<!-- Editorial Header Section -->
+<section class="mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b border-outline-variant/30 pb-space-lg">
+<div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm tracking-widest uppercase mb-3">
+<span class="material-symbols-outlined text-14" data-icon="verified">verified</span>
+            Curated Film Vault
+          </div>
+<h1 class="text-headline-lg-mobile md:text-display-hero font-headline-lg md:font-display-hero text-on-surface tracking-tight">
+            Explore Curated Archive
+          </h1>
+<p class="text-body-md md:text-body-lg font-body-md md:font-body-lg text-on-surface-variant max-w-3xl mt-2 leading-relaxed">
+            Discover thousands of restored 4K masterpieces, festival laureates, and exclusive cinematic releases curated for the discerning cinephile.
+          </p>
+</div>
+<!-- Layout View Toggle -->
+<div class="flex items-center gap-2 self-start md:self-end bg-surface-container-low p-1 rounded-lg border border-outline-variant/40">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container-high text-primary shadow-sm text-label-md font-label-md transition-colors" id="view-grid-btn" title="Grid Layout">
+<span class="material-symbols-outlined text-18" data-icon="grid_view">grid_view</span>
+<span class="hidden sm:inline">Grid</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-colors" id="view-list-btn" title="Detailed List Layout">
+<span class="material-symbols-outlined text-18" data-icon="view_agenda">view_agenda</span>
+<span class="hidden sm:inline">Detailed List</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Filter & Sorting Controls -->
+<section class="space-y-space-md mb-space-xl">
+<!-- Horizontal Genre Pills Bar -->
+<div class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-1" id="genre-pills">
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-primary text-on-primary text-label-md font-label-md transition-all shadow-[0_4px_16px_rgba(244,195,119,0.2)]" data-genre="all">
+          All Genres
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Sci-Fi">
+          Sci-Fi
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Psychological Drama">
+          Psychological Drama
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Film Noir">
+          Film Noir
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Neo-Realism">
+          Neo-Realism
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Dystopian">
+          Dystopian
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Auteur Classics">
+          Auteur Classics
+        </button>
+<button class="genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all" data-genre="Documentary">
+          Documentary
+        </button>
+</div>
+<!-- Advanced Filter Dropdowns & Sorting Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-md p-4 rounded-xl bg-surface-container-low/70 border border-outline-variant/30 backdrop-blur-md">
+<!-- Dropdown Group -->
+<div class="flex flex-wrap items-center gap-3">
+<!-- Year Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container border border-outline-variant/50 text-on-surface text-label-md font-label-md rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-primary cursor-pointer" id="filter-year">
+<option value="all">Year: All Eras</option>
+<option value="2020-2025">2020 – 2025</option>
+<option value="2010-2019">2010 – 2019</option>
+<option value="pre-2010">Pre-2010 Classics</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-16 text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Min Rating Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container border border-outline-variant/50 text-on-surface text-label-md font-label-md rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-primary cursor-pointer" id="filter-rating">
+<option value="all">Min Rating: All Ratings</option>
+<option value="8.0">8.0+ Critical Acclaim</option>
+<option value="8.5">8.5+ Masterworks</option>
+<option value="9.0">9.0+ Canonical</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-16 text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<!-- Audio/Format Selector -->
+<div class="relative">
+<select class="appearance-none bg-surface-container border border-outline-variant/50 text-on-surface text-label-md font-label-md rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-primary cursor-pointer" id="filter-format">
+<option value="all">Format: All Formats</option>
+<option value="Dolby Vision">Dolby Vision • Atmos</option>
+<option value="4K Remaster">4K Remaster</option>
+<option value="IMAX">IMAX 70mm</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-16 text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<button class="text-outline hover:text-primary transition-colors text-label-sm font-label-sm uppercase tracking-wider pl-1 font-semibold flex items-center gap-1" id="reset-filters-btn">
+<span class="material-symbols-outlined text-14">restart_alt</span>
+            Reset Filters
+          </button>
+</div>
+<!-- Sort By Group -->
+<div class="flex items-center gap-2.5">
+<span class="text-on-surface-variant text-label-md font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-16 text-primary" data-icon="sort">sort</span>
+            Sort By:
+          </span>
+<div class="relative">
+<select class="appearance-none bg-surface-container-high border border-primary/40 text-primary font-semibold text-label-md font-label-md rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-primary cursor-pointer" id="sort-select">
+<option selected="" value="curator-rating">Curator Rating</option>
+<option value="release-year">Release Year</option>
+<option value="title-az">Title A-Z</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 text-16 text-primary" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= CURATED MOVIE GRID / CONTAINER ================= -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter mb-space-xl transition-all duration-300" id="movie-grid-container">
+<!-- Movie cards will be dynamically injected / rendered here -->
+</section>
+<!-- ================= EMPTY SEARCH STATE ================= -->
+<div class="hidden flex-col items-center justify-center text-center py-20 px-4 bg-surface-container-low/40 rounded-2xl border border-outline-variant/30 my-8" id="empty-state">
+<span class="material-symbols-outlined text-64 text-outline mb-4">search_off</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">No Curated Works Match Your Criteria</h3>
+<p class="text-body-md text-on-surface-variant max-w-md mb-6 leading-relaxed">
+    Our archivist vault could not find titles fitting this combination of epoch, accolade, and format. Try loosening your filters or resetting the search query.
+  </p>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-semibold text-label-md flex items-center gap-2 shadow-[0_4px_16px_rgba(244,195,119,0.25)] hover:bg-primary-fixed-dim transition-all" id="empty-reset-btn">
+<span class="material-symbols-outlined text-18">restart_alt</span>
+    Clear Filters &amp; View All Works
+  </button>
+</div>
+<!-- ================= INTERACTIVE PAGINATION BAR ================= -->
+<nav class="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-outline-variant/30">
+<div class="text-body-sm font-body-sm text-on-surface-variant" id="pagination-status">
+        Showing <span class="text-primary font-semibold" id="pag-range">1 – 12</span> of <span class="text-on-surface" id="pag-total">12 Works</span> • Page <span id="pag-current">1</span> of <span id="pag-max">1</span>
+</div>
+<div class="flex items-center gap-1.5" id="pagination-controls">
+<button class="w-9 h-9 rounded-lg flex items-center justify-center text-outline/50 border border-outline-variant/20 cursor-not-allowed transition-colors" disabled="" id="pag-prev">
+<span class="material-symbols-outlined text-18" data-icon="chevron_left">chevron_left</span>
+</button>
+<!-- Page Pills -->
+<button class="page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-primary text-on-primary font-semibold text-label-md font-label-md shadow-[0_2px_8px_rgba(244,195,119,0.3)] transition-colors" data-page="1">
+          1
+        </button>
+<button class="page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/30 text-label-md font-label-md transition-colors" data-page="2">
+          2
+        </button>
+<button class="page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/30 text-label-md font-label-md transition-colors" data-page="3">
+          3
+        </button>
+<span class="px-1.5 text-on-surface-variant">...</span>
+<button class="page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/30 text-label-md font-label-md transition-colors" data-page="42">
+          42
+        </button>
+<button class="px-3 h-9 rounded-lg flex items-center justify-center gap-1 bg-surface-container text-on-surface hover:text-primary hover:border-primary/40 border border-outline-variant/30 text-label-md font-label-md transition-colors" id="pag-next">
+<span>Next</span>
+<span class="material-symbols-outlined text-16" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</nav>
+</main>
+<!-- ================= FOOTER (Shared Anchor Component) ================= -->
+<footer class="w-full px-margin-mobile md:px-margin py-space-xl flex flex-col gap-space-lg border-t border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<!-- Footer Brand -->
+<div>
+<a class="font-headline-lg text-headline-lg tracking-widest text-primary uppercase font-bold" href="index.html">
+          MINDX CINEMA
+        </a>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-1 max-w-md">
+          A dedicated sanctuary for motion picture art, archival restorations, and unapologetic auteur expression.
+        </p>
+</div>
+<!-- Links Array -->
+<nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-label-sm font-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Curation Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Film Festivals</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">4K Premieres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="register.html">VIP Membership</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Terms of Service</a>
+</nav>
+</div>
+<!-- Legal & Copyright -->
+<div class="flex flex-col sm:flex-row items-center justify-between pt-space-md border-t border-outline-variant/20 text-body-sm font-body-sm text-on-surface-variant">
+<span>© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</span>
+<div class="flex items-center gap-4 mt-2 sm:mt-0 text-label-sm font-label-sm text-outline">
+<span>EST. 2024</span>
+<span>•</span>
+<span>BERLIN • PARIS • TOKYO • NEW YORK</span>
+</div>
+</div>
+</footer>
+<!-- ================= JAVASCRIPT APPLICATION LOGIC ================= -->
+<script>
+  // Complete Dataset of Curated Works
+  const ARCHIVE_MOVIES = [
+    {
+      id: "m1",
+      title: "The Obsidian Horizon",
+      year: 2024,
+      duration: "2h 46m",
+      genres: ["Sci-Fi", "Psychological Drama"],
+      genreDisplay: "Sci-Fi / Drama",
+      rating: 8.9,
+      badge: "Cannes 2024",
+      format: "Dolby Vision",
+      director: "Denis Villeneuve & Archivist Collective",
+      synopsis: "A deep-space surveyor intercepts an incomprehensible mathematical cadence radiating from the edge of an extinct galaxy.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD-p4Js7Bt_hOV1kkjgZ2iYAroLVr32WogS2RatdfcR5jnNyJRt0rsB4X3duRvq0wSNG3LBaCcbNeH67VaySm8zzbgJLt7ZOXh_EIdxyeOjw_N5hRGxKqrVOuZ30nTCDkg3gtc3Z4KNTiO9bjjgUcCsvOAb0FZAtKqTZW-xHRynNxinOiNUTUVS6oYO9n7VPOcNPNyAiH9VUsw_rwuTVPFvYZtSFECXXcZFT2wh340",
+      alt: "Cinematic still poster of a monolithic cosmic vessel floating near an amber-lit gas giant ring system."
+    },
+    {
+      id: "m2",
+      title: "Solitude in Monolith",
+      year: 2023,
+      duration: "2h 18m",
+      genres: ["Psychological Drama"],
+      genreDisplay: "Psychological Drama",
+      rating: 9.1,
+      badge: "Venice Golden Lion",
+      format: "4K Remaster",
+      director: "Elena Ramos",
+      synopsis: "In an architect's final days, memory cascades unravel secrets behind an austere city planned for the next civilization.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDn2pxLqUc1j2f30VXrXiIuL3e3XvS_jOkOjb2b2cq8_hRzJvULArAwJvvbEeq90qzmVxgSGOriZdsOfy7tLL3-3dvWgnp-zhbOeeAOUrcMKuts5g4GPKnd3nNuiS-IOD5MJFae9J_tmm4MzXhQ8mSzlsQZiG6K-w4UoqKtufJVTaQNbhemvNbqPWUsvwCV_ke9rsoCwgO_X9NGp5T4FNf5qFgVL0wh0eWEwzP9kwU",
+      alt: "Atmospheric low-key photograph of a solitary silhouette standing inside a minimalist brutalist pavilion."
+    },
+    {
+      id: "m3",
+      title: "The Echo of Vienna",
+      year: 2022,
+      duration: "2h 31m",
+      genres: ["Auteur Classics", "Psychological Drama"],
+      genreDisplay: "Auteur Classics",
+      rating: 8.8,
+      badge: "4K Remaster",
+      format: "4K Remaster",
+      director: "Karl Heinz Meyer",
+      synopsis: "Two rival conductors clash over a lost symphony score during the stormy dawn of European modernism.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBRn0d8blWAG2ERLPIT8EifMopJLiGTKyjnji0uVINo-p93nDjv2Lj0VdJOVCOzGTMjzDMucqfZGGDGTIMBxZX8UXB_fMT3Umw-SklzHBoeZG86EzHOvtF246DPZHZhQI2G9Fyv_Al9YmrnO6Ex1krrfkH-BQebHGmrNtAgF8Za4Bb3QLEphcccq2db0mAIpkc7aA11WxFLBB8kge9tjS1_EsCOhQa2whHK9qikuP0",
+      alt: "Editorial portrait of two classical actors captured in dramatic chiaroscuro stage lighting."
+    },
+    {
+      id: "m4",
+      title: "Neon Lacuna",
+      year: 2024,
+      duration: "1h 58m",
+      genres: ["Film Noir", "Sci-Fi"],
+      genreDisplay: "Film Noir / Sci-Fi",
+      rating: 8.7,
+      badge: "Berlin Laureate",
+      format: "Dolby Vision",
+      director: "Kenji Sato",
+      synopsis: "A private cryptographer untangles synthetic identities disappearing across the encrypted underbelly of New Tokyo.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuATVHGrDAErzwqKcmefywx5wo1OMooG2G8Df2J44UoMkQuYnFam4llwRbkF0cTyVpJ58k4K9VbwPtSKQSUP_g0qB3EG2cu9DgauEv1Vdhe72L-_KVEQW-OZF-eG_z6zNZs_sKN3ynhHyV0lqB4taEcDRIUIh5ohPvtH9V7_J4PDH6XQC7Pc3k8DBhKWvK-Jr_YTGtgs1-z-Zcssg-1NdRpAfdcyBQhzevcbDq5RwGw",
+      alt: "Striking cinematic wide shot of a misty neon-drenched metropolis alleyway at 3 AM."
+    },
+    {
+      id: "m5",
+      title: "The Seventh Mirage",
+      year: 2023,
+      duration: "2h 52m",
+      genres: ["Dystopian", "Psychological Drama"],
+      genreDisplay: "Dystopian / Drama",
+      rating: 9.0,
+      badge: "Curator Choice",
+      format: "IMAX",
+      director: "Tariq Mansoor",
+      synopsis: "Across three shifting desert centuries, a mystic chronometer charts the rise and extinction of sacred water kingdoms.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuA1DgGgCdejQdTHSP2aWknjdwtZ1bBjWtQxqgnLiGk8YRL31Ty7PhofubEmIdwD9bFD_kK77XobFf3RiltWjwOYN6jd0BUrz2797TdhOQlLoqYkz26ePp0jWoBRYgZd5j7pw-4m__da45GZIg_4hTzWuUJ4AexZcqkAikp4SvooPY8c07r1-QeqiSVuV_I_Lc8lKCMjUF5OBOegTIrye4g-opIsLDiPl3ywcLKvm84",
+      alt: "A vast desolate sand dune landscape under a pale eclipse sun with a nomadic figure."
+    },
+    {
+      id: "m6",
+      title: "Cadence of Static",
+      year: 2024,
+      duration: "1h 44m",
+      genres: ["Documentary"],
+      genreDisplay: "Documentary",
+      rating: 8.6,
+      badge: "Doc Premiere",
+      format: "Dolby Vision",
+      director: "Anya Vlasic",
+      synopsis: "An intimate investigation into the enigmatic tape recordings that pioneered electronic music behind the Iron Curtain.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD55wNlUzOObJ0JcixUgJEuhQ9Lt9Ik5oh7wqNvUxeu9DdpvjY2QT3rfj29cn4CsUNU6y5Hdf8VxViOKXYRv808TGyddoRaj67vp8g6XxjG8zhwk1Dje8OElIVIgIA1miwx9aiqTGagRgLb3WEJpCBqWxyQtvHvZSSOZyqa5BN2to8k_I8Yd-3M-dD1oXysxuR-JhRCCbxOlTtVPYEoaAxV3Sqaj1c3jcKHg3FC1c8",
+      alt: "Editorial close-up of a vintage analog synthesizer console in a dim audio laboratory."
+    },
+    {
+      id: "m7",
+      title: "Whispers in Vermilion",
+      year: 2023,
+      duration: "2h 05m",
+      genres: ["Psychological Drama"],
+      genreDisplay: "Psychological Drama",
+      rating: 8.9,
+      badge: "Sundance Winner",
+      format: "4K Remaster",
+      director: "Clara Dupond",
+      synopsis: "A restorative art conservator uncovers a hidden tempera portrait that mirrors an unsolved disappearance from her childhood.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBqb9nZ2IUB3Lc_ovvblUuOxvGGmqAMAwYa6IB72GUmUk2KwNoxL6kZr3hfdSVpKgOYTY9sMDSTidgevlIV06WUpRVQ29ZRUZRUWoEZuxTdT6hfFIzg9U8QY2AYAVZH5SZWnSTi4705oQOAqbE2WKtxIRzlQJawTsqSubIEmXAAE1EvGzkC-YxkwOLx2gaLBE_j1-LKGsX_jsAseMo_JNSMH28O0_2rLGYrunUrGo0",
+      alt: "Intense dramatic portrait of a woman in an empty glass museum hall at twilight."
+    },
+    {
+      id: "m8",
+      title: "The Clockmaker of Palermo",
+      year: 2021,
+      duration: "2h 14m",
+      genres: ["Neo-Realism"],
+      genreDisplay: "Neo-Realism",
+      rating: 9.3,
+      badge: "Criterion Master",
+      format: "4K Remaster",
+      director: "Matteo Ferrante",
+      synopsis: "Restored in original 4K: a tender chronicle of manual craft, post-war reconstruction, and unconditional filial devotion.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuD7ZPcJsXU5R5flC-GbH8vJOo48zb8nygBblZ68K8iNnqTvcAmdv5DCyFbX8GaTDoRUd2hfCisb3HLxqSY16lXivt93fQBzNaU6uwNq1VdH7_1D2oyXCk0uOsilaQceyDPTYc-Q-JIEP73qzZ1PVTfjiBIFoYEXj-rhGNiM1u_IZgvsIwPpdDKq5Omdoq4hlZQVh4T4HN6VPmh2CpLsFjD8UxSQqlGE8_sJgW_58_M",
+      alt: "Gritty high-contrast monochrome frame of an artisan inspecting a clockwork device."
+    },
+    {
+      id: "m9",
+      title: "Abyssal Sanctum",
+      year: 2024,
+      duration: "2h 10m",
+      genres: ["Sci-Fi", "Auteur Classics"],
+      genreDisplay: "Sci-Fi / Auteur",
+      rating: 8.8,
+      badge: "Dolby Vision",
+      format: "Dolby Vision",
+      director: "Julian Vane",
+      synopsis: "A deep-sea archeological unit uncovers a submerged liturgical vault containing sound records of human civilization.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDdKsdGm_agapdw2gqzYlQMyTDOYfNYCz8CqNQ6EB5v0Drhsxp_p03Za0gU4Re8iuf_x7YiVNkvaLktxPXtlUNlG-hIkQTn0uxqXJa70dWdq8w2DENV_f5-RxURMh0NI98W4S2OfNKpbDGEaeXvYMEQWqbYeJWKuZUJvx2mWwBjNIIFQG4yY9ZG9htRIQ1GAi77r1NZMqgx7PaCSMJcWEkLMaKkCqGDDxvuJMDDQKg",
+      alt: "Surreal cinematic vista of an abandoned underwater cathedral with golden sunlight shafts."
+    },
+    {
+      id: "m10",
+      title: "Trans-Siberian Nocturne",
+      year: 2022,
+      duration: "2h 22m",
+      genres: ["Film Noir", "Psychological Drama"],
+      genreDisplay: "Film Noir / Drama",
+      rating: 8.5,
+      badge: "Festival Jury Prize",
+      format: "4K Remaster",
+      director: "Sergei Romanov",
+      synopsis: "Seven strangers aboard an unchartered sleeper locomotive confront their intertwined wartime destinies.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBpumW3zKCjnQEaadbFxeIe2E7Qc6-o0jD2c1ZDekggV0dl02jqDrXAgAPbrzhGugbFffjCADSFJ1nZIs84RiAPZzCHAro9gbwfLn7-lNd6WNFAKfU7KV_S2fsKQsPAhFj44gKIm7ETS9tejiLY8Aj02P4ASE7xtVEiItOsRMZ2MHc3l2UZkrSNcHUplV34m9nD35v5KDdnKHjKgJxrmejXNMN0k1uiZz8cRtjo0Wc",
+      alt: "Atmospheric night shot of a luxury train crossing an arched viaduct over a dark misty river."
+    },
+    {
+      id: "m11",
+      title: "The Silence of Cedar",
+      year: 2024,
+      duration: "1h 56m",
+      genres: ["Neo-Realism", "Auteur Classics"],
+      genreDisplay: "Neo-Realism",
+      rating: 9.2,
+      badge: "Kyoto Laureate",
+      format: "4K Remaster",
+      director: "Hiroshi Morimoto",
+      synopsis: "A master lacquerer prepares a final ceremonial vessel while confronting the generational drift of his family heritage.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGd5__8HohTlZpT6-22HJUO3mg-GeziiJdBaZn5khlQia_sxI40WXghQ2XVvLh-bU9D8M07bbOut28-_NeV2TNN9AVcIKj3F9yy1p8ZKMTjgvx-OV9Qfq06FUnkUNRneSS2hrD87ldRclpel8Ouyh5FGc9D7HeF0pSe8G7iEG-1Lj1A89nIp-Ma5zfxeKlfuFVQ5pEWpOJZncIA4mJf79jyxmSpWqc4Y35Kym9JpU",
+      alt: "Editorial still of a secluded Japanese cedar forest bathed in morning mist."
+    },
+    {
+      id: "m12",
+      title: "Eden Protocol",
+      year: 2025,
+      duration: "2h 38m",
+      genres: ["Dystopian", "Sci-Fi"],
+      genreDisplay: "Dystopian / Sci-Fi",
+      rating: 8.9,
+      badge: "IMAX Exclusive",
+      format: "IMAX",
+      director: "Vivian Ward & Lin Thorne",
+      synopsis: "When the last bio-dome loses artificial sunlight, an ecologist must synthesize photosynthetic fuel from forgotten flora.",
+      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBznU8ZXe9QmFH2zfgzmPyva8ZvmViuLlzr3YUsTxu-9DGvNee-d1QMkVRlvZD5Vihr2i9iN2PEjebinkwta3smydwjqhrV0DRepiBRXncE6_6W9yswbq0X1Skegga0gB5vJar8azCTUydltiFDn33-0qh0XxndmZQFCFyOxHkllWnVzrMCgXaEsWKHDzQnysTvAeSaMC0RG32KNZ0MIGSipnNR5K2efnOdxW5R5c8",
+      alt: "Dystopian futuristic botanical greenhouse dome under an ominous stormy violet sky."
+    }
+  ];
+
+  // Application State
+  const state = {
+    searchQuery: "",
+    selectedGenre: "all",
+    yearFilter: "all",
+    ratingFilter: "all",
+    formatFilter: "all",
+    sortBy: "curator-rating",
+    currentView: "grid", // "grid" or "list"
+    currentPage: 1,
+    itemsPerPage: 12,
+    bookmarkedIds: new Set(["m1", "m8"])
+  };
+
+  // Toast Notification System
+  function showToast(message, icon = "bookmark") {
+    const container = document.getElementById("toast-container");
+    const toast = document.createElement("div");
+    toast.className = "toast-anim flex items-center gap-2.5 px-4 py-3 rounded-xl bg-surface-container-high border border-primary/40 text-on-surface shadow-2xl backdrop-blur-md pointer-events-auto text-body-sm font-medium";
+    toast.innerHTML = `
+      <span class="material-symbols-outlined text-primary text-18" style="font-variation-settings: 'FILL' 1;">${icon}</span>
+      <span>${message}</span>
+    `;
+    container.appendChild(toast);
+    setTimeout(() => {
+      toast.remove();
+    }, 3200);
+  }
+
+  // Filter & Sort Logic
+  function getFilteredMovies() {
+    let result = [...ARCHIVE_MOVIES];
+
+    // Search query
+    if (state.searchQuery.trim() !== "") {
+      const q = state.searchQuery.toLowerCase().trim();
+      result = result.filter(m => 
+        m.title.toLowerCase().includes(q) ||
+        m.director.toLowerCase().includes(q) ||
+        m.badge.toLowerCase().includes(q) ||
+        m.genreDisplay.toLowerCase().includes(q) ||
+        m.genres.some(g => g.toLowerCase().includes(q)) ||
+        m.synopsis.toLowerCase().includes(q) ||
+        String(m.year).includes(q)
+      );
+    }
+
+    // Genre filter
+    if (state.selectedGenre !== "all") {
+      result = result.filter(m => m.genres.includes(state.selectedGenre));
+    }
+
+    // Year Range
+    if (state.yearFilter === "2020-2025") {
+      result = result.filter(m => m.year >= 2020 && m.year <= 2025);
+    } else if (state.yearFilter === "2010-2019") {
+      result = result.filter(m => m.year >= 2010 && m.year <= 2019);
+    } else if (state.yearFilter === "pre-2010") {
+      result = result.filter(m => m.year < 2010);
+    }
+
+    // Critical Acclaim Rating
+    if (state.ratingFilter !== "all") {
+      const minRating = parseFloat(state.ratingFilter);
+      result = result.filter(m => m.rating >= minRating);
+    }
+
+    // Format Selector
+    if (state.formatFilter !== "all") {
+      result = result.filter(m => m.format.toLowerCase().includes(state.formatFilter.toLowerCase()));
+    }
+
+    // Sorting
+    if (state.sortBy === "curator-rating") {
+      result.sort((a, b) => b.rating - a.rating);
+    } else if (state.sortBy === "release-year") {
+      result.sort((a, b) => b.year - a.year);
+    } else if (state.sortBy === "title-az") {
+      result.sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    return result;
+  }
+
+  // Render Function
+  function render() {
+    const gridContainer = document.getElementById("movie-grid-container");
+    const emptyState = document.getElementById("empty-state");
+    const filtered = getFilteredMovies();
+
+    // Toggle view classes
+    if (state.currentView === "list") {
+      gridContainer.classList.add("movies-list-view");
+      gridContainer.classList.remove("grid", "grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3", "xl:grid-cols-4");
+    } else {
+      gridContainer.classList.remove("movies-list-view");
+      gridContainer.classList.add("grid", "grid-cols-1", "sm:grid-cols-2", "lg:grid-cols-3", "xl:grid-cols-4");
+    }
+
+    // Handle Empty State
+    if (filtered.length === 0) {
+      gridContainer.innerHTML = "";
+      emptyState.classList.remove("hidden");
+      emptyState.classList.add("flex");
+      updatePagination(0, 0);
+      return;
+    } else {
+      emptyState.classList.add("hidden");
+      emptyState.classList.remove("flex");
+    }
+
+    // Render Cards
+    gridContainer.innerHTML = filtered.map(movie => {
+      const isBookmarked = state.bookmarkedIds.has(movie.id);
+      return `
+        <article data-movie-id="${movie.id}" class="cinema-card group relative bg-surface-container-low rounded-xl overflow-hidden border border-outline-variant/30 hover:border-primary/60 transition-all duration-300 hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)] flex flex-col cursor-pointer">
+          <div class="relative aspect-[2/3] overflow-hidden bg-surface-container">
+            <img alt="${movie.title}" class="card-img w-full h-full object-cover transition-transform duration-500 ease-out" src="${movie.image}" />
+            
+            <!-- Badges Top Row -->
+            <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10 pointer-events-none">
+              <span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary text-label-sm font-label-sm uppercase">
+                ${movie.badge}
+              </span>
+              <span class="flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/40 text-primary text-label-md font-title-md">
+                <span class="text-primary">★</span> ${movie.rating.toFixed(1)}
+              </span>
+            </div>
+
+            <!-- Hover Overlay -->
+            <div class="poster-overlay absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/85 to-transparent opacity-0 translate-y-4 transition-all duration-300 p-5 flex flex-col justify-end z-20">
+              <p class="text-body-sm font-body-sm text-on-surface-variant line-clamp-3 mb-4">
+                ${movie.synopsis}
+              </p>
+              <div class="flex items-center gap-2">
+                <button type="button" class="btn-watch flex-grow py-2 px-3 rounded-lg bg-primary-container text-on-primary font-semibold text-label-md font-label-md flex items-center justify-center gap-1.5 hover:bg-primary transition-all">
+                  <span class="material-symbols-outlined text-18" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  Watch Now
+                </button>
+                <button type="button" class="btn-bookmark w-9 h-9 rounded-lg bg-surface-container/80 border border-outline-variant/40 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors" title="${isBookmarked ? 'Remove from Watchlist' : 'Save to Watchlist'}">
+                  <span class="material-symbols-outlined text-18 ${isBookmarked ? 'text-primary' : ''}" style="${isBookmarked ? "font-variation-settings: 'FILL' 1;" : ''}">${isBookmarked ? 'bookmark_added' : 'bookmark'}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-4 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="text-title-md font-title-md text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+                  ${movie.title}
+                </h3>
+                <button type="button" class="btn-bookmark sm:hidden text-on-surface-variant hover:text-primary">
+                  <span class="material-symbols-outlined text-18 ${isBookmarked ? 'text-primary' : ''}">${isBookmarked ? 'bookmark_added' : 'bookmark'}</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-2 text-body-sm font-body-sm text-on-surface-variant mt-1">
+                <span>${movie.year}</span>
+                <span>•</span>
+                <span>${movie.duration}</span>
+                <span>•</span>
+                <span class="text-outline">${movie.genreDisplay}</span>
+              </div>
+            </div>
+
+            <!-- List View Expanded Details -->
+            <div class="list-expanded-info flex-col justify-between pt-2 border-t border-outline-variant/20 mt-2">
+              <p class="text-body-sm text-on-surface-variant line-clamp-2 mb-3">
+                ${movie.synopsis}
+              </p>
+              <div class="flex items-center justify-between">
+                <span class="text-label-sm text-outline uppercase font-semibold">Format: ${movie.format}</span>
+                <div class="flex items-center gap-2">
+                  <button type="button" class="btn-watch px-3 py-1.5 rounded-lg bg-primary-container text-on-primary font-semibold text-label-md flex items-center gap-1 hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined text-16" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                    Watch
+                  </button>
+                  <button type="button" class="btn-bookmark p-1.5 rounded-lg bg-surface-container border border-outline-variant/40 hover:text-primary transition-colors" title="Bookmark">
+                    <span class="material-symbols-outlined text-18 ${isBookmarked ? 'text-primary' : ''}">${isBookmarked ? 'bookmark_added' : 'bookmark'}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join("");
+
+    updatePagination(filtered.length, filtered.length);
+  }
+
+  function updatePagination(count, total) {
+    const rangeSpan = document.getElementById("pag-range");
+    const totalSpan = document.getElementById("pag-total");
+    const currentSpan = document.getElementById("pag-current");
+    const maxSpan = document.getElementById("pag-max");
+
+    if (count === 0) {
+      rangeSpan.textContent = "0";
+      totalSpan.textContent = "0 Works";
+      currentSpan.textContent = "0";
+      maxSpan.textContent = "0";
+    } else {
+      rangeSpan.textContent = `1 – ${count}`;
+      totalSpan.textContent = `${count} Curated Works`;
+      currentSpan.textContent = state.currentPage;
+      maxSpan.textContent = state.currentPage === 1 ? "1" : state.currentPage;
+    }
+  }
+
+  // Modal Open Handler
+  function openMovieModal(movieId) {
+    const movie = ARCHIVE_MOVIES.find(m => m.id === movieId);
+    if (!movie) return;
+
+    document.getElementById("modal-img").src = movie.image;
+    document.getElementById("modal-img").alt = movie.title;
+    document.getElementById("modal-title").textContent = movie.title;
+    document.getElementById("modal-badge").textContent = movie.badge;
+    document.getElementById("modal-rating").innerHTML = `<span class="text-primary">★</span> ${movie.rating.toFixed(1)}`;
+    document.getElementById("modal-meta").innerHTML = `
+      <span>${movie.year}</span>
+      <span>•</span>
+      <span>${movie.duration}</span>
+      <span>•</span>
+      <span class="text-primary font-medium">${movie.genreDisplay}</span>
+      <span>•</span>
+      <span class="text-outline">Director: ${movie.director}</span>
+    `;
+    document.getElementById("modal-synopsis").textContent = movie.synopsis;
+
+    const bookmarkBtn = document.getElementById("modal-bookmark-btn");
+    const isBookmarked = state.bookmarkedIds.has(movie.id);
+    bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-20 ${isBookmarked ? 'text-primary' : ''}">${isBookmarked ? 'bookmark_added' : 'bookmark'}</span>`;
+    
+    bookmarkBtn.onclick = (e) => {
+      e.stopPropagation();
+      toggleBookmark(movie.id);
+      const updated = state.bookmarkedIds.has(movie.id);
+      bookmarkBtn.innerHTML = `<span class="material-symbols-outlined text-20 ${updated ? 'text-primary' : ''}">${updated ? 'bookmark_added' : 'bookmark'}</span>`;
+    };
+
+    document.getElementById("modal-play-btn").onclick = () => {
+      showToast(`Initiating 4K Dolby Atmos Stream for "${movie.title}"`, "movie");
+    };
+
+    const modal = document.getElementById("preview-modal");
+    modal.classList.remove("hidden");
+    modal.classList.add("flex");
+  }
+
+  function closeMovieModal() {
+    const modal = document.getElementById("preview-modal");
+    modal.classList.add("hidden");
+    modal.classList.remove("flex");
+  }
+
+  // Toggle Bookmark Handler
+  function toggleBookmark(movieId) {
+    const movie = ARCHIVE_MOVIES.find(m => m.id === movieId);
+    const title = movie ? movie.title : "Film";
+    if (state.bookmarkedIds.has(movieId)) {
+      state.bookmarkedIds.delete(movieId);
+      showToast(`Removed "${title}" from Watchlist`, "bookmark_remove");
+    } else {
+      state.bookmarkedIds.add(movieId);
+      showToast(`Saved "${title}" to Watchlist`, "bookmark_added");
+    }
+    render();
+  }
+
+  // Event Listeners & Wire-up
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Search Bar Interaction
+    const searchInput = document.getElementById("nav-search-input");
+    const clearSearchBtn = document.getElementById("search-clear-btn");
+
+    searchInput.addEventListener("input", (e) => {
+      state.searchQuery = e.target.value;
+      if (state.searchQuery.length > 0) {
+        clearSearchBtn.classList.remove("hidden");
+      } else {
+        clearSearchBtn.classList.add("hidden");
+      }
+      render();
+    });
+
+    clearSearchBtn.addEventListener("click", () => {
+      searchInput.value = "";
+      state.searchQuery = "";
+      clearSearchBtn.classList.add("hidden");
+      render();
+    });
+
+    // 2. Genre Pills
+    const genreButtons = document.querySelectorAll(".genre-pill");
+    genreButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        genreButtons.forEach(b => {
+          b.className = "genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all";
+        });
+        btn.className = "genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-primary text-on-primary text-label-md font-label-md transition-all shadow-[0_4px_16px_rgba(244,195,119,0.2)]";
+
+        state.selectedGenre = btn.dataset.genre;
+        render();
+      });
+    });
+
+    // 3. Dropdowns
+    const yearSelect = document.getElementById("filter-year");
+    yearSelect.addEventListener("change", (e) => {
+      state.yearFilter = e.target.value;
+      render();
+    });
+
+    const ratingSelect = document.getElementById("filter-rating");
+    ratingSelect.addEventListener("change", (e) => {
+      state.ratingFilter = e.target.value;
+      render();
+    });
+
+    const formatSelect = document.getElementById("filter-format");
+    formatSelect.addEventListener("change", (e) => {
+      state.formatFilter = e.target.value;
+      render();
+    });
+
+    // Sort Dropdown
+    const sortSelect = document.getElementById("sort-select");
+    sortSelect.addEventListener("change", (e) => {
+      state.sortBy = e.target.value;
+      render();
+    });
+
+    // Reset Filters Logic
+    function resetAllFilters() {
+      state.searchQuery = "";
+      state.selectedGenre = "all";
+      state.yearFilter = "all";
+      state.ratingFilter = "all";
+      state.formatFilter = "all";
+      state.sortBy = "curator-rating";
+      state.currentPage = 1;
+
+      searchInput.value = "";
+      clearSearchBtn.classList.add("hidden");
+      yearSelect.value = "all";
+      ratingSelect.value = "all";
+      formatSelect.value = "all";
+      sortSelect.value = "curator-rating";
+
+      // Reset genre pill styling
+      genreButtons.forEach(b => {
+        if (b.dataset.genre === "all") {
+          b.className = "genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-primary text-on-primary text-label-md font-label-md transition-all shadow-[0_4px_16px_rgba(244,195,119,0.2)]";
+        } else {
+          b.className = "genre-pill whitespace-nowrap px-4 py-2 rounded-full bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-all";
+        }
+      });
+
+      render();
+      showToast("All filters restored to vault default.", "refresh");
+    }
+
+    document.getElementById("reset-filters-btn").addEventListener("click", resetAllFilters);
+    document.getElementById("empty-reset-btn").addEventListener("click", resetAllFilters);
+
+    // 4. View Mode Toggle
+    const gridBtn = document.getElementById("view-grid-btn");
+    const listBtn = document.getElementById("view-list-btn");
+
+    gridBtn.addEventListener("click", () => {
+      state.currentView = "grid";
+      gridBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container-high text-primary shadow-sm text-label-md font-label-md transition-colors";
+      listBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-colors";
+      render();
+    });
+
+    listBtn.addEventListener("click", () => {
+      state.currentView = "list";
+      listBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-surface-container-high text-primary shadow-sm text-label-md font-label-md transition-colors";
+      gridBtn.className = "flex items-center gap-1.5 px-3 py-1.5 rounded-md text-on-surface-variant hover:text-on-surface text-label-md font-label-md transition-colors";
+      render();
+    });
+
+    // 5. Grid Delegation for Cards, Watch, Bookmark, & Modal
+    const movieContainer = document.getElementById("movie-grid-container");
+    movieContainer.addEventListener("click", (e) => {
+      const card = e.target.closest(".cinema-card");
+      if (!card) return;
+      const movieId = card.dataset.movieId;
+
+      // Check if bookmark clicked
+      const bookmarkBtn = e.target.closest(".btn-bookmark");
+      if (bookmarkBtn) {
+        e.stopPropagation();
+        toggleBookmark(movieId);
+        return;
+      }
+
+      // Check if watch clicked
+      const watchBtn = e.target.closest(".btn-watch");
+      if (watchBtn) {
+        e.stopPropagation();
+        const m = ARCHIVE_MOVIES.find(item => item.id === movieId);
+        showToast(`Starting playback: ${m.title}`, "play_circle");
+        return;
+      }
+
+      // Otherwise open details preview dialog
+      openMovieModal(movieId);
+    });
+
+    // Modal close events
+    document.getElementById("modal-close").addEventListener("click", closeMovieModal);
+    document.getElementById("preview-modal").addEventListener("click", (e) => {
+      if (e.target === document.getElementById("preview-modal")) {
+        closeMovieModal();
+      }
+    });
+
+    // Pagination Simulated Clicks
+    const pageButtons = document.querySelectorAll(".page-pill");
+    pageButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        pageButtons.forEach(b => {
+          b.className = "page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-surface-container text-on-surface-variant hover:text-primary hover:border-primary/40 border border-outline-variant/30 text-label-md font-label-md transition-colors";
+        });
+        btn.className = "page-pill w-9 h-9 rounded-lg flex items-center justify-center bg-primary text-on-primary font-semibold text-label-md font-label-md shadow-[0_2px_8px_rgba(244,195,119,0.3)] transition-colors";
+        state.currentPage = parseInt(btn.dataset.page, 10);
+        document.getElementById("pag-current").textContent = state.currentPage;
+        window.scrollTo({ top: 120, behavior: "smooth" });
+        showToast(`Navigated to Archive Page ${state.currentPage}`, "auto_stories");
+      });
+    });
+
+    document.getElementById("pag-next").addEventListener("click", () => {
+      showToast("Loaded Next Archive Ledger (Page 2)", "arrow_forward");
+      window.scrollTo({ top: 120, behavior: "smooth" });
+    });
+
+    // Initial render
+    render();
+  });
+</script>
+<script src="js/site-navigation.js"></script></body></html>

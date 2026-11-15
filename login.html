@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA | Curated VIP Screening Access</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with Container Queries and Forms -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", {"lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+            "body-sm": ["12px", {"lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-md": ["14px", {"lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400"}],
+            "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "headline-md": ["28px", {"lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600"}],
+            "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600"}],
+            "headline-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .gold-glow {
+      box-shadow: 0 10px 30px -5px rgba(214, 168, 95, 0.22);
+    }
+    .gold-glow-subtle {
+      box-shadow: 0 0 20px 0 rgba(214, 168, 95, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-surface-container-lowest min-h-screen overflow-x-hidden">
+<!-- Dual Split Canvas Wrapper -->
+<main class="min-h-screen w-full flex flex-col lg:flex-row relative">
+<!-- Back to Catalog Minimalist Return Affordance -->
+<a class="absolute top-6 left-6 z-30 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest/60 backdrop-blur-md border border-outline-variant/30 text-on-surface-variant hover:text-primary transition-all duration-200 text-label-md font-label-md group" href="index.html">
+<span class="material-symbols-outlined text-lg transition-transform duration-200 group-hover:-translate-x-1" data-icon="arrow_back">arrow_back</span>
+<span>Return to Catalog</span>
+</a>
+<!-- LEFT SIDE: Full-height Breathtaking Cinematic Visual Artwork -->
+<section class="relative w-full lg:w-7/12 min-h-[480px] lg:min-h-screen flex flex-col justify-between p-8 lg:p-margin overflow-hidden bg-surface-container-lowest">
+<!-- High Contrast 2.39:1 Cinematic Film Still Background -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 scale-105" data-alt="A moody, atmospheric 35mm cinematic film still framed in 2.39 to 1 widescreen ratio. A lone protagonist in an impeccably tailored dark trench coat stands amidst an empty architectural brutalist plaza in nocturnal twilight. Deep obsidian shadows and slate charcoal fog are pierced by warm amber streetlights creating dramatic rim lighting and reflective wet pavements. The atmosphere breathes European art cinema, quiet elegance, sophisticated noir mystery, and pristine 4K archival prestige." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCLFalWdoKV7YlBPHfVViimUFQpiQTms4PGABGEWH4_ODEx7mzzZ1TkfMidB-srqCJdQYNdQg8q2apd9KzHrI1QGC7hCuVBK0LbXblO7e51bhSmsLwcgu1h5sUVs08ZwOZwU2eVoH43xocV3nv8ZzHvcZk3-8qKCr5Cr55D0628YQvE_-aLVRomwUz8IpVWwnQqZGba9zuOIGZSYFCQbp0XuifRR1_hZwyRNCrW_ZY')"></div>
+<!-- Sophisticated Multi-layered Vignette & Editorial Gradients -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-transparent via-surface-container-lowest/30 to-surface-container-lowest hidden lg:block"></div>
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,rgba(12,14,19,0.85)_100%)]"></div>
+<!-- Top Branding Emblem & Editorial Label -->
+<div class="relative z-10 pt-14 lg:pt-0">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40 flex items-center justify-center backdrop-blur-md shadow-lg">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="movie_filter">movie_filter</span>
+</div>
+<span class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold">MINDX CINEMA</span>
+</div>
+<div class="mt-3 flex items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container/15 text-primary border border-primary/30 text-label-sm font-label-sm tracking-widest uppercase">Archival Vault 4K</span>
+<span class="text-on-surface-variant text-label-sm font-label-sm tracking-wide">• Curated Cinema Collection</span>
+</div>
+</div>
+<!-- Center Subtle Focal Ring (Ambient Cinematic Detail) -->
+<div class="relative z-10 my-auto py-12 lg:py-0">
+<div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-surface-container-lowest/60 border border-outline-variant/30 backdrop-blur-md">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="text-label-sm font-label-sm tracking-widest text-primary uppercase">Now Screening Premiere</span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">| 78th Venice Biennale Golden Lion Edition</span>
+</div>
+</div>
+<!-- Bottom Editorial Quote & Cinephile Accreditation -->
+<div class="relative z-10 max-w-xl">
+<div class="w-12 h-0.5 bg-primary/60 mb-6"></div>
+<blockquote class="font-headline-md text-headline-md text-on-surface italic leading-snug drop-shadow-md">
+          “Cinema is a matter of what’s in the frame and what’s out.”
+        </blockquote>
+<div class="mt-4 flex items-center gap-4">
+<p class="font-title-md text-title-md text-primary font-semibold tracking-wide">
+            — Martin Scorsese
+          </p>
+<span class="text-outline-variant">•</span>
+<span class="text-body-sm font-body-sm text-on-surface-variant tracking-wider uppercase">Masterclass Retrospective</span>
+</div>
+</div>
+</section>
+<!-- RIGHT SIDE: Elegant Dark Form Container (#121722 with #29313D border) -->
+<section class="w-full lg:w-5/12 bg-surface-container-low flex flex-col justify-center px-6 sm:px-12 lg:px-16 py-12 relative z-20 border-t lg:border-t-0 lg:border-l border-outline-variant/30">
+<div class="w-full max-w-md mx-auto flex flex-col gap-6">
+<!-- Form Header Block -->
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-label-sm font-label-sm tracking-widest text-primary uppercase bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+              Discerning Cinephile Access
+            </span>
+<div class="flex items-center gap-1.5 text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="lock">lock</span>
+<span>256-bit Encrypted</span>
+</div>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">
+            Welcome to MINDX CINEMA
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
+            Sign in to access your curated 4K archive, retrospective notes, and exclusive VIP screenings.
+          </p>
+</div>
+<!-- Editorial Tab Switcher (Sign In vs Create VIP Account) -->
+<div class="p-1 rounded-lg bg-surface-container-lowest border border-outline-variant/30 flex items-center gap-1">
+<button class="flex-1 py-2.5 px-4 rounded text-center font-title-md text-body-md text-on-primary-container bg-primary-container font-semibold transition-all duration-200 shadow-sm" id="tab-signin" type="button">
+            Sign In
+          </button>
+<button class="flex-1 py-2.5 px-4 rounded text-center font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-all duration-200 hover:bg-surface-container" id="tab-register" type="button">
+            Create VIP Account
+          </button>
+</div>
+<!-- Authentication Form Interactive Area -->
+<form class="flex flex-col gap-4" onsubmit="event.preventDefault();">
+<!-- Full Name Field (Conditionally dynamic in register mode) -->
+<div class="hidden flex flex-col gap-1.5" id="field-fullname">
+<label class="font-label-md text-label-md text-on-surface font-medium tracking-wide" for="fullname">
+              Full Legal Name
+            </label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-xl" data-icon="badge">badge</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" id="fullname" placeholder="Henri Langlois" type="text"/>
+</div>
+</div>
+<!-- Email Address Field with Icon -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium tracking-wide flex justify-between items-center" for="email">
+<span>Email Address</span>
+<span class="text-label-sm font-label-sm text-outline">Member credentials</span>
+</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="alternate_email">alternate_email</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" id="email" placeholder="curator@mindx-cinema.org" required="" type="email"/>
+</div>
+</div>
+<!-- Password Field with Lock Icon and Eye Show/Hide Toggle -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md text-on-surface font-medium tracking-wide" for="password">
+              Password
+            </label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="lock_open">lock_open</span>
+</div>
+<input class="w-full pl-11 pr-12 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/40 text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-md text-body-md" id="password" placeholder="••••••••••••" required="" type="password"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-primary transition-colors cursor-pointer" id="toggle-password" title="Toggle password visibility" type="button">
+<span class="material-symbols-outlined text-xl" data-icon="visibility" id="eye-icon">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utility Row: Remember Device Checkbox & Forgot Password Link -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container-lowest border border-outline-variant text-primary focus:ring-0 focus:ring-offset-0 transition-colors" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant hover:text-on-surface">
+                Remember my device for 30 days
+              </span>
+</label>
+<a class="font-label-md text-label-md text-primary hover:text-primary-fixed transition-colors underline-offset-4 hover:underline" href="index.html">
+              Forgot your password?
+            </a>
+</div>
+<!-- Primary Curated Action Button (Sign In to Cinema) with Rich Amber Glow -->
+<button class="w-full mt-2 py-3.5 px-6 rounded-lg bg-primary-container text-surface-container-lowest font-title-md text-title-md font-semibold tracking-wide hover:bg-primary transition-all duration-300 gold-glow flex items-center justify-center gap-2 cursor-pointer active:scale-[0.99]" id="btn-primary" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="key">key</span>
+<span id="btn-text">Sign In to Cinema</span>
+</button>
+</form>
+<!-- Divider with Architectural Cinephile Framing -->
+<div class="relative flex items-center justify-center my-1">
+<div class="border-t border-outline-variant/30 w-full"></div>
+<span class="bg-surface-container-low px-3 font-label-sm text-label-sm tracking-widest text-outline uppercase whitespace-nowrap">
+            Single Sign-On Alternatives
+          </span>
+<div class="border-t border-outline-variant/30 w-full"></div>
+</div>
+<!-- Social SSO Buttons: Google & Apple -->
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40 hover:border-primary/50 hover:bg-surface-container transition-all duration-200 group text-on-surface" type="button">
+<svg class="w-4 h-4 fill-current text-on-surface-variant group-hover:text-primary transition-colors" viewbox="0 0 24 24">
+<path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"></path>
+</svg>
+<span class="font-label-md text-label-md font-medium">Continue with Google</span>
+</button>
+<button class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-lg bg-surface-container-lowest/80 border border-outline-variant/40 hover:border-primary/50 hover:bg-surface-container transition-all duration-200 group text-on-surface" type="button">
+<svg class="w-4 h-4 fill-current text-on-surface-variant group-hover:text-primary transition-colors" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.37c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.34-.56.64-.99 1.69-.87 2.72 1 .08 2.02-.51 2.56-1.21z"></path>
+</svg>
+<span class="font-label-md text-label-md font-medium">Continue with Apple</span>
+</button>
+</div>
+<!-- Archival Trust & Security Note Footer -->
+<div class="pt-4 border-t border-outline-variant/30 flex flex-col items-center text-center gap-2">
+<div class="flex items-center gap-1.5 text-outline text-label-sm font-label-sm tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="verified_user">verified_user</span>
+<span>Protected by MINDX Archival Security</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            New cinephile? 
+            <button class="text-primary font-semibold hover:text-primary-fixed hover:underline transition-colors ml-1" id="switch-to-vip" type="button">
+              Join VIP Membership
+            </button>
+</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Interactive State Script for Login / Register Toggle & Password Masking -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabSignIn = document.getElementById('tab-signin');
+      const tabRegister = document.getElementById('tab-register');
+      const fieldFullName = document.getElementById('field-fullname');
+      const btnText = document.getElementById('btn-text');
+      const switchToVip = document.getElementById('switch-to-vip');
+      const togglePassword = document.getElementById('toggle-password');
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eye-icon');
+
+      let isRegisterMode = false;
+
+      function updateUI() {
+        if (isRegisterMode) {
+          // Register Mode
+          tabRegister.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          tabRegister.classList.remove('text-on-surface-variant', 'hover:bg-surface-container');
+          
+          tabSignIn.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          tabSignIn.classList.add('text-on-surface-variant', 'hover:bg-surface-container');
+
+          fieldFullName.classList.remove('hidden');
+          btnText.textContent = 'Create VIP Archival Pass';
+        } else {
+          // Sign In Mode
+          tabSignIn.classList.add('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          tabSignIn.classList.remove('text-on-surface-variant', 'hover:bg-surface-container');
+
+          tabRegister.classList.remove('bg-primary-container', 'text-on-primary-container', 'font-semibold', 'shadow-sm');
+          tabRegister.classList.add('text-on-surface-variant', 'hover:bg-surface-container');
+
+          fieldFullName.classList.add('hidden');
+          btnText.textContent = 'Sign In to Cinema';
+        }
+      }
+
+      tabSignIn.addEventListener('click', () => {
+        isRegisterMode = false;
+        updateUI();
+      });
+
+      tabRegister.addEventListener('click', () => {
+        isRegisterMode = true;
+        updateUI();
+      });
+
+      if (switchToVip) {
+        switchToVip.addEventListener('click', () => {
+          isRegisterMode = true;
+          updateUI();
+        });
+      }
+
+      // Password Toggle Visibility
+      togglePassword.addEventListener('click', () => {
+        const isPassword = passwordInput.getAttribute('type') === 'password';
+        passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+        eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+      });
+    });
+  </script>
+<script src="js/site-navigation.js"></script></body></html>

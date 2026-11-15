@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA - Curated Watchlist</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.preconnect.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+  /* Custom scrollbar & glass styling */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #111318; }
+  ::-webkit-scrollbar-thumb { background: #33353a; border-radius: 9999px; }
+  ::-webkit-scrollbar-thumb:hover { background: #f4c377; }
+</style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-margin-mobile md:px-margin py-space-md bg-surface/85 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-8">
+<a class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-28px" data-icon="movie_filter" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+<span>MINDX CINEMA</span>
+</a>
+<!-- Desktop Navigation Cluster -->
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html" onclick="openModal('modal-curator-ai'); return false;">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Series</a>
+<!-- Active Link: Watchlist -->
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md flex items-center gap-1.5" href="watch-list.html">
+<span class="material-symbols-outlined text-base" data-icon="bookmarks" style="font-variation-settings: 'FILL' 1;">bookmarks</span>
+<span>Watchlist</span>
+</a>
+</nav>
+</div>
+<!-- Trailing Action Controls & Profile -->
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-lg" data-icon="search">search</span>
+<input class="bg-surface-container-low border border-outline-variant/50 text-on-surface placeholder-outline text-body-sm font-body-sm rounded-lg pl-9 pr-8 py-1.5 focus:border-primary focus:ring-1 focus:ring-primary w-48 lg:w-64 transition-all" id="nav-search-input" oninput="handleSearch(this.value)" placeholder="Search saved archives..." type="text"/>
+<button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors text-sm" id="nav-search-clear" onclick="clearSearch()">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+<button aria-label="Notifications" class="relative p-2 rounded-lg text-on-surface-variant hover:text-primary transition-colors duration-200" onclick="showToast('You have 2 new restored 70mm recommendations available.')">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</button>
+<div class="flex items-center gap-3 pl-2 border-l border-outline-variant/40">
+<div class="relative cursor-pointer" onclick="showToast('Curator Profile: Master Collector #082')">
+<img alt="User VIP profile avatar with active status badge" class="w-9 h-9 rounded-full object-cover ring-1 ring-primary/40 hover:ring-primary transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeg2TJXant9GIA8YgJ9JClnjjj5kyYHldtSQEx2R9eBfQzKIEZTsv-JLBSTrKXAcMSf3wYEYwwK-Hs8N6xxm8l1SdUn1GuJFKPSDNZ0_c9pcLgSgZ8fBzUl7KjHx4tkkP7_bcZlkXJHIBYQbikoh_vrFks7nduTia-X6Qk3Hcs0Cpm-SNJQFhg78vOkO6RaJ0S0cH6JpPcz2f6V_rUpR3z0qqCBNcF1wBCW547fyw"/>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-primary rounded-full border-2 border-surface flex items-center justify-center">
+<span class="w-1.5 h-1.5 bg-surface rounded-full"></span>
+</span>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 w-full pt-28 pb-20 px-margin-mobile md:px-margin max-w-7xl mx-auto flex flex-col gap-8">
+<!-- PAGE HEADER -->
+<section class="flex flex-col gap-6">
+<!-- Breadcrumb & Top Bar -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-2 text-outline text-body-sm font-body-sm">
+<span>Curator Lounge</span>
+<span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+<span class="text-on-surface font-medium">Personal Collection</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-label-sm font-label-sm uppercase tracking-widest text-outline">Storage Sync:</span>
+<span class="flex items-center gap-1.5 text-xs text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-full font-label-md">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          Cloud Master 4K
+        </span>
+</div>
+</div>
+<!-- Main Title Block & Quick Controls -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6 border-b border-outline-variant/30">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-2.5 py-1 rounded-full bg-primary/10 text-primary border border-primary/25 text-label-sm font-label-sm uppercase tracking-widest">
+            Curator Library
+          </span>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant text-label-md font-label-md">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span id="saved-counter-badge">6 Masterpieces Saved</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+          My Curated Watchlist
+        </h1>
+<p class="text-outline text-body-md font-body-md mt-1 max-w-2xl">
+          A bespoke private cinema index of festival laureates, restored 70mm masterworks, and uncompromising visionaries awaiting your screen.
+        </p>
+</div>
+<!-- Filter & Modal Actions -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold hover:bg-surface-tint transition-all shadow-lg hover:shadow-primary/20 active:scale-95" onclick="openModal('modal-create-collection')">
+<span class="material-symbols-outlined text-lg" data-icon="add_circle">add_circle</span>
+<span>Create Custom Collection</span>
+</button>
+</div>
+</div>
+<!-- FILTER & BULK CONTROLS BAR (Bento Control Hub) -->
+<div class="bg-surface-container-low border border-outline-variant/40 rounded-xl p-4 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0" id="filter-tabs-container">
+<button class="filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-primary text-on-primary font-bold border border-primary transition-all" id="chip-all" onclick="setFilter('all')">
+          All (<span id="count-all">6</span>)
+        </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all" id="chip-unwatched" onclick="setFilter('unwatched')">
+          Unwatched (<span id="count-unwatched">4</span>)
+        </button>
+<button class="filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all flex items-center gap-1.5" id="chip-4k" onclick="setFilter('4k')">
+<span class="material-symbols-outlined text-xs text-primary" data-icon="hd">hd</span>
+<span>4K HDR Only (<span id="count-4k">5</span>)</span>
+</button>
+<button class="filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all" id="chip-laureates" onclick="setFilter('laureates')">
+          Festival Laureates (<span id="count-laureates">3</span>)
+        </button>
+</div>
+<!-- Right Side: Sort & View Toggle -->
+<div class="flex items-center justify-between md:justify-end gap-3 pt-3 md:pt-0 border-t md:border-t-0 border-outline-variant/30">
+<!-- Sort Dropdown -->
+<div class="flex items-center gap-2">
+<span class="text-outline text-label-sm font-label-sm hidden sm:inline">Sort:</span>
+<div class="relative">
+<select class="bg-surface-container border border-outline-variant/50 text-on-surface text-label-md font-label-md rounded-lg pl-3 pr-8 py-1.5 focus:border-primary focus:ring-0 cursor-pointer appearance-none" id="sort-select" onchange="handleSort(this.value)">
+<option value="date-latest">Date Added (Latest)</option>
+<option value="rating-high">Curator Rating (High to Low)</option>
+<option value="year-desc">Release Year (Newest)</option>
+<option value="runtime-short">Runtime (Shortest)</option>
+<option value="title-az">Title (A-Z)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-outline text-sm pointer-events-none" data-icon="unfold_more">unfold_more</span>
+</div>
+</div>
+<!-- View toggles -->
+<div class="flex items-center bg-surface-container rounded-lg p-0.5 border border-outline-variant/40">
+<button class="p-1.5 rounded bg-surface text-primary transition-all shadow-sm" id="btn-grid-view" onclick="setViewMode('grid')" title="Grid View">
+<span class="material-symbols-outlined text-lg" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-1.5 rounded text-outline hover:text-on-surface transition-all" id="btn-list-view" onclick="setViewMode('list')" title="Editorial Table View">
+<span class="material-symbols-outlined text-lg" data-icon="view_agenda">view_agenda</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BULK ACTION TOOLBAR -->
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container/60 border border-outline-variant/30 rounded-lg text-body-sm font-body-sm transition-all">
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer select-none text-on-surface">
+<input class="w-4 h-4 rounded bg-surface-container border-outline-variant text-primary focus:ring-primary focus:ring-offset-surface cursor-pointer" id="checkbox-select-all" onchange="toggleSelectAll(this.checked)" type="checkbox"/>
+<span class="font-medium text-label-md font-label-md" id="select-all-label">Select All (6)</span>
+</label>
+<span class="text-outline">|</span>
+<span class="text-primary font-medium text-xs hidden sm:inline" id="selected-counter">0 items highlighted</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1.5 px-3 py-1 text-label-md font-label-md text-error hover:bg-error-container/20 rounded transition-colors opacity-50 cursor-not-allowed" disabled="" id="btn-remove-selected" onclick="removeSelected()" title="Remove selected films">
+<span class="material-symbols-outlined text-sm" data-icon="delete">delete</span>
+<span>Remove Selected</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1 text-label-md font-label-md text-on-surface-variant hover:text-primary hover:bg-surface-container-high rounded transition-colors" onclick="exportCSV()" title="Export curated list">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+<span>Export List (.CSV)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- WATCHLIST MOVIE GRID / LIST CONTAINER -->
+<section id="watchlist-container">
+<!-- Grid Render Target -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 transition-all" id="movies-grid">
+<!-- Items dynamically populated via JS -->
+</div>
+<!-- Empty State Container -->
+<div class="hidden flex-col items-center justify-center text-center py-20 px-4 bg-surface-container-low/50 border border-dashed border-outline-variant/40 rounded-2xl" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-outline mb-4">
+<span class="material-symbols-outlined text-3xl text-primary" data-icon="movie_edit">movie_edit</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-semibold mb-2">No Curated Titles Found</h3>
+<p class="text-outline text-body-md max-w-md mb-6">No matching cinematic works match your current search filters. Clear filters or explore our editorial archive.</p>
+<div class="flex items-center gap-3">
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-title-md text-sm font-semibold hover:bg-surface-tint transition-all" onclick="resetFilters()">
+          Reset All Filters
+        </button>
+<button class="px-5 py-2.5 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface text-sm font-semibold hover:border-primary/50 transition-colors" onclick="openModal('modal-curator-ai')">
+          Ask Curator AI
+        </button>
+</div>
+</div>
+</section>
+<!-- EMPTY STATE & RECOMMENDATION DISCOVERY BANNER (Explore Curated Archive) -->
+<section class="mt-6 relative overflow-hidden rounded-2xl bg-surface-container-low border border-outline-variant/40 p-8 md:p-12">
+<!-- Ambient Golden Glow behind element -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl flex flex-col items-start gap-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container border border-primary/30 text-primary text-label-sm font-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome">auto_awesome</span>
+<span>Editorial Program Discovery</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-bold">
+        Looking for recommendations? Explore our Curated Archive
+      </h3>
+<p class="text-on-surface-variant text-body-lg font-body-lg">
+        Dive into retrospectives from the 1960s French New Wave, rare Japanese New Wave masterworks, and Cannes Palme d’Or winners meticulously preserved in uncompressed 4K.
+      </p>
+<div class="flex flex-wrap items-center gap-4 mt-2">
+<button class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold hover:bg-surface-tint transition-all shadow-md active:scale-95" onclick="openModal('modal-curated-archive')">
+<span>Explore Curated Archive</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<button class="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface font-title-md text-title-md hover:border-primary/50 transition-colors active:scale-95" onclick="openModal('modal-curator-ai')">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="smart_toy">smart_toy</span>
+<span>Ask Curator AI</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="w-full px-margin-mobile md:px-margin py-space-xl flex flex-col gap-space-lg border-t border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="font-headline-lg text-headline-lg tracking-widest text-primary uppercase font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-32px" data-icon="movie_filter" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+<span>MINDX CINEMA</span>
+</div>
+<!-- Footer Navigation Links -->
+<nav class="flex flex-wrap items-center gap-x-6 gap-y-2 text-label-sm font-label-sm uppercase tracking-wider">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html" onclick="showToast('Curatorial Manifesto: Preserving 70mm &amp; auteur visions.'); return false;">Curation Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html" onclick="showToast('Festival Laureate section loaded.'); return false;">Film Festivals</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html" onclick="showToast('4K Premieres schedule available for VIP members.'); return false;">4K Premieres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="register.html" onclick="showToast('VIP Concierge active.'); return false;">VIP Membership</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Terms of Service</a>
+</nav>
+</div>
+<div class="pt-6 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-body-sm font-body-sm text-outline">
+<p>© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</p>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-1.5 text-xs text-primary">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+        Dolby Atmos &amp; 4K UHD Certified
+      </span>
+</div>
+</div>
+</footer>
+<!-- MODAL 1: CREATE CUSTOM COLLECTION -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 transition-all" id="modal-create-collection">
+<div class="bg-surface-container border border-outline-variant/50 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-5">
+<div class="flex items-center gap-2 text-primary font-headline-md text-headline-sm font-bold">
+<span class="material-symbols-outlined text-primary" data-icon="video_library">video_library</span>
+<span>Create Custom Collection</span>
+</div>
+<button class="text-outline hover:text-on-surface transition-colors p-1 rounded-lg" onclick="closeModal('modal-create-collection')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-4" onsubmit="handleCreateCollection(event)">
+<div>
+<label class="block text-label-md font-semibold text-on-surface mb-1.5">Collection Title</label>
+<input class="w-full bg-surface-container-low border border-outline-variant/60 rounded-lg px-3.5 py-2.5 text-on-surface placeholder-outline focus:border-primary focus:ring-1 focus:ring-primary text-body-md" id="collection-title-input" placeholder="e.g. 70mm Neo-Noir Masterworks" required="" type="text"/>
+</div>
+<div>
+<label class="block text-label-md font-semibold text-on-surface mb-1.5">Curatorial Description</label>
+<textarea class="w-full bg-surface-container-low border border-outline-variant/60 rounded-lg px-3.5 py-2 text-on-surface placeholder-outline focus:border-primary focus:ring-1 focus:ring-primary text-body-md" id="collection-desc-input" placeholder="Provide notes regarding restoration details, color grading, or director retrospective context..." rows="3"></textarea>
+</div>
+<div class="flex items-center justify-between p-3.5 rounded-lg bg-surface-container-low border border-outline-variant/40">
+<div>
+<div class="text-sm font-semibold text-on-surface">Private Archival Mode</div>
+<div class="text-xs text-outline">Keep this collection exclusive to your personal screening room</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" id="collection-privacy-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-surface peer-checked:bg-primary after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-surface after:rounded-full after:h-5 after:w-5 after:transition-all"></div>
+</label>
+</div>
+<div class="flex items-center justify-end gap-3 pt-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface text-label-md font-medium transition-colors" onclick="closeModal('modal-create-collection')" type="button">
+          Cancel
+        </button>
+<button class="px-5 py-2 rounded-lg bg-primary text-on-primary font-title-md text-label-md font-semibold hover:bg-surface-tint transition-all shadow-md" type="submit">
+          Save Collection
+        </button>
+</div>
+</form>
+</div>
+</div>
+<!-- MODAL 2: ASK CURATOR AI -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 transition-all" id="modal-curator-ai">
+<div class="bg-surface-container border border-outline-variant/50 rounded-2xl max-w-xl w-full p-6 shadow-2xl relative">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-4">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg" data-icon="smart_toy">smart_toy</span>
+</div>
+<div>
+<h3 class="text-headline-sm font-semibold text-on-surface font-headline-md">MINDX AI Curator</h3>
+<p class="text-xs text-outline">Film scholar trained on Criterion essays &amp; festival archives</p>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="closeModal('modal-curator-ai')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Chat/Insight Content -->
+<div class="space-y-4 max-h-80 overflow-y-auto pr-1">
+<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant/40">
+<div class="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-sm">auto_awesome</span>
+          Personalized Program Insight
+        </div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+          "Based on your admiration for Tarkovsky's <em>Solaris</em> and Denis Villeneuve's <em>Dune: Part Two</em>, your watchlist favors meditative atmospheric worldbuilding with deep philosophical subtexts. We recommend experiencing <strong>Stalker (1979)</strong> in 4K or Bela Tarr's <strong>Werckmeister Harmonies</strong>."
+        </p>
+</div>
+<div class="space-y-2">
+<label class="text-xs text-outline font-semibold uppercase tracking-wider">Quick Inquiries</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<button class="text-left text-xs p-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary border border-outline-variant/30 transition-all flex items-center justify-between" onclick="quickAISuggest('Recommend Japanese New Wave 4K transfers')">
+<span>Japanese New Wave in 4K</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="text-left text-xs p-2.5 rounded-lg bg-surface-container-high/60 hover:bg-surface-container-high text-on-surface-variant hover:text-primary border border-outline-variant/30 transition-all flex items-center justify-between" onclick="quickAISuggest('More films shot on 70mm IMAX by Christopher Nolan')">
+<span>Nolan 70mm IMAX Retrospective</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-5 pt-3 border-t border-outline-variant/30 flex items-center gap-2">
+<input class="flex-1 bg-surface-container-low border border-outline-variant/60 rounded-lg px-3.5 py-2 text-sm text-on-surface placeholder-outline focus:border-primary focus:ring-0" id="ai-chat-prompt" placeholder="Ask about cinematographers, aspect ratios, or rare prints..." type="text"/>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-semibold text-xs hover:bg-surface-tint transition-all flex items-center gap-1" onclick="sendAIPrompt()">
+<span>Consult</span>
+<span class="material-symbols-outlined text-sm">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- MODAL 3: EXPLORE ARCHIVE DRAWER -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 transition-all" id="modal-curated-archive">
+<div class="bg-surface-container border border-outline-variant/50 rounded-2xl max-w-2xl w-full p-6 shadow-2xl relative">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-5">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="auto_awesome">auto_awesome</span>
+<div>
+<h3 class="text-headline-sm font-semibold text-on-surface font-headline-md">Editorial Curated Archives</h3>
+<p class="text-xs text-outline">Official restored programs ready for your private screening</p>
+</div>
+</div>
+<button class="text-outline hover:text-on-surface p-1 rounded-lg" onclick="closeModal('modal-curated-archive')">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3 max-h-96 overflow-y-auto pr-1">
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary font-bold text-lg">70</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">The 70mm Large Format Epoch (1968-2024)</div>
+<div class="text-xs text-outline">18 Titles • 2001: A Space Odyssey, Lawrence of Arabia, The Master</div>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-semibold border border-outline-variant/50 transition-all" onclick="addArchiveCollection('70mm Large Format Epoch')">
+          Import Program
+        </button>
+</div>
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary font-bold text-lg">FR</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">French New Wave: Radical Visions</div>
+<div class="text-xs text-outline">12 Titles • Jean-Luc Godard, Agnès Varda, François Truffaut</div>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-semibold border border-outline-variant/50 transition-all" onclick="addArchiveCollection('French New Wave')">
+          Import Program
+        </button>
+</div>
+<div class="flex items-center justify-between p-3.5 rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/50 transition-colors">
+<div class="flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary font-bold text-lg">PALME</div>
+<div>
+<div class="text-sm font-semibold text-on-surface">Cannes Palme d'Or 21st Century Decennium</div>
+<div class="text-xs text-outline">10 Titles • Anatomy of a Fall, Parasite, Triangle of Sadness</div>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-xs font-semibold border border-outline-variant/50 transition-all" onclick="addArchiveCollection('Cannes Palme d\'Or')">
+          Import Program
+        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- TOAST NOTIFICATION CONTAINER -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-highest border border-primary/40 text-on-surface shadow-2xl" id="toast">
+<span class="material-symbols-outlined text-primary text-xl" id="toast-icon">check_circle</span>
+<span class="text-sm font-medium" id="toast-msg">Item updated</span>
+</div>
+<script>
+  // Initial Movie Dataset with comprehensive metadata
+  let movies = [
+    {
+      id: "m1",
+      title: "Oppenheimer",
+      director: "Christopher Nolan",
+      year: 2023,
+      rating: 9.4,
+      runtime: 180,
+      formatBadge: "70mm IMAX Master",
+      is4K: true,
+      isLaureate: true,
+      watched: false,
+      watchedText: "Unwatched",
+      addedDate: 1716000000000,
+      synopsis: "The pulse-quickening paradox of the enigmatic genius whose atomic crucible rewrote world history forever.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDtYwuoxIryX-JhDRq4qoJNTmVicJ0jqxxT67ZdX3I--4XvwFBf1qec0k38RntKEYb_SavUAKeE-jSfmBMaUeeuw1Y1luPLb0e2i0X4dAJ7gn-pfH4LMCPEUC_leGvSqdWDkqA3BiyxoOEZvT9OJ8uFAs-a1PXeNJGNvk5VRmG3dzlCLTlp-az2ncPvOlIrvM7J8cjp0G0y2BRLfvX5MeLZ9jn3TaDb1b-6Ahlgajs"
+    },
+    {
+      id: "m2",
+      title: "Dune: Part Two",
+      director: "Denis Villeneuve",
+      year: 2024,
+      rating: 9.6,
+      runtime: 166,
+      formatBadge: "Dolby Vision",
+      is4K: true,
+      isLaureate: false,
+      watched: true,
+      watchedText: "Watched 1x",
+      addedDate: 1715000000000,
+      synopsis: "Paul Atreides unites with Chani and the Fremen while seeking vengeance against the conspirators who destroyed his dynasty.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDGSYhKGPwLAhFURQpzDFrpqXhoxXXYRKP6Fsu_1Qn7O9EdtMMZMhYFt1q4VzmMvAqkVz-WXpXVKjWCOHBYEUoqmuCEP72T2AGp63i04VTE7KDONeppN4cxvQKOJ3k5D2JX4URlKpMLKEG2GO8DXSHIOSfgJ8UyVdmSqKB01mv45UKiWcAytBIiCgtN2J1aB6HikHQII-wsDHfYR6ovNOOzvv6HiWrxPS3uAL9_IiI"
+    },
+    {
+      id: "m3",
+      title: "Blade Runner 2049",
+      director: "Denis Villeneuve",
+      year: 2017,
+      rating: 9.5,
+      runtime: 164,
+      formatBadge: "Criterion 4K",
+      is4K: true,
+      isLaureate: false,
+      watched: false,
+      watchedText: "Unwatched",
+      addedDate: 1714000000000,
+      synopsis: "A blade runner's discovery of a long-buried secret leads him to track down former runner Rick Deckard, missing for thirty years.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5bGmVMXzOozuAcLuZihMezrED3J7Z9Xu7UNqU2x3qZq_obkWflIl6KJt5-V8-V_eON7TJsJuq0JNEgGiXw16PCJ2vJCeBQFBMexx5TiS2JCMkgfENHfFSj7vWgQUag1RbIAPwNZBJFxHFoFB1XplUkQ3Kc23IFvMGDBbIyCrMCIhbEFT22hcQ-B9OAN2flcqdHnGycZdd9LjX8hXB_ShPGwUF7LeB_bS6KEDbZlo"
+    },
+    {
+      id: "m4",
+      title: "Solaris",
+      director: "Andrei Tarkovsky",
+      year: 1972,
+      rating: 9.2,
+      runtime: 167,
+      formatBadge: "Mosfilm Restored",
+      is4K: false,
+      isLaureate: true,
+      watched: false,
+      watchedText: "Unwatched",
+      addedDate: 1713000000000,
+      synopsis: "A psychologist sent to investigate strange occurrences at an enigmatic planetary research station confronts apparitions of his own memory.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAQqnBHiWAZYEQXJfVp7CIpLmrLCYeMkhDqPDSpkZhOgWRtZm46Ia1Z5jyFTe1MTjQeQGWYbPpKBVG2PTSNrQPnP_hu8XnPvOjDCyfviBnFJDylRC3CPWFnaEDbhK48qc0J1gkI7x_64KnJoN4VMTQSXn08IPVThLipwyWxuf81JcLSG62_Ca7nBCx4ZvZuiovh0VHRKRx4w1wTH4k3oPgzncrqPBAmZOSxIvTK2tA"
+    },
+    {
+      id: "m5",
+      title: "Poor Things",
+      director: "Yorgos Lanthimos",
+      year: 2023,
+      rating: 9.1,
+      runtime: 141,
+      formatBadge: "Venice Golden Lion",
+      is4K: true,
+      isLaureate: true,
+      watched: true,
+      watchedText: "Watched 2x",
+      addedDate: 1712000000000,
+      synopsis: "The incredible tale and fantastical evolution of Bella Baxter, a young woman brought back to life by the brilliant and unorthodox scientist.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTyiGMc0ydSMk-akdbxq_rNHuoVeQ5DAQbuuCA4_jHZxcuRMAZHliKRHcQkDLiLs2VdkBY1HtDHWjjM7x45uTT3TR_WiI_MGrX9-YrX8-sxB9-Q7DjMn_qN473LzjjzkU53ptoTLy2lG_Y_uqoS7v8dJXo9mHAoVqxGcugf6HbgAzerdPqXSqg7DVLYqbH-QmJ6eDKuyrvNwbaynJYpGC5BPozs7uNg2YzEn6Ij70"
+    },
+    {
+      id: "m6",
+      title: "Anatomy of a Fall",
+      director: "Justine Triet",
+      year: 2023,
+      rating: 8.9,
+      runtime: 151,
+      formatBadge: "Palme d'Or",
+      is4K: true,
+      isLaureate: true,
+      watched: false,
+      watchedText: "Unwatched",
+      addedDate: 1711000000000,
+      synopsis: "A woman is suspected of her husband's murder, and their blind son faces a moral dilemma as the main witness.",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuDB3itNjNi6N-Ca7o09FRcQfucE5Q3Mg6wAeMV-FjhXz1WqVijjLghH1zWcWuXkJv7Nj11v8UdaVmw7gP_BKuCm_UEiYFUX-C9rDYi6sV5nWQQMwkp67MNWizS4ohff-2keRdk4oPQMYChzrkGjFe7xgQlHf8BubIe4PMx97HYo7SG9r8gucL2-rlhJ5fD9XBl0S2--1Xl7cwl9HQv_dMLLnHI8dBCmPAsBM9dfuEw"
+    }
+  ];
+
+  // State Management
+  let currentFilter = 'all';
+  let currentSearch = '';
+  let currentSort = 'date-latest';
+  let currentView = 'grid'; // 'grid' | 'list'
+  let selectedIds = new Set();
+
+  function updateBadgeCounts() {
+    const total = movies.length;
+    const unwatched = movies.filter(m => !m.watched).length;
+    const is4k = movies.filter(m => m.is4K).length;
+    const laureates = movies.filter(m => m.isLaureate).length;
+
+    document.getElementById('count-all').innerText = total;
+    document.getElementById('count-unwatched').innerText = unwatched;
+    document.getElementById('count-4k').innerText = is4k;
+    document.getElementById('count-laureates').innerText = laureates;
+    document.getElementById('saved-counter-badge').innerText = `${total} Masterpieces Saved`;
+    document.getElementById('select-all-label').innerText = `Select All (${total})`;
+  }
+
+  function getFilteredAndSortedMovies() {
+    return movies.filter(movie => {
+      // 1. Filter logic
+      if (currentFilter === 'unwatched' && movie.watched) return false;
+      if (currentFilter === '4k' && !movie.is4K) return false;
+      if (currentFilter === 'laureates' && !movie.isLaureate) return false;
+
+      // 2. Search query logic (searches title, director, year, and formatBadge)
+      if (currentSearch.trim() !== '') {
+        const q = currentSearch.toLowerCase();
+        const matchTitle = movie.title.toLowerCase().includes(q);
+        const matchDirector = movie.director.toLowerCase().includes(q);
+        const matchYear = movie.year.toString().includes(q);
+        const matchBadge = movie.formatBadge.toLowerCase().includes(q);
+        if (!matchTitle && !matchDirector && !matchYear && !matchBadge) return false;
+      }
+      return true;
+    }).sort((a, b) => {
+      // 3. Sorting logic
+      if (currentSort === 'rating-high') return b.rating - a.rating;
+      if (currentSort === 'year-desc') return b.year - a.year;
+      if (currentSort === 'runtime-short') return a.runtime - b.runtime;
+      if (currentSort === 'title-az') return a.title.localeCompare(b.title);
+      // default: date-latest
+      return b.addedDate - a.addedDate;
+    });
+  }
+
+  function renderWatchlist() {
+    updateBadgeCounts();
+    const container = document.getElementById('movies-grid');
+    const emptyState = document.getElementById('empty-state');
+    const filtered = getFilteredAndSortedMovies();
+
+    if (filtered.length === 0) {
+      container.innerHTML = '';
+      container.classList.add('hidden');
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+      updateSelectionUI();
+      return;
+    }
+
+    emptyState.classList.add('hidden');
+    emptyState.classList.remove('flex');
+    container.classList.remove('hidden');
+
+    if (currentView === 'grid') {
+      container.className = "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 transition-all";
+      container.innerHTML = filtered.map(movie => {
+        const isSelected = selectedIds.has(movie.id);
+        return `
+          <article data-id="${movie.id}" class="group relative bg-surface-container-low border ${isSelected ? 'border-primary shadow-lg shadow-primary/20 ring-1 ring-primary' : 'border-outline-variant/40'} rounded-xl overflow-hidden flex flex-col transition-all duration-300 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-1">
+            <!-- Poster Container (16:10 cinematic landscape) -->
+            <div class="relative w-full aspect-[16/10] overflow-hidden bg-surface-container-highest">
+              <img alt="${movie.title} Key Frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" src="${movie.img}"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-surface-container-low/40 to-transparent"></div>
+              
+              <!-- Top Row Badges -->
+              <div class="absolute top-3 left-3 right-3 flex items-center justify-between z-10">
+                <span class="px-2 py-0.5 rounded-full bg-surface/85 backdrop-blur-md text-primary border border-primary/30 text-label-sm font-label-sm uppercase tracking-wider font-bold">
+                  ${movie.formatBadge}
+                </span>
+                <div class="flex items-center gap-2">
+                  <input type="checkbox" onchange="toggleItemSelection('${movie.id}', this.checked)" ${isSelected ? 'checked' : ''} class="w-5 h-5 rounded bg-surface/80 border-outline-variant text-primary focus:ring-primary cursor-pointer shadow-md" title="Select film">
+                  <button onclick="removeMovie('${movie.id}')" class="w-8 h-8 rounded-full bg-surface/85 backdrop-blur-md text-on-surface-variant hover:text-error hover:bg-error-container/40 flex items-center justify-center transition-colors border border-outline-variant/40" title="Remove from Watchlist">
+                    <span class="material-symbols-outlined text-lg" data-icon="bookmark_remove">bookmark_remove</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Hover Play Quick Action Overlay -->
+              <div class="absolute inset-0 bg-surface/60 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-3">
+                <button onclick="showToast('Initiating 4K Master playback for ${movie.title}...')" class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
+                  <span class="material-symbols-outlined text-2xl" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                </button>
+                <button onclick="showToast('Archival metadata: ${movie.title} (${movie.year}), Aspect Ratio: 2.39:1, Mastered in Dolby Atmos')" class="w-10 h-10 rounded-full bg-surface-container border border-outline-variant/60 text-on-surface flex items-center justify-center hover:border-primary transition-colors" title="Screening Details">
+                  <span class="material-symbols-outlined text-xl" data-icon="info">info</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Card Content Body -->
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-outline text-label-sm font-label-sm mb-1.5">
+                  <span>${movie.director} • ${movie.year}</span>
+                  <span class="flex items-center gap-1 text-primary">
+                    <span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                    <span class="font-bold text-on-surface">${movie.rating}</span>
+                  </span>
+                </div>
+                <h2 class="font-headline-md text-title-md text-on-surface font-semibold group-hover:text-primary transition-colors">
+                  ${movie.title}
+                </h2>
+                <p class="text-on-surface-variant text-body-sm font-body-sm line-clamp-2 mt-1">
+                  ${movie.synopsis}
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm">
+                <span class="text-outline flex items-center gap-1">
+                  <span class="material-symbols-outlined text-xs" data-icon="schedule">schedule</span>
+                  ${movie.runtime} min
+                </span>
+                <button onclick="toggleWatchStatus('${movie.id}')" class="px-2.5 py-1 rounded-md transition-colors ${movie.watched ? 'text-outline hover:text-on-surface bg-surface-container' : 'text-primary bg-primary/10 border border-primary/30 font-semibold hover:bg-primary/20'}">
+                  ${movie.watched ? movie.watchedText : 'Unwatched'}
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join('');
+    } else {
+      // List / Table View Mode
+      container.className = "flex flex-col gap-3 transition-all";
+      container.innerHTML = `
+        <div class="bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden">
+          <div class="divide-y divide-outline-variant/30">
+            ${filtered.map(movie => {
+              const isSelected = selectedIds.has(movie.id);
+              return `
+                <div class="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:bg-surface-container/60 transition-colors ${isSelected ? 'bg-surface-container/80 ring-1 ring-inset ring-primary' : ''}">
+                  <div class="flex items-center gap-4">
+                    <input type="checkbox" onchange="toggleItemSelection('${movie.id}', this.checked)" ${isSelected ? 'checked' : ''} class="w-4 h-4 rounded bg-surface-container border-outline-variant text-primary focus:ring-primary cursor-pointer">
+                    <img src="${movie.img}" alt="${movie.title}" class="w-20 h-12 object-cover rounded-lg border border-outline-variant/30 shadow">
+                    <div>
+                      <div class="flex items-center gap-2">
+                        <h3 class="text-base font-semibold text-on-surface hover:text-primary transition-colors cursor-pointer" onclick="showToast('Playing preview for ${movie.title}...')">${movie.title}</h3>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-surface-container text-primary border border-primary/20">${movie.formatBadge}</span>
+                      </div>
+                      <div class="text-xs text-outline mt-0.5">${movie.director} • ${movie.year} • ${movie.runtime} min</div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between sm:justify-end gap-5">
+                    <div class="flex items-center gap-1 text-primary text-sm font-bold">
+                      <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+                      <span>${movie.rating}</span>
+                    </div>
+
+                    <button onclick="toggleWatchStatus('${movie.id}')" class="px-2.5 py-1 rounded text-xs ${movie.watched ? 'text-outline bg-surface-container' : 'text-primary bg-primary/10 border border-primary/30 font-semibold'} hover:opacity-90">
+                      ${movie.watched ? movie.watchedText : 'Unwatched'}
+                    </button>
+
+                    <div class="flex items-center gap-1">
+                      <button onclick="showToast('Initiating screening for ${movie.title}')" class="p-1.5 rounded-lg text-primary hover:bg-primary/20" title="Play Now">
+                        <span class="material-symbols-outlined text-lg">play_arrow</span>
+                      </button>
+                      <button onclick="removeMovie('${movie.id}')" class="p-1.5 rounded-lg text-outline hover:text-error" title="Remove">
+                        <span class="material-symbols-outlined text-lg">delete</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+    updateSelectionUI();
+  }
+
+  // Filter Handling
+  function setFilter(filterType) {
+    currentFilter = filterType;
+    const chips = ['all', 'unwatched', '4k', 'laureates'];
+    chips.forEach(c => {
+      const el = document.getElementById(`chip-${c}`);
+      if (c === filterType) {
+        el.className = "filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-primary text-on-primary font-bold border border-primary shadow-sm transition-all";
+      } else {
+        el.className = "filter-chip px-3.5 py-1.5 rounded-lg text-label-md font-label-md bg-surface-container text-on-surface-variant hover:text-on-surface border border-outline-variant/40 transition-all";
+      }
+    });
+    renderWatchlist();
+  }
+
+  // Search Handling
+  function handleSearch(val) {
+    currentSearch = val;
+    const clearBtn = document.getElementById('nav-search-clear');
+    if (val.trim().length > 0) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+    renderWatchlist();
+  }
+
+  function clearSearch() {
+    const input = document.getElementById('nav-search-input');
+    input.value = '';
+    handleSearch('');
+    input.focus();
+  }
+
+  // Sort Handling
+  function handleSort(val) {
+    currentSort = val;
+    renderWatchlist();
+  }
+
+  // View Mode Toggling
+  function setViewMode(mode) {
+    currentView = mode;
+    const gridBtn = document.getElementById('btn-grid-view');
+    const listBtn = document.getElementById('btn-list-view');
+    if (mode === 'grid') {
+      gridBtn.className = "p-1.5 rounded bg-surface text-primary shadow-sm";
+      listBtn.className = "p-1.5 rounded text-outline hover:text-on-surface";
+    } else {
+      listBtn.className = "p-1.5 rounded bg-surface text-primary shadow-sm";
+      gridBtn.className = "p-1.5 rounded text-outline hover:text-on-surface";
+    }
+    renderWatchlist();
+  }
+
+  // Selection & Bulk Actions
+  function toggleItemSelection(id, checked) {
+    if (checked) {
+      selectedIds.add(id);
+    } else {
+      selectedIds.delete(id);
+    }
+    updateSelectionUI();
+    // Re-render to update outline styling
+    renderWatchlist();
+  }
+
+  function toggleSelectAll(checked) {
+    const visibleMovies = getFilteredAndSortedMovies();
+    if (checked) {
+      visibleMovies.forEach(m => selectedIds.add(m.id));
+    } else {
+      selectedIds.clear();
+    }
+    updateSelectionUI();
+    renderWatchlist();
+  }
+
+  function updateSelectionUI() {
+    const totalSelected = selectedIds.size;
+    const counter = document.getElementById('selected-counter');
+    const removeBtn = document.getElementById('btn-remove-selected');
+    const selectAllCheckbox = document.getElementById('checkbox-select-all');
+
+    counter.innerText = `${totalSelected} item${totalSelected === 1 ? '' : 's'} highlighted`;
+
+    if (totalSelected > 0) {
+      removeBtn.removeAttribute('disabled');
+      removeBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      removeBtn.classList.add('cursor-pointer');
+    } else {
+      removeBtn.setAttribute('disabled', 'true');
+      removeBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      removeBtn.classList.remove('cursor-pointer');
+    }
+
+    const visibleMovies = getFilteredAndSortedMovies();
+    if (visibleMovies.length > 0 && visibleMovies.every(m => selectedIds.has(m.id))) {
+      selectAllCheckbox.checked = true;
+    } else {
+      selectAllCheckbox.checked = false;
+    }
+  }
+
+  function removeMovie(id) {
+    const movie = movies.find(m => m.id === id);
+    movies = movies.filter(m => m.id !== id);
+    selectedIds.delete(id);
+    showToast(`Removed "${movie ? movie.title : 'Movie'}" from watchlist.`);
+    renderWatchlist();
+  }
+
+  function removeSelected() {
+    if (selectedIds.size === 0) return;
+    const count = selectedIds.size;
+    movies = movies.filter(m => !selectedIds.has(m.id));
+    selectedIds.clear();
+    showToast(`Successfully removed ${count} title${count === 1 ? '' : 's'} from your library.`);
+    renderWatchlist();
+  }
+
+  function toggleWatchStatus(id) {
+    const movie = movies.find(m => m.id === id);
+    if (movie) {
+      movie.watched = !movie.watched;
+      movie.watchedText = movie.watched ? 'Watched 1x' : 'Unwatched';
+      showToast(`Marked "${movie.title}" as ${movie.watched ? 'Watched' : 'Unwatched'}`);
+      renderWatchlist();
+    }
+  }
+
+  function exportCSV() {
+    const visibleMovies = getFilteredAndSortedMovies();
+    if (visibleMovies.length === 0) {
+      showToast('No movies available to export.');
+      return;
+    }
+    const headers = "Title,Director,Year,Rating,Runtime(min),Format,Status\n";
+    const rows = visibleMovies.map(m => 
+      `"${m.title}","${m.director}",${m.year},${m.rating},${m.runtime},"${m.formatBadge}","${m.watched ? 'Watched' : 'Unwatched'}"`
+    ).join("\n");
+    const blob = new Blob([headers + rows], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("download", `mindx_curated_watchlist_${new Date().toISOString().slice(0,10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    showToast(`Exported ${visibleMovies.length} curated masterworks as .CSV`);
+  }
+
+  function resetFilters() {
+    currentFilter = 'all';
+    currentSearch = '';
+    currentSort = 'date-latest';
+    document.getElementById('nav-search-input').value = '';
+    document.getElementById('nav-search-clear').classList.add('hidden');
+    document.getElementById('sort-select').value = 'date-latest';
+    setFilter('all');
+  }
+
+  // Modals Management
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+  }
+
+  function handleCreateCollection(e) {
+    e.preventDefault();
+    const title = document.getElementById('collection-title-input').value;
+    closeModal('modal-create-collection');
+    document.getElementById('collection-title-input').value = '';
+    document.getElementById('collection-desc-input').value = '';
+    showToast(`New custom collection "${title}" curated successfully!`);
+  }
+
+  function quickAISuggest(promptText) {
+    document.getElementById('ai-chat-prompt').value = promptText;
+  }
+
+  function sendAIPrompt() {
+    const val = document.getElementById('ai-chat-prompt').value.trim();
+    if (!val) return;
+    closeModal('modal-curator-ai');
+    showToast(`AI Curator dispatched recommendation dossier for: "${val}"`);
+    document.getElementById('ai-chat-prompt').value = '';
+  }
+
+  function addArchiveCollection(name) {
+    closeModal('modal-curated-archive');
+    showToast(`Imported curated program: "${name}" to your library.`);
+  }
+
+  // Toast Notification
+  let toastTimer = null;
+  function showToast(msg) {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    toastMsg.innerText = msg;
+    toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    if (toastTimer) clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => {
+      toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3600);
+  }
+
+  // Close modals on Escape or background click
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      ['modal-create-collection', 'modal-curator-ai', 'modal-curated-archive'].forEach(closeModal);
+    }
+  });
+
+  ['modal-create-collection', 'modal-curator-ai', 'modal-curated-archive'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('click', (e) => {
+        if (e.target === el) closeModal(id);
+      });
+    }
+  });
+
+  // Initial Boot
+  window.addEventListener('DOMContentLoaded', () => {
+    renderWatchlist();
+  });
+</script>
+<script src="js/site-navigation.js"></script></body></html>

@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA - Search &amp; Discovery</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-range-slider {
+      accent-color: #d6a85f;
+    }
+    .card-fade-enter {
+      animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col font-body-md text-body-md">
+<!-- Toast Notification Container -->
+<div class="fixed bottom-6 right-6 z-50 transform translate-y-16 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-3 px-4 py-3 rounded-xl bg-surface-container-high border border-primary/40 shadow-2xl text-on-surface" id="toast-notification">
+<span class="material-symbols-outlined text-primary text-xl" id="toast-icon">tune</span>
+<span class="text-body-sm font-medium" id="toast-message">Filter applied</span>
+</div>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin py-space-md bg-surface/75 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-space-xl">
+<a class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-28px" data-icon="movie_filter" style="font-variation-settings: 'FILL' 1;">movie_filter</span>
+        MINDX CINEMA
+      </a>
+<nav class="hidden md:flex items-center gap-space-lg">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="index.html">Home</a>
+<!-- Active navigation state based on Search / Explore intent -->
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="explore.html">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="explore.html">Series</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1 font-label-md text-label-md" href="watch-list.html">Watchlist</a>
+</nav>
+</div>
+<div class="flex items-center gap-space-md">
+<!-- Search Trigger Pill for Header -->
+<div class="hidden sm:flex items-center gap-2 bg-surface-container-low border border-outline-variant/60 rounded-full px-3 py-1.5 text-on-surface-variant text-label-md cursor-pointer hover:border-primary/50 transition-colors" id="header-search-pill">
+<span class="material-symbols-outlined text-primary text-sm" data-icon="search">search</span>
+<span class="text-primary font-medium" id="header-search-text">Christopher Nolan</span>
+<kbd class="ml-2 px-1.5 py-0.5 rounded bg-surface-container-high border border-outline-variant/40 text-[10px] text-tertiary">⌘K</kbd>
+</div>
+<!-- Trailing Icon Actions -->
+<button class="relative p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors duration-200" title="Notifications">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface"></span>
+</button>
+<!-- VIP Profile Avatar with status badge -->
+<div class="relative flex items-center cursor-pointer group">
+<div class="w-9 h-9 rounded-full ring-1 ring-primary/40 p-0.5 overflow-hidden bg-surface-container-high">
+<img alt="User VIP profile avatar with active status badge" class="w-full h-full object-cover rounded-full" data-alt="Close up photographic portrait of a refined movie critic and cinephile curator in an obsidian-lit film archive, soft atmospheric golden key lighting reflecting in glasses, dark mood aesthetic, cinematic 35mm film photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyBNG9YV-8Vp8Z9LJ09T5FnAJVc87TPF787p4QiQspDBSfkPvkXA58K4jnhKF3_XHeCU_mEltfKtXfSNAWYl53BvXzxPUTKZ3e92zRTgY3Zs4gXg5YvzNegFNByT1hODwua2ZPGoGmQf5_JkVh9xSMitMIkyjXuh60_YhM7FP3v3v_3rrEG-6hr1UKgC289qTaM_RbCtnqWw0Mpk6-joD49ZcoOSsrilk275fHDlk"/>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary-container ring-2 ring-surface"></span>
+</div>
+</div>
+</header>
+<!-- Main Search & Discovery Canvas -->
+<main class="flex-grow pt-28 pb-16 px-margin-mobile md:px-margin max-w-7xl mx-auto w-full">
+<!-- Hero Search Interface Header -->
+<section class="mb-10">
+<div class="flex flex-col gap-2 mb-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Archive Index &amp; Curatorial Vault</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface">Curated Search &amp; Discovery</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+          Search over 12,000 restored master prints, festival laureates, auteur retrospectives, and 70mm archival reels.
+        </p>
+</div>
+<!-- Prominent Search Input Box -->
+<div class="relative w-full rounded-2xl bg-surface-container-low border border-primary/50 shadow-[0_0_24px_rgba(214,168,95,0.15)] focus-within:shadow-[0_0_36px_rgba(214,168,95,0.25)] focus-within:border-primary transition-all duration-300">
+<div class="flex items-center px-5 py-4 gap-4">
+<span class="material-symbols-outlined text-primary text-28px" data-icon="search">search</span>
+<input autocomplete="off" class="w-full bg-transparent border-none text-on-surface placeholder:text-on-surface-variant/60 font-body-lg text-body-lg focus:outline-none focus:ring-0 p-0" id="main-search-input" placeholder="Search directors, actors, master editions, or themes..." type="text" value="Christopher Nolan"/>
+<div class="flex items-center gap-3">
+<button class="p-1 rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors" id="clear-search-btn" title="Clear search">
+<span class="material-symbols-outlined text-xl" data-icon="cancel">cancel</span>
+</button>
+<div class="hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container-high border border-outline-variant/40 text-on-surface-variant text-label-sm uppercase tracking-wider font-semibold cursor-pointer hover:border-primary/50" id="esc-key-badge">
+<span>ESC</span>
+<span class="opacity-60 text-[9px]">to cancel</span>
+</div>
+</div>
+</div>
+<!-- Scope Pills -->
+<div class="flex items-center gap-2 px-5 py-3 border-t border-outline-variant/30 overflow-x-auto no-scrollbar" id="scope-pills-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mr-1 hidden sm:inline">Scope:</span>
+<button class="scope-pill px-3.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold transition-all" data-scope="all">All Titles</button>
+<button class="scope-pill px-3.5 py-1 rounded-full bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-md text-label-md transition-all" data-scope="directors">Directors &amp; Auteurs</button>
+<button class="scope-pill px-3.5 py-1 rounded-full bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-md text-label-md transition-all" data-scope="actors">Actors</button>
+<button class="scope-pill px-3.5 py-1 rounded-full bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-md text-label-md transition-all" data-scope="genres">Genres &amp; Themes</button>
+<button class="scope-pill px-3.5 py-1 rounded-full bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-md text-label-md transition-all" data-scope="soundtracks">Original Soundtracks</button>
+</div>
+</div>
+<!-- Recent History & Trending Chips -->
+<div class="mt-6 flex flex-col md:flex-row gap-6 md:items-center justify-between">
+<!-- Recent Searches -->
+<div class="flex flex-wrap items-center gap-2" id="recent-searches-wrapper">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider mr-1">
+<span class="material-symbols-outlined text-sm" data-icon="history">history</span>
+<span>Recent:</span>
+</div>
+<div class="flex flex-wrap items-center gap-2" id="recent-chips-list">
+<a class="recent-search-chip flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/60 border border-outline-variant/40 hover:border-primary/50 text-on-surface text-body-sm transition-colors group cursor-pointer" data-query="Christopher Nolan 70mm" href="javascript:void(0)">
+<span class="chip-text">Christopher Nolan 70mm</span>
+<span class="remove-chip-btn material-symbols-outlined text-xs text-outline group-hover:text-primary" data-icon="close" title="Remove">close</span>
+</a>
+<a class="recent-search-chip flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/60 border border-outline-variant/40 hover:border-primary/50 text-on-surface text-body-sm transition-colors group cursor-pointer" data-query="Blade Runner 2049" href="javascript:void(0)">
+<span class="chip-text">Blade Runner 2049</span>
+<span class="remove-chip-btn material-symbols-outlined text-xs text-outline group-hover:text-primary" data-icon="close" title="Remove">close</span>
+</a>
+<a class="recent-search-chip flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/60 border border-outline-variant/40 hover:border-primary/50 text-on-surface text-body-sm transition-colors group cursor-pointer" data-query="Denis Villeneuve" href="javascript:void(0)">
+<span class="chip-text">Denis Villeneuve</span>
+<span class="remove-chip-btn material-symbols-outlined text-xs text-outline group-hover:text-primary" data-icon="close" title="Remove">close</span>
+</a>
+<a class="recent-search-chip flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high/60 border border-outline-variant/40 hover:border-primary/50 text-on-surface text-body-sm transition-colors group cursor-pointer" data-query="Cannes 2024 Winners" href="javascript:void(0)">
+<span class="chip-text">Cannes 2024 Winners</span>
+<span class="remove-chip-btn material-symbols-outlined text-xs text-outline group-hover:text-primary" data-icon="close" title="Remove">close</span>
+</a>
+</div>
+<button class="text-primary hover:underline font-label-sm text-label-sm ml-2" id="clear-history-btn">Clear History</button>
+</div>
+<!-- Trending Now -->
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant flex-wrap">
+<span class="material-symbols-outlined text-primary text-base" data-icon="local_fire_department" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Trending:</span>
+<span class="trending-tag text-on-surface font-medium hover:text-primary cursor-pointer transition-colors" data-query="Oppenheimer">Oppenheimer (70mm IMAX)</span>
+<span class="text-outline-variant">•</span>
+<span class="trending-tag text-on-surface font-medium hover:text-primary cursor-pointer transition-colors" data-query="Anatomy of a Fall">Anatomy of a Fall</span>
+</div>
+</div>
+</section>
+<!-- Layout: Faceted Filter Sidebar + Results Canvas -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Filter Sidebar (Facet Controls) -->
+<aside class="lg:col-span-3 bg-surface-container-low/90 backdrop-blur-md border border-outline-variant/40 rounded-xl p-5 flex flex-col gap-6 sticky top-24">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="tune">tune</span>
+<h2 class="font-title-md text-title-md text-on-surface">Curatorial Filters</h2>
+</div>
+<button class="text-primary hover:text-primary-fixed-dim text-label-sm font-label-sm uppercase tracking-wider transition-colors" id="reset-filters-btn">Reset</button>
+</div>
+<!-- Filter 1: Award Laureates -->
+<div class="flex flex-col gap-3">
+<label class="font-label-md text-label-md uppercase tracking-wider text-primary">Prestige Awards</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer" data-filter="award" type="checkbox" value="oscar"/>
+<span class="text-on-surface group-hover:text-primary text-body-sm transition-colors">Academy Award Winner</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer" data-filter="award" type="checkbox" value="cannes"/>
+<span class="text-on-surface-variant group-hover:text-primary text-body-sm transition-colors">Palme d'Or / Cannes Official</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer" data-filter="award" type="checkbox" value="bafta"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm transition-colors">BAFTA Film Laureate</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 focus:ring-offset-0 cursor-pointer" data-filter="award" type="checkbox" value="venice"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm transition-colors">Golden Lion (Venice)</span>
+</label>
+</div>
+</div>
+<!-- Filter 2: Genre & Curated Themes -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<label class="font-label-md text-label-md uppercase tracking-wider text-primary">Genre &amp; Movement</label>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="sci-fi"/>
+<span class="text-on-surface group-hover:text-primary text-body-sm">Sci-Fi Epic</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="psychological"/>
+<span class="text-on-surface group-hover:text-primary text-body-sm">Psychological</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="neo-noir"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm">Neo-Noir</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="biographical"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm">Biographical</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="avant-garde"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm">Avant-Garde</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="filter-checkbox w-3.5 h-3.5 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="genre" type="checkbox" value="period"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm">Period Drama</span>
+</label>
+</div>
+</div>
+<!-- Filter 3: Release Timeline / Decade Slider -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md uppercase tracking-wider text-primary">Era / Decade</label>
+<span class="text-primary font-mono text-body-sm" id="decade-indicator">2000 — 2025</span>
+</div>
+<input class="w-full custom-range-slider h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer" id="decade-slider" max="2025" min="1960" step="1" type="range" value="2000"/>
+<div class="flex justify-between text-[11px] text-tertiary">
+<span>1960</span>
+<span>1990</span>
+<span>2010</span>
+<span>2025</span>
+</div>
+</div>
+<!-- Filter 4: Critic Rating Threshold -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<label class="font-label-md text-label-md uppercase tracking-wider text-primary">Minimum Critic Score</label>
+<div class="flex items-center justify-between gap-2" id="rating-filter-group">
+<button class="rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all" data-score="7.5">7.5+</button>
+<button class="rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all" data-score="8.5">8.5+</button>
+<button class="rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all" data-score="9.0">9.0+</button>
+</div>
+</div>
+<!-- Filter 5: Master Format -->
+<div class="flex flex-col gap-3 pt-3 border-t border-outline-variant/30">
+<label class="font-label-md text-label-md uppercase tracking-wider text-primary">Master Format</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="format" type="checkbox" value="70mm"/>
+<span class="text-on-surface group-hover:text-primary text-body-sm">70mm IMAX Restored</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="format" type="checkbox" value="4k"/>
+<span class="text-on-surface group-hover:text-primary text-body-sm">4K Dolby Vision HDR</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="filter-checkbox w-4 h-4 rounded border-outline-variant bg-surface-container text-primary-container focus:ring-0 cursor-pointer" data-filter="format" type="checkbox" value="audio"/>
+<span class="text-on-surface-variant group-hover:text-on-surface text-body-sm">Uncompressed Spatial Audio</span>
+</label>
+</div>
+</div>
+</aside>
+<!-- Search Results Area -->
+<section class="lg:col-span-9 flex flex-col gap-6">
+<!-- Results Counter & Sort Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-outline-variant/30 gap-4">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md text-on-surface" id="results-headline">Displaying <span class="text-primary font-bold" id="results-count">8</span> curated results for <span class="text-primary italic" id="results-query-label">"Christopher Nolan"</span></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Sort By:</span>
+<div class="relative">
+<select class="bg-surface-container-low border border-outline-variant/60 rounded-lg text-on-surface py-1.5 pl-3 pr-8 font-label-md text-label-md focus:border-primary focus:ring-0 cursor-pointer" id="sort-select">
+<option value="rating">Curator Priority &amp; Rating</option>
+<option value="year-desc">Chronological: Latest First</option>
+<option value="year-asc">Chronological: Earliest First</option>
+<option value="title">Title (A-Z)</option>
+<option value="runtime">Runtime (Longest First)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- FEATURED AUTEUR PROFILE CARD (Bento Accent) -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-low border border-primary/30 p-6 shadow-2xl flex flex-col md:flex-row items-center gap-6 transition-all duration-300" id="auteur-card">
+<div class="w-32 h-32 md:w-40 md:h-40 shrink-0 rounded-2xl overflow-hidden border-2 border-primary/40 relative">
+<img alt="Director bio card portrait for Christopher Nolan" class="w-full h-full object-cover" data-alt="Editorial close portrait of visionary director Christopher Nolan in a monochrome atmospheric set, golden amber rim lighting highlights on tailored coat, moody architectural shadows in a prestigious film studio setting, luxury publication cover style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzifJk21o-5Cp3EBn-G9RRJLVNMy1eUi3osW6o33o0US6kvHKu10WMIrt1xZLG1JWhDvEM65EVwwuJFWDHrHbmKjgqZAAgZmf4OZcOe745r1PwSY-b-T82ZWiLTEL9J96m0KIcvEhyDkc2gLDo2I6IPU6-KN4qZpBksrLKPpGKMWxZwPoJZ7zxKhUqVlJFgYTRNxryEulY0EvY0FIMwJR57HQjQOoA5obxJI3ymBQ"/>
+<div class="absolute bottom-1 right-1 bg-surface-container-lowest/90 px-1.5 py-0.5 rounded text-[10px] text-primary uppercase font-bold tracking-wider">Auteur</div>
+</div>
+<div class="flex-grow flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary font-label-sm text-label-sm uppercase tracking-widest">Featured Retrospective</span>
+<span class="text-tertiary text-body-sm">12 Works Archived • 8 Academy Awards</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Christopher Nolan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">
+              Renowned for non-linear storytelling, practical film effects, grand architectural scale, and persistent dedication to the photochemical 70mm and IMAX formats.
+            </p>
+<div class="flex flex-wrap items-center gap-3 mt-1">
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-colors" id="filmography-btn">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                Explore Complete Filmography
+              </button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-surface-container border border-outline-variant/60 text-on-surface hover:border-primary/50 text-label-md transition-colors" id="follow-retrospective-btn">
+<span class="material-symbols-outlined text-sm" data-icon="bookmark_add" id="follow-icon">bookmark_add</span>
+<span id="follow-text">Follow Retrospective</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Curated Movie Results Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6" id="movies-grid">
+<!-- Film 1: Oppenheimer -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Cillian Murphy, Emily Blunt, Matt Damon, Robert Downey Jr." data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k" data-genres="biographical,period,psychological" data-rating="8.9" data-runtime="180" data-title="Oppenheimer" data-year="2023">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Oppenheimer 70mm Master Edition" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic still and theatrical art from Oppenheimer, brooding scientist framed against intense glowing orange embers and golden nuclear sparks, dark atmospheric shadows, 70mm film grain luxury cinema aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMB4rd1LIcnxZMiLkQcJ9elFf9BVd5cT41bg8hbOWstVgi1OB9hrWQL2ftAw2F5SQw8_t3W_ukEPQoIEldGzFAV_r9sugehfLJS3oJJrr7H4ANCJoc03sT42X8QeYgiQmBkMQ77M-MRvNoGZfQPhEj9kzVrauPoTKiYW1gZjqjKT9q51dwaHJfXi9p03ReuovHB_JTrzBMWsPDmarjkrw4E-dEcoqKHN30Q064A9o"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">70mm IMAX</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/40 text-primary-fixed font-label-sm text-label-sm uppercase">7 Oscars</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2023 • 180 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">8.9</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Oppenheimer</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Cillian Murphy, Emily Blunt</p>
+</div>
+</div>
+<!-- Film 2: Interstellar -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Matthew McConaughey, Anne Hathaway, Jessica Chastain" data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k,audio" data-genres="sci-fi,psychological" data-rating="8.7" data-runtime="169" data-title="Interstellar" data-year="2014">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Interstellar 10th Anniversary Master" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High contrast film still of an astronaut in space suit standing before an iridescent gargantua black hole with glowing golden accretion disk, deep obsidian cosmic space, luxury editorial cinematography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN-J_TK9edOgfItBj-IKwsiIHxDoWCowzTw_iYbEf5R38Cc8usKMxzFhDKcqs0X3S-fTp0I3bXxgd9gcrh4xsyNM5fpHZUiJATKwTu7DX1BXNPl99xE3fPhdslYUFVCuiaO0RudlMd92Yide3cxBFDWsLqYGZMjxatWcrzxWv1Ut9wQXelm6JTnoDMn77dDKlZ5Ih--0vClu5AvIbM-0AEd7nqLEh1_w64k9IBMKM"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">4K HDR</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/40 text-on-surface font-label-sm text-label-sm uppercase">Curator Pick</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2014 • 169 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">8.7</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Interstellar</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Matthew McConaughey</p>
+</div>
+</div>
+<!-- Film 3: Inception -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Ken Watanabe" data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k,audio" data-genres="sci-fi,psychological,neo-noir" data-rating="8.8" data-runtime="148" data-title="Inception" data-year="2010">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Inception 4K Master" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Cinematic still from Inception showing folding geometric Paris city streets curved into vertical sky, cold architectural blue slate with amber streetlights, surrealist perspective, crisp 35mm film frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnxit9ko2iLdo2_r8cy03VToY9KYbEwuph1LTuXKy6qRCArNhH7RnF4NHSEq3K6zd5g8iN6zLhy8wRQZnTbuXLxD2_oQIUVDyn00J1w-thi9bYqKvSZ_7IV8A5UdJrhWrTg64bEZjpt0Vp0e04pCsXU33pZFLjlNwd_qYy3jToovVCWDSAgSX7JaU2bI5BWyvbDpcfsPM0BzcMxIoC0q__sJuv8-IUig7H0fkhw88"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">Dolby Atmos</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2010 • 148 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">8.8</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Inception</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Leonardo DiCaprio</p>
+</div>
+</div>
+<!-- Film 4: Dunkirk -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Fionn Whitehead, Tom Hardy, Mark Rylance, Cillian Murphy" data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k" data-genres="period,biographical" data-rating="7.9" data-runtime="106" data-title="Dunkirk" data-year="2017">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Dunkirk 70mm Format" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Epic wide cinematic shot of a vintage Spitfire airplane flying low over dark churning sea foam and wide misty sand dunes, cold overcast sky with warm cockpit instrumentation light, photorealistic 70mm cinematography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdrg2S_6tzjtRVD5y-KE1kx8Lp9HhO_NDfFLsOGDVhyOi7Fb1eo1jCHRaTNGUtGNyHt460ewngBTAvovd_I3pXy0G9tFJvmUaO7TN-ia17mHHBmxUYIwnx0L_62n4XH9dWxiEf-XuVYx7KsWsg_-Npv6E-WUB_eXYSqn_QURbK_Q_3uh7jyDT64cIOsnbcFnEDNAcmMu8bY1EVCaxqG5sQXmU317_PQSOJ7-XyW_A"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">65mm Large Format</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2017 • 106 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">7.9</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Dunkirk</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Fionn Whitehead, Tom Hardy</p>
+</div>
+</div>
+<!-- Film 5: The Prestige -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Christian Bale, Hugh Jackman, Scarlett Johansson, David Bowie" data-awards="oscar" data-director="Christopher Nolan" data-formats="70mm,4k" data-genres="psychological,period,neo-noir" data-rating="8.5" data-runtime="130" data-title="The Prestige" data-year="2006">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="The Prestige Restored" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Atmospheric Victorian theatrical magic stage interior lit by glowing Tesla electric arcs and warm antique filament bulbs, dark wood textures, luxury gothic cinema aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD006TmqTOiHhVxRJdOOgR0H41lRP6j26OmUxFbaSJe74HPdvOB02om2MPfg1678tKAp6IJoDxd4QinY0Ibm6qtmJm3zsBwWf3Jr0LUGkJmQn3AZGgouI1Nw5FcMY6YewvXjb5K8Ut29eM7Gw_ZtTig-kWkEIq5yAXd78SapV8-UT3Oe7nsA-uupJDQe0asF9wpzQt01IrQnsViyTq2qFYp4C3Gqn0rq7qK4Q3FaNM"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">Restored Print</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2006 • 130 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">8.5</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">The Prestige</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Christian Bale, Hugh Jackman</p>
+</div>
+</div>
+<!-- Film 6: Memento -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Guy Pearce, Carrie-Anne Moss, Joe Pantoliano" data-awards="oscar,cannes" data-director="Christopher Nolan" data-formats="4k,audio" data-genres="psychological,neo-noir,avant-garde" data-rating="8.4" data-runtime="113" data-title="Memento" data-year="2000">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Memento 4K Criterion Restoration" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Gritty neo-noir still of instant polaroid photographs spread over a dark mahogany table, moody single key lighting casting sharp diagonal shadows, high dynamic range 35mm film look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5YoJ2vk_AaioMPk7eG_210z_Mg1zfyL3VLZ7gPOxeY8QDLdYtYLooAb_e3_s7o0ZwbIL05aJ2iEyorlDIvYqn8KhlM4loj5V09joxGXvdeXFs_GThHnlCxwNsonytOLcfL4UGLJOnvR3puDHlemd5TGHGRC81HqHYSo10QzSDNBWnVa8AR5l-S5donQoRJxMIZiAgD6ZG4EP5j1aCVzOpJCkVQwITU7c4F0ES5XY"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">Sundance Winner</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2000 • 113 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">8.4</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Memento</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Guy Pearce, Carrie-Anne Moss</p>
+</div>
+</div>
+<!-- Film 7: Tenet -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="John David Washington, Robert Pattinson, Elizabeth Debicki, Kenneth Branagh" data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k,audio" data-genres="sci-fi,psychological" data-rating="7.3" data-runtime="150" data-title="Tenet" data-year="2020">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="Tenet 70mm Master Edition" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-concept action cinematography showing an operative in tactical oxygen gear during an inverted temporal combat scene, backward exploding debris with contrasting red and cobalt blue studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9_4NReChYSPn3SDmJHMV0B-xxUESb8v1yaKBuVDrluu-1WR-R19VjDUySKybfsFZiwTqoI-othTtcRoXtBKKKbZv8wiyITN4a0nuvLD1I-fK5nhXYkYLmw0C-amuVIKAiGdvr0Yh7znm6W1brQt9IBGRRrmDVGzQ8t7mOW_OW6OuMtlffQWnC1-9GitWGVwpbtsfnq1IrpCnaDn6zRXzNKlATX4nBi7pLf4eScmo"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">70mm Master</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2020 • 150 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">7.3</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Tenet</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • John David Washington</p>
+</div>
+</div>
+<!-- Film 8: The Dark Knight -->
+<div class="movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)]" data-actors="Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine" data-awards="oscar,bafta" data-director="Christopher Nolan" data-formats="70mm,4k,audio" data-genres="neo-noir,psychological" data-rating="9.0" data-runtime="152" data-title="The Dark Knight" data-year="2008">
+<div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+<img alt="The Dark Knight 4K HDR" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Iconic nighttime skyline of a gothic metropolis with intense fiery amber explosions reflected in skyscraper glass, brooding vigilante silhouette in shadows, 35mm photochemical master look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEdLiFzrVcxSCekVpcEsYr_T-5wAUBJBxKSuOd3923hb832wGQaQX0UHv0rxo1nKWxPM4Q4d3nbwjA6zm2M39Vof0xMmruBrejOEBIWZ0qJ--DYX_5gSl9vM2hbRUndAEOa_ffiNwjw3qMEhwMrtoPs65LCmWRxX6jCtzqyvF4HsewPAhwOi3LUe0VWhcDEF-SA4KMMjMbGNzcrjxkioeVhKAXFqvtn4yZtGki31Q"/>
+<div class="absolute top-3 left-3 flex flex-col gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">4K HDR</span>
+<span class="px-2 py-0.5 rounded-full bg-primary/20 backdrop-blur-md border border-primary/40 text-primary-fixed font-label-sm text-label-sm uppercase">2 Oscars</span>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+<button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="p-4 flex flex-col gap-1.5 flex-grow">
+<div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+<span>2008 • 152 min</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-xs">9.0</span>
+</div>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">The Dark Knight</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">Dir. Christopher Nolan • Christian Bale, Heath Ledger</p>
+</div>
+</div>
+</div>
+<!-- Empty State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center py-20 px-6 text-center rounded-2xl bg-surface-container-low/50 border border-outline-variant/30" id="empty-state">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 border border-outline-variant/50">
+<span class="material-symbols-outlined text-3xl text-outline" data-icon="search_off">search_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">No Archival Titles Match</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md mb-6">
+    No archival titles match your current curation parameters. Try adjusting your keywords or clearing specific facet filters.
+  </p>
+<button class="px-5 py-2.5 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold hover:bg-primary-fixed transition-colors" id="empty-state-reset-btn">
+    Reset All Filters &amp; Search
+  </button>
+</div>
+<!-- Load More Curated Vault Items -->
+<div class="mt-8 flex flex-col items-center gap-3" id="load-more-section">
+<button class="px-8 py-3 rounded-lg bg-surface-container border border-outline-variant/60 hover:border-primary/50 text-on-surface font-title-md text-title-md hover:text-primary transition-all duration-200 flex items-center gap-2" id="load-more-btn">
+<span id="load-more-text">Load Additional 4 Vault Masterprints</span>
+<span class="material-symbols-outlined text-base" data-icon="expand_more" id="load-more-icon">expand_more</span>
+</button>
+<span class="text-tertiary text-body-sm" id="vault-entries-count">Showing 8 of 12 curated master entries</span>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full px-margin py-space-xl flex flex-col gap-space-lg border-t border-outline-variant/30 bg-surface-container-lowest mt-auto">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg tracking-widest text-primary uppercase font-bold">MINDX CINEMA</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">THE ARCHITECTURAL THEATER FOR CONTEMPLATIVE FILMMAKING</p>
+</div>
+<nav class="flex flex-wrap gap-x-6 gap-y-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="explore.html">Curation Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="explore.html">Film Festivals</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="explore.html">4K Premieres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="register.html">VIP Membership</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="policies.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-sm text-label-sm" href="policies.html">Terms of Service</a>
+</nav>
+</div>
+<div class="flex flex-col sm:flex-row items-center justify-between pt-6 border-t border-outline-variant/20 text-on-surface-variant text-body-sm">
+<p>© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</p>
+<div class="flex items-center gap-4 mt-4 sm:mt-0 text-outline">
+<span class="hover:text-primary cursor-pointer transition-colors text-label-sm uppercase">Dolby Vision™</span>
+<span class="hover:text-primary cursor-pointer transition-colors text-label-sm uppercase">IMAX 70mm Certified</span>
+<span class="hover:text-primary cursor-pointer transition-colors text-label-sm uppercase">Lossless Atmos</span>
+</div>
+</div>
+</footer>
+<!-- Interactive Vanilla JavaScript Filter & Search Controller -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Elements
+  const searchInput = document.getElementById('main-search-input');
+  const clearSearchBtn = document.getElementById('clear-search-btn');
+  const escBadge = document.getElementById('esc-key-badge');
+  const headerSearchPill = document.getElementById('header-search-pill');
+  const headerSearchText = document.getElementById('header-search-text');
+  const scopePills = document.querySelectorAll('.scope-pill');
+  const checkboxes = document.querySelectorAll('.filter-checkbox');
+  const resetFiltersBtn = document.getElementById('reset-filters-btn');
+  const ratingButtons = document.querySelectorAll('.rating-btn');
+  const decadeSlider = document.getElementById('decade-slider');
+  const decadeIndicator = document.getElementById('decade-indicator');
+  const sortSelect = document.getElementById('sort-select');
+  const moviesGrid = document.getElementById('movies-grid');
+  const resultsCount = document.getElementById('results-count');
+  const resultsQueryLabel = document.getElementById('results-query-label');
+  const emptyState = document.getElementById('empty-state');
+  const emptyResetBtn = document.getElementById('empty-state-reset-btn');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+  const loadMoreSection = document.getElementById('load-more-section');
+  const vaultEntriesCount = document.getElementById('vault-entries-count');
+  const auteurCard = document.getElementById('auteur-card');
+  const clearHistoryBtn = document.getElementById('clear-history-btn');
+  const recentChipsContainer = document.getElementById('recent-chips-list');
+  const recentWrapper = document.getElementById('recent-searches-wrapper');
+  const followBtn = document.getElementById('follow-retrospective-btn');
+  const followIcon = document.getElementById('follow-icon');
+  const followText = document.getElementById('follow-text');
+  const filmographyBtn = document.getElementById('filmography-btn');
+
+  // State
+  let currentScope = 'all';
+  let activeRatingThreshold = null; // null or number
+  let additionalLoaded = false;
+  let isFollowingRetrospective = false;
+
+  // Additional films dataset for the "Load Additional" functionality
+  const additionalFilmsData = [
+    {
+      title: "Batman Begins",
+      director: "Christopher Nolan",
+      actors: "Christian Bale, Michael Caine, Liam Neeson, Morgan Freeman",
+      year: 2005,
+      runtime: 140,
+      rating: 8.2,
+      genres: "neo-noir,psychological",
+      awards: "oscar,bafta",
+      formats: "4k,audio",
+      badge1: "4K REMASTER",
+      badge2: "ORIGIN STORY",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAdrg2S_6tzjtRVD5y-KE1kx8Lp9HhO_NDfFLsOGDVhyOi7Fb1eo1jCHRaTNGUtGNyHt460ewngBTAvovd_I3pXy0G9tFJvmUaO7TN-ia17mHHBmxUYIwnx0L_62n4XH9dWxiEf-XuVYx7KsWsg_-Npv6E-WUB_eXYSqn_QURbK_Q_3uh7jyDT64cIOsnbcFnEDNAcmMu8bY1EVCaxqG5sQXmU317_PQSOJ7-XyW_A",
+      subtitle: "Dir. Christopher Nolan • Christian Bale, Liam Neeson"
+    },
+    {
+      title: "The Dark Knight Rises",
+      director: "Christopher Nolan",
+      actors: "Christian Bale, Tom Hardy, Anne Hathaway, Gary Oldman",
+      year: 2012,
+      runtime: 165,
+      rating: 8.4,
+      genres: "neo-noir,psychological",
+      awards: "bafta",
+      formats: "70mm,4k",
+      badge1: "70mm IMAX",
+      badge2: "TRILOGY FINALE",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuAEdLiFzrVcxSCekVpcEsYr_T-5wAUBJBxKSuOd3923hb832wGQaQX0UHv0rxo1nKWxPM4Q4d3nbwjA6zm2M39Vof0xMmruBrejOEBIWZ0qJ--DYX_5gSl9vM2hbRUndAEOa_ffiNwjw3qMEhwMrtoPs65LCmWRxX6jCtzqyvF4HsewPAhwOi3LUe0VWhcDEF-SA4KMMjMbGNzcrjxkioeVhKAXFqvtn4yZtGki31Q",
+      subtitle: "Dir. Christopher Nolan • Christian Bale, Tom Hardy"
+    },
+    {
+      title: "Following",
+      director: "Christopher Nolan",
+      actors: "Jeremy Theobald, Alex Haw, Lucy Russell",
+      year: 1998,
+      runtime: 70,
+      rating: 7.5,
+      genres: "neo-noir,avant-garde,psychological",
+      awards: "cannes",
+      formats: "4k",
+      badge1: "16MM RESTORATION",
+      badge2: "DEBUT AUTEUR",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuA5YoJ2vk_AaioMPk7eG_210z_Mg1zfyL3VLZ7gPOxeY8QDLdYtYLooAb_e3_s7o0ZwbIL05aJ2iEyorlDIvYqn8KhlM4loj5V09joxGXvdeXFs_GThHnlCxwNsonytOLcfL4UGLJOnvR3puDHlemd5TGHGRC81HqHYSo10QzSDNBWnVa8AR5l-S5donQoRJxMIZiAgD6ZG4EP5j1aCVzOpJCkVQwITU7c4F0ES5XY",
+      subtitle: "Dir. Christopher Nolan • Jeremy Theobald"
+    },
+    {
+      title: "Insomnia",
+      director: "Christopher Nolan",
+      actors: "Al Pacino, Robin Williams, Hilary Swank",
+      year: 2002,
+      runtime: 118,
+      rating: 7.2,
+      genres: "psychological,neo-noir",
+      awards: "bafta",
+      formats: "4k,audio",
+      badge1: "DOLBY VISION",
+      badge2: "MIDNIGHT SUN",
+      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuD006TmqTOiHhVxRJdOOgR0H41lRP6j26OmUxFbaSJe74HPdvOB02om2MPfg1678tKAp6IJoDxd4QinY0Ibm6qtmJm3zsBwWf3Jr0LUGkJmQn3AZGgouI1Nw5FcMY6YewvXjb5K8Ut29eM7Gw_ZtTig-kWkEIq5yAXd78SapV8-UT3Oe7nsA-uupJDQe0asF9wpzQt01IrQnsViyTq2qFYp4C3Gqn0rq7qK4Q3FaNM",
+      subtitle: "Dir. Christopher Nolan • Al Pacino, Robin Williams"
+    }
+  ];
+
+  // Micro-toast feedback
+  function showToast(message, icon = 'tune') {
+    const toast = document.getElementById('toast-notification');
+    const toastMsg = document.getElementById('toast-message');
+    const toastIco = document.getElementById('toast-icon');
+    if (!toast || !toastMsg) return;
+
+    toastMsg.textContent = message;
+    if (toastIco) toastIco.textContent = icon;
+    toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-16');
+    toast.classList.add('opacity-100', 'translate-y-0');
+
+    clearTimeout(window.toastTimer);
+    window.toastTimer = setTimeout(() => {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-16');
+    }, 2200);
+  }
+
+  // Follow Auteur button toggle
+  if (followBtn) {
+    followBtn.addEventListener('click', () => {
+      isFollowingRetrospective = !isFollowingRetrospective;
+      if (isFollowingRetrospective) {
+        followIcon.textContent = 'bookmark_added';
+        followIcon.style.fontVariationSettings = "'FILL' 1";
+        followText.textContent = 'Following Retrospective';
+        followBtn.classList.add('border-primary', 'text-primary');
+        showToast('Added Christopher Nolan to followed auteurs', 'bookmark');
+      } else {
+        followIcon.textContent = 'bookmark_add';
+        followIcon.style.fontVariationSettings = "'FILL' 0";
+        followText.textContent = 'Follow Retrospective';
+        followBtn.classList.remove('border-primary', 'text-primary');
+        showToast('Unfollowed retrospective', 'bookmark_remove');
+      }
+    });
+  }
+
+  // Explore Complete Filmography action
+  if (filmographyBtn) {
+    filmographyBtn.addEventListener('click', () => {
+      searchInput.value = 'Christopher Nolan';
+      currentScope = 'directors';
+      updateScopeStyles();
+      filterAndRenderMovies();
+      showToast('Viewing Christopher Nolan complete filmography', 'movie');
+    });
+  }
+
+  // Header quick search pill click
+  if (headerSearchPill) {
+    headerSearchPill.addEventListener('click', () => {
+      searchInput.focus();
+      searchInput.select();
+    });
+  }
+
+  // Main Filtering Engine
+  function filterAndRenderMovies() {
+    const query = searchInput.value.trim().toLowerCase();
+    const queryTokens = query.split(/\s+/).filter(Boolean);
+
+    // Update query label in results headline
+    if (resultsQueryLabel) {
+      resultsQueryLabel.textContent = query ? `"${searchInput.value.trim()}"` : '"All Vault Archive"';
+    }
+    if (headerSearchText) {
+      headerSearchText.textContent = query ? searchInput.value.trim() : 'Search catalog...';
+    }
+
+    // Checkboxes collected
+    const checkedAwards = Array.from(document.querySelectorAll('.filter-checkbox[data-filter="award"]:checked')).map(el => el.value);
+    const checkedGenres = Array.from(document.querySelectorAll('.filter-checkbox[data-filter="genre"]:checked')).map(el => el.value);
+    const checkedFormats = Array.from(document.querySelectorAll('.filter-checkbox[data-filter="format"]:checked')).map(el => el.value);
+
+    // Decade Slider
+    const minYear = parseInt(decadeSlider.value, 10);
+    decadeIndicator.textContent = `${minYear} — 2025`;
+
+    const allCards = Array.from(document.querySelectorAll('.movie-card'));
+    let visibleCount = 0;
+
+    allCards.forEach(card => {
+      const title = (card.getAttribute('data-title') || '').toLowerCase();
+      const director = (card.getAttribute('data-director') || '').toLowerCase();
+      const actors = (card.getAttribute('data-actors') || '').toLowerCase();
+      const cardYear = parseInt(card.getAttribute('data-year'), 10) || 2000;
+      const cardRating = parseFloat(card.getAttribute('data-rating')) || 0;
+      const cardGenres = (card.getAttribute('data-genres') || '').split(',').map(s => s.trim());
+      const cardAwards = (card.getAttribute('data-awards') || '').split(',').map(s => s.trim());
+      const cardFormats = (card.getAttribute('data-formats') || '').split(',').map(s => s.trim());
+
+      let matchesSearch = true;
+
+      if (queryTokens.length > 0) {
+        if (currentScope === 'all') {
+          matchesSearch = queryTokens.every(tok => 
+            title.includes(tok) || 
+            director.includes(tok) || 
+            actors.includes(tok) || 
+            cardGenres.some(g => g.includes(tok))
+          );
+        } else if (currentScope === 'directors') {
+          matchesSearch = queryTokens.every(tok => director.includes(tok));
+        } else if (currentScope === 'actors') {
+          matchesSearch = queryTokens.every(tok => actors.includes(tok));
+        } else if (currentScope === 'genres') {
+          matchesSearch = queryTokens.every(tok => cardGenres.some(g => g.includes(tok)));
+        } else if (currentScope === 'soundtracks') {
+          // Soundtracks scope: searches title or soundtrack format
+          matchesSearch = queryTokens.every(tok => 
+            title.includes(tok) || 
+            tok.includes('hans') || 
+            tok.includes('zimmer') || 
+            tok.includes('soundtrack') || 
+            tok.includes('score') ||
+            tok.includes('music') ||
+            cardFormats.includes('audio')
+          );
+        }
+      }
+
+      // Decade filter
+      const matchesYear = cardYear >= minYear;
+
+      // Rating filter
+      const matchesRating = activeRatingThreshold === null || cardRating >= activeRatingThreshold;
+
+      // Award checkboxes: if any checked, movie must match at least one
+      const matchesAwards = checkedAwards.length === 0 || checkedAwards.some(a => cardAwards.includes(a));
+
+      // Genre checkboxes: if any checked, movie must match at least one
+      const matchesGenres = checkedGenres.length === 0 || checkedGenres.some(g => cardGenres.includes(g));
+
+      // Format checkboxes: if any checked, movie must match at least one
+      const matchesFormats = checkedFormats.length === 0 || checkedFormats.some(f => cardFormats.includes(f));
+
+      const isVisible = matchesSearch && matchesYear && matchesRating && matchesAwards && matchesGenres && matchesFormats;
+
+      if (isVisible) {
+        card.classList.remove('hidden');
+        card.classList.add('card-fade-enter');
+        visibleCount++;
+      } else {
+        card.classList.add('hidden');
+        card.classList.remove('card-fade-enter');
+      }
+    });
+
+    // Sort visible cards
+    sortCards();
+
+    // Update Counter
+    if (resultsCount) {
+      resultsCount.textContent = visibleCount;
+    }
+
+    // Toggle Empty State
+    if (visibleCount === 0) {
+      emptyState.classList.remove('hidden');
+      emptyState.classList.add('flex');
+      moviesGrid.classList.add('hidden');
+      if (loadMoreSection) loadMoreSection.classList.add('hidden');
+    } else {
+      emptyState.classList.add('hidden');
+      emptyState.classList.remove('flex');
+      moviesGrid.classList.remove('hidden');
+      if (loadMoreSection) loadMoreSection.classList.remove('hidden');
+    }
+
+    // Spotlight card visibility: show if Nolan is relevant in search
+    if (auteurCard) {
+      if (query && !query.includes('nolan') && !query.includes('christopher') && !query.includes('70mm') && currentScope !== 'all') {
+        auteurCard.classList.add('hidden');
+      } else {
+        auteurCard.classList.remove('hidden');
+      }
+    }
+  }
+
+  // Sorting functionality
+  function sortCards() {
+    const sortVal = sortSelect.value;
+    const cards = Array.from(document.querySelectorAll('.movie-card'));
+
+    cards.sort((a, b) => {
+      const ratingA = parseFloat(a.getAttribute('data-rating')) || 0;
+      const ratingB = parseFloat(b.getAttribute('data-rating')) || 0;
+      const yearA = parseInt(a.getAttribute('data-year'), 10) || 0;
+      const yearB = parseInt(b.getAttribute('data-year'), 10) || 0;
+      const runtimeA = parseInt(a.getAttribute('data-runtime'), 10) || 0;
+      const runtimeB = parseInt(b.getAttribute('data-runtime'), 10) || 0;
+      const titleA = (a.getAttribute('data-title') || '').toLowerCase();
+      const titleB = (b.getAttribute('data-title') || '').toLowerCase();
+
+      switch (sortVal) {
+        case 'rating':
+          return ratingB - ratingA;
+        case 'year-desc':
+          return yearB - yearA;
+        case 'year-asc':
+          return yearA - yearB;
+        case 'title':
+          return titleA.localeCompare(titleB);
+        case 'runtime':
+          return runtimeB - runtimeA;
+        default:
+          return 0;
+      }
+    });
+
+    cards.forEach(c => moviesGrid.appendChild(c));
+  }
+
+  // Event: Search Input
+  searchInput.addEventListener('input', () => {
+    filterAndRenderMovies();
+  });
+
+  // Event: Clear button & ESC
+  function clearAllSearch() {
+    searchInput.value = '';
+    searchInput.focus();
+    filterAndRenderMovies();
+    showToast('Search query cleared', 'backspace');
+  }
+
+  clearSearchBtn.addEventListener('click', clearAllSearch);
+  if (escBadge) escBadge.addEventListener('click', clearAllSearch);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      clearAllSearch();
+    } else if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+
+  // Event: Scope Pills
+  function updateScopeStyles() {
+    scopePills.forEach(pill => {
+      const scope = pill.getAttribute('data-scope');
+      if (scope === currentScope) {
+        pill.className = 'scope-pill px-3.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md font-semibold transition-all shadow-[0_0_12px_rgba(214,168,95,0.2)]';
+      } else {
+        pill.className = 'scope-pill px-3.5 py-1 rounded-full bg-surface-container border border-outline-variant/50 text-on-surface-variant hover:text-on-surface hover:border-primary/50 font-label-md text-label-md transition-all';
+      }
+    });
+  }
+
+  scopePills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      currentScope = pill.getAttribute('data-scope');
+      updateScopeStyles();
+      filterAndRenderMovies();
+      showToast(`Search scope set to: ${pill.textContent.trim()}`, 'filter_alt');
+    });
+  });
+
+  // Event: Recent tags and Trending tags
+  function applyQuery(tagText) {
+    searchInput.value = tagText;
+    searchInput.focus();
+    filterAndRenderMovies();
+    showToast(`Filtering for "${tagText}"`, 'search');
+  }
+
+  document.querySelectorAll('.recent-search-chip').forEach(chip => {
+    chip.addEventListener('click', (e) => {
+      if (e.target.classList.contains('remove-chip-btn')) {
+        e.stopPropagation();
+        chip.remove();
+        showToast('Recent search removed', 'close');
+        if (recentChipsContainer.children.length === 0) {
+          recentWrapper.classList.add('hidden');
+        }
+        return;
+      }
+      const q = chip.getAttribute('data-query');
+      applyQuery(q);
+    });
+  });
+
+  document.querySelectorAll('.trending-tag').forEach(tag => {
+    tag.addEventListener('click', () => {
+      const q = tag.getAttribute('data-query');
+      applyQuery(q);
+    });
+  });
+
+  // Clear History
+  if (clearHistoryBtn) {
+    clearHistoryBtn.addEventListener('click', () => {
+      if (recentChipsContainer) {
+        recentChipsContainer.innerHTML = '';
+        recentWrapper.classList.add('hidden');
+        showToast('Recent search history cleared', 'delete_sweep');
+      }
+    });
+  }
+
+  // Checkboxes
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      filterAndRenderMovies();
+      showToast('Filters updated', 'tune');
+    });
+  });
+
+  // Decade Slider
+  decadeSlider.addEventListener('input', () => {
+    decadeIndicator.textContent = `${decadeSlider.value} — 2025`;
+    filterAndRenderMovies();
+  });
+
+  // Minimum Critic Score Buttons
+  ratingButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const val = parseFloat(btn.getAttribute('data-score'));
+      if (activeRatingThreshold === val) {
+        // Toggle off
+        activeRatingThreshold = null;
+        btn.className = 'rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all';
+        showToast('Rating filter removed', 'star_outline');
+      } else {
+        // Activate
+        activeRatingThreshold = val;
+        ratingButtons.forEach(b => {
+          b.className = 'rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all';
+        });
+        btn.className = 'rating-btn flex-1 py-1.5 rounded bg-primary-container text-on-primary-container font-semibold text-body-sm shadow-[0_0_12px_rgba(214,168,95,0.2)]';
+        showToast(`Critic score >= ${val}`, 'star');
+      }
+      filterAndRenderMovies();
+    });
+  });
+
+  // Reset Filters Functionality
+  function resetAllFilters() {
+    // Reset inputs
+    searchInput.value = '';
+    currentScope = 'all';
+    updateScopeStyles();
+
+    // Reset Checkboxes
+    checkboxes.forEach(cb => {
+      cb.checked = false;
+    });
+
+    // Reset default decade
+    decadeSlider.value = '1960';
+    decadeIndicator.textContent = '1960 — 2025';
+
+    // Reset ratings
+    activeRatingThreshold = null;
+    ratingButtons.forEach(btn => {
+      btn.className = 'rating-btn flex-1 py-1.5 rounded bg-surface-container border border-outline-variant/60 text-on-surface-variant text-body-sm hover:border-primary transition-all';
+    });
+
+    // Reset sort
+    sortSelect.value = 'rating';
+
+    filterAndRenderMovies();
+    showToast('All curatorial filters reset to vault default', 'restart_alt');
+  }
+
+  if (resetFiltersBtn) resetFiltersBtn.addEventListener('click', resetAllFilters);
+  if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAllFilters);
+
+  // Sort Dropdown Change
+  sortSelect.addEventListener('change', () => {
+    sortCards();
+    showToast(`Sorted by: ${sortSelect.options[sortSelect.selectedIndex].text}`, 'sort');
+  });
+
+  // Load Additional 4 Vault Masterprints
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener('click', () => {
+      if (additionalLoaded) {
+        showToast('All 12 archived master entries are currently loaded', 'check_circle');
+        return;
+      }
+
+      additionalFilmsData.forEach(film => {
+        const card = document.createElement('div');
+        card.setAttribute('data-title', film.title);
+        card.setAttribute('data-director', film.director);
+        card.setAttribute('data-actors', film.actors);
+        card.setAttribute('data-year', film.year);
+        card.setAttribute('data-runtime', film.runtime);
+        card.setAttribute('data-rating', film.rating);
+        card.setAttribute('data-genres', film.genres);
+        card.setAttribute('data-awards', film.awards);
+        card.setAttribute('data-formats', film.formats);
+        card.className = 'movie-card group relative rounded-xl bg-surface-container-low border border-outline-variant/40 hover:border-primary/60 transition-all duration-300 flex flex-col overflow-hidden hover:scale-[1.02] hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.2)] card-fade-enter';
+
+        card.innerHTML = `
+          <div class="aspect-[2/3] w-full relative overflow-hidden bg-surface-container">
+            <img alt="${film.title} Master Edition" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="${film.img}"/>
+            <div class="absolute top-3 left-3 flex flex-col gap-1.5">
+              <span class="px-2 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md border border-primary/30 text-primary font-label-sm text-label-sm uppercase">${film.badge1}</span>
+              <span class="px-2 py-0.5 rounded-full bg-surface-container-high/80 backdrop-blur-md border border-outline-variant/40 text-on-surface font-label-sm text-label-sm uppercase">${film.badge2}</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent opacity-80 group-hover:opacity-95 transition-opacity"></div>
+            <button class="absolute bottom-3 right-3 w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform translate-y-2 group-hover:translate-y-0 shadow-lg" title="Play Trailer">
+              <span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+            </button>
+          </div>
+          <div class="p-4 flex flex-col gap-1.5 flex-grow">
+            <div class="flex items-center justify-between text-body-sm text-on-surface-variant">
+              <span>${film.year} • ${film.runtime} min</span>
+              <div class="flex items-center gap-1 text-primary">
+                <span class="material-symbols-outlined text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="font-bold text-xs">${film.rating}</span>
+              </div>
+            </div>
+            <h4 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">${film.title}</h4>
+            <p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">${film.subtitle}</p>
+          </div>
+        `;
+        moviesGrid.appendChild(card);
+      });
+
+      additionalLoaded = true;
+      document.getElementById('load-more-text').textContent = 'All Vault Entries Restored';
+      document.getElementById('load-more-icon').textContent = 'done_all';
+      loadMoreBtn.classList.add('opacity-75', 'cursor-default');
+      vaultEntriesCount.textContent = 'Showing 12 of 12 curated master entries';
+
+      filterAndRenderMovies();
+      showToast('Loaded 4 additional restored prints into vault', 'library_add');
+    });
+  }
+
+  // Initial Run
+  filterAndRenderMovies();
+});
+</script>
+<script src="js/site-navigation.js"></script></body></html>

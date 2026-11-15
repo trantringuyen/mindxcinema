@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA | INTERSTELLAR</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            surface: "#111318",
+            error: "#ffb4ab",
+            "outline-variant": "#4f4538",
+            tertiary: "#c3cbdb",
+            "surface-container-highest": "#33353a",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            secondary: "#e7c180",
+            outline: "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            primary: "#f4c377",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            background: "#111318"
+          },
+          spacing: {
+            margin: "3rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          fontFamily: {
+            "title-md": ["Plus Jakarta Sans", "sans-serif"],
+            "body-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "display-hero": ["Playfair Display", "serif"],
+            "display-hero-mobile": ["Playfair Display", "serif"],
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Playfair Display", "serif"],
+            "headline-md": ["Playfair Display", "serif"],
+            "label-sm": ["Plus Jakarta Sans", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "label-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-sm": ["Plus Jakarta Sans", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .gold-glow { box-shadow: 0 12px 32px -8px rgba(214, 168, 95, 0.32); }
+    .custom-scrollbar::-webkit-scrollbar { height: 4px; width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #111318; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #4f4538; border-radius: 9999px; }
+    @keyframes fadeInReview {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeInReview { animation: fadeInReview 0.35s ease-out forwards; }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col relative selection:bg-primary-container selection:text-surface-container-lowest">
+<!-- TOP APP BAR -->
+<header class="fixed top-0 left-0 w-full z-40 flex items-center justify-between px-6 md:px-margin py-3.5 bg-surface/90 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-6">
+<a class="font-headline-md text-2xl tracking-wider text-primary uppercase font-bold hover:opacity-90 transition-opacity" href="index.html">
+      MINDX CINEMA
+    </a>
+<nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest font-semibold">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="explore.html">Explore</a>
+<a class="text-primary border-b-2 border-primary pb-0.5" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="explore.html">Series</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors" href="watch-list.html">Watchlist</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 relative">
+<div class="relative hidden sm:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-outline text-lg pointer-events-none">search</span>
+<input class="bg-surface-container-lowest text-on-surface text-xs pl-9 pr-4 py-1.5 rounded-full border border-outline-variant/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none w-48 lg:w-60 placeholder:text-outline" id="header-search-input" placeholder="Search archives, directors, 4K..." type="text"/>
+</div>
+<div class="relative">
+<button aria-label="Notifications" class="p-2 rounded-full text-on-surface-variant hover:text-primary transition-colors focus:outline-none" id="notif-toggle-btn">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary ring-2 ring-surface" id="notif-badge-dot"></span>
+</button>
+<div class="hidden absolute right-0 mt-3 w-80 bg-surface-container-low border border-outline-variant/60 rounded-xl shadow-2xl p-4 z-50 backdrop-blur-xl" id="notifications-tray">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-base">notifications</span>
+<span class="text-xs text-on-surface font-semibold uppercase tracking-wider">Cinephile Dispatches</span>
+</div>
+<button class="text-[10px] text-primary hover:underline uppercase tracking-wider font-semibold" id="mark-read-btn">Mark read</button>
+</div>
+<div class="space-y-2.5 pt-3 max-h-64 overflow-y-auto custom-scrollbar">
+<div class="p-2 rounded-lg bg-surface-container/70 border border-primary/25 text-xs">
+<span class="text-[10px] font-bold text-primary tracking-widest uppercase block">70mm IMAX Premieres</span>
+<p class="text-on-surface mt-1 leading-snug">Interstellar 10th Anniversary IMAX 70mm archival transfer is now available for streaming.</p>
+</div>
+<div class="p-2 rounded-lg bg-surface-container/70 border border-outline-variant/30 text-xs">
+<span class="text-[10px] font-bold text-secondary tracking-widest uppercase block">Curator Series</span>
+<p class="text-on-surface mt-1 leading-snug">Christopher Nolan curated director monograph updated with archival commentary.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-center pl-2 border-l border-outline-variant/30 relative">
+<button aria-label="VIP Menu" class="group cursor-pointer focus:outline-none flex items-center relative" id="vip-menu-btn">
+<div class="w-8 h-8 rounded-full ring-1 ring-primary/40 group-hover:ring-primary overflow-hidden bg-primary/20 text-primary flex items-center justify-center font-bold text-xs">VIP</div>
+<span class="absolute bottom-0 right-0 w-2 h-2 bg-primary rounded-full ring-2 ring-surface"></span>
+</button>
+<div class="hidden absolute right-0 top-11 w-56 bg-surface-container-low border border-outline-variant/60 rounded-xl shadow-2xl p-3 z-50 backdrop-blur-xl text-xs" id="vip-dropdown">
+<div class="pb-2 border-b border-outline-variant/30 flex items-center gap-2.5">
+<div class="w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">VIP</div>
+<div>
+<div class="font-semibold text-on-surface">Cinephile Patron</div>
+<div class="text-[10px] text-primary">Archival Tier Active</div>
+</div>
+</div>
+<div class="py-2 divide-y divide-outline-variant/20">
+<a class="vip-item flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors" href="watch-list.html">
+<span class="material-symbols-outlined text-sm">video_library</span> My Cinephile Vault (18)
+          </a>
+<a class="vip-item flex items-center gap-2 py-1.5 text-on-surface-variant hover:text-primary transition-colors" href="index.html">
+<span class="material-symbols-outlined text-sm">high_quality</span> Lossless Audio Settings
+          </a>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- MAIN HERO & CONTENT -->
+<main class="flex-grow pt-16">
+<!-- HERO BACKDROP -->
+<section class="relative w-full min-h-[82vh] lg:min-h-[88vh] flex items-end overflow-hidden pb-14">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUEC3nXhX7ctb3ifv14pnTagJX-r5ocdsqmByKmpx_UlSRZozA-lsTESkXOsAymF9lQqQULadcYWzlL7jgca7VkNdZ7trpvkk7pK0tdb62e6O3n2bSwgSPcIIslfiWD7UJVHRMUBGZaD5iwoyuXr8X4YleVU_KFGqVCezcv-PKeIBqt5TwXTv7DNsDk18LnvphULvP9qkETIu7rHmTsHIQOAYU2msFZk0nhYtAuBA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/30"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent"></div>
+<div class="absolute top-0 inset-x-0 h-36 bg-gradient-to-b from-surface/90 to-transparent"></div>
+</div>
+<div class="relative z-10 w-full px-6 md:px-margin max-w-7xl mx-auto flex flex-col gap-5">
+<!-- Badges -->
+<div class="flex flex-wrap items-center gap-2 text-xs">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container/20 text-primary border border-primary/40 font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span> IMDb 8.7
+        </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-container/20 text-primary border border-primary/40 font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span> RT 94%
+        </span>
+<span class="px-2.5 py-1 rounded-full text-on-surface-variant bg-surface-container-high/70 border border-outline-variant/40">2014</span>
+<span class="px-2.5 py-1 rounded-full text-on-surface-variant bg-surface-container-high/70 border border-outline-variant/40">PG-13</span>
+<span class="px-2.5 py-1 rounded-full text-on-surface-variant bg-surface-container-high/70 border border-outline-variant/40">2h 49m</span>
+<span class="px-2.5 py-1 rounded-full text-secondary bg-secondary-container/40 border border-secondary/50 font-bold uppercase">IMAX 70MM / 4K UHD</span>
+<span class="px-2.5 py-1 rounded-full text-on-surface-variant bg-surface-container-high/70 border border-outline-variant/40">Dolby Atmos</span>
+</div>
+<!-- Title & Quote -->
+<div class="space-y-2">
+<h1 class="text-4xl md:text-6xl font-display-hero text-on-surface font-bold tracking-tight drop-shadow-xl">
+          INTERSTELLAR
+        </h1>
+<p class="text-lg md:text-2xl font-headline-md text-primary/95 italic">
+          "Mankind was born on Earth. It was never meant to die here."
+        </p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<button class="flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-primary-container hover:bg-primary text-surface-container-lowest font-bold text-xs uppercase tracking-wider transition-all duration-300 gold-glow transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer" id="hero-watch-movie-btn">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+<span>Watch Movie (Play)</span>
+</button>
+<button class="flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-high/80 hover:bg-surface-container-highest border border-outline-variant text-on-surface font-semibold text-xs tracking-wider transition-all duration-300 backdrop-blur-md hover:border-primary/40 cursor-pointer" id="hero-play-trailer-btn">
+<span class="material-symbols-outlined text-lg text-primary">movie</span>
+<span>Play Official Trailer</span>
+</button>
+<button aria-label="Add to Watchlist" class="p-3.5 rounded-full bg-surface-container-high/70 hover:bg-surface-container border border-outline-variant/60 text-on-surface hover:text-primary hover:border-primary/50 transition-all backdrop-blur-md cursor-pointer" id="hero-watchlist-btn" title="Add to Watchlist">
+<span class="material-symbols-outlined text-xl">bookmark_add</span>
+</button>
+<button aria-label="Share Film" class="p-3.5 rounded-full bg-surface-container-high/70 hover:bg-surface-container border border-outline-variant/60 text-on-surface hover:text-primary hover:border-primary/50 transition-all backdrop-blur-md cursor-pointer" id="hero-share-btn" title="Share Link">
+<span class="material-symbols-outlined text-xl">share</span>
+</button>
+<button aria-label="Download Archival Master" class="p-3.5 rounded-full bg-surface-container-high/70 hover:bg-surface-container border border-outline-variant/60 text-on-surface hover:text-primary hover:border-primary/50 transition-all backdrop-blur-md cursor-pointer" id="hero-download-btn" title="Download Master">
+<span class="material-symbols-outlined text-xl">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- CONTENT GRID -->
+<div class="px-6 md:px-margin max-w-7xl mx-auto py-12 space-y-12">
+<!-- SECTION 1: SYNOPSIS & TECHNICAL SPECS -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<article class="lg:col-span-8 bg-surface-container-low/70 border border-outline-variant/30 rounded-xl p-6 md:p-8 backdrop-blur-md flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-center gap-2 text-primary text-xs uppercase tracking-widest font-semibold">
+<span class="material-symbols-outlined text-base">menu_book</span>
+<span>Curatorial Overview</span>
+</div>
+<h2 class="text-2xl md:text-3xl font-headline-md text-on-surface">
+            The Architecture of Time, Gravity, and Human Devotion
+          </h2>
+<p class="text-base text-on-surface-variant leading-relaxed font-light">
+            In Earth’s twilight era, catastrophic dust blights consume planetary agriculture, threatening human survival. Cooper, an ex-NASA pilot turned dust farmer, stumbles into a secretive clandestine facility orchestrated by Professor Brand. Humanity’s remaining beacon relies on an inexplicable gravitational anomaly near Saturn: a traversable wormhole leading to a distant galaxy holding three candidate habitable worlds orbiting a titanic black hole named Gargantua.
+          </p>
+<p class="text-sm text-tertiary leading-relaxed">
+            Driven by love across cosmic chasms and anchored by relentless relativity equations, Cooper and Dr. Amelia Brand embark on the Endurance mission—leaving children and eras behind to traverse quantum horizons where one hour on an ocean surface equates to seven standard years of earthly extinction.
+          </p>
+</div>
+<div class="pt-6 flex flex-wrap gap-2 border-t border-outline-variant/20 mt-6 text-xs uppercase tracking-wider">
+<span class="px-3 py-1 bg-surface-container text-primary rounded-full border border-outline-variant/30">Existential Sci-Fi</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full border border-outline-variant/30">Astrophysics Fidelity</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full border border-outline-variant/30">Academy Award Winner: Visual Effects</span>
+<span class="px-3 py-1 bg-surface-container text-on-surface-variant rounded-full border border-outline-variant/30">Hans Zimmer Score</span>
+</div>
+</article>
+<aside class="lg:col-span-4 bg-surface-container-low/70 border border-outline-variant/30 rounded-xl p-6 backdrop-blur-md flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<span class="text-xs uppercase tracking-wider text-primary font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">memory</span> Technical Master Specs
+            </span>
+<button class="px-2 py-0.5 rounded text-[10px] font-bold bg-primary-container/20 hover:bg-primary-container/30 text-primary border border-primary/40 uppercase transition-colors" id="archival-info-badge">Archival</button>
+</div>
+<dl class="divide-y divide-outline-variant/20 text-xs mt-3 space-y-2">
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Aspect Ratio</dt>
+<dd class="text-on-surface font-semibold text-right">2.39:1 / 1.43:1 (IMAX Sequences)</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Resolution</dt>
+<dd class="text-primary font-semibold">Master 4K DCI (Native 70mm)</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Audio Track</dt>
+<dd class="text-on-surface font-semibold text-right">Dolby Atmos, 5.1 DTS-HD Master</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Dynamic Range</dt>
+<dd class="text-on-surface font-semibold">Dolby Vision &amp; HDR10+</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Subtitles</dt>
+<dd class="text-on-surface font-semibold">14 Languages Available</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Color Space</dt>
+<dd class="text-on-surface font-semibold">BT.2020 Mastered</dd>
+</div>
+<div class="flex justify-between py-2">
+<dt class="text-on-surface-variant">Filming Locations</dt>
+<dd class="text-on-surface font-semibold">Svínafellsjökull, Iceland; Alberta</dd>
+</div>
+</dl>
+</div>
+<div class="mt-4 p-3 bg-surface-container rounded-lg border border-primary/20 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div class="text-[11px] leading-tight text-on-surface-variant">
+<span class="text-primary font-semibold block">MINDX Certified Master</span>
+            Transferred directly from 70mm original negative prints.
+          </div>
+</div>
+</aside>
+</section>
+<!-- SECTION 2: CAST & DIRECTORIAL CAROUSEL -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<span class="text-xs uppercase tracking-widest text-primary flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-sm">groups</span> Principals &amp; Creators
+          </span>
+<h2 class="text-2xl font-headline-md text-on-surface font-semibold">Cast &amp; Visionary Crew</h2>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Previous cast" class="p-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="cast-scroll-prev">
+<span class="material-symbols-outlined text-base">arrow_back</span>
+</button>
+<button aria-label="Next cast" class="p-2 rounded-full border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="cast-scroll-next">
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="flex items-stretch gap-5 overflow-x-auto pb-4 custom-scrollbar scroll-smooth" id="cast-track">
+<!-- Card 1: Christopher Nolan -->
+<div class="cast-card min-w-[200px] w-[220px] bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1" data-person="Christopher Nolan">
+<div class="h-60 w-full relative overflow-hidden bg-surface-container-highest">
+<img alt="Portrait of Christopher Nolan" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpH0pDzu5NCRy3i_nTbO09HZ8ZwQrZeLTmLYXS1eXYMdcirDXfNuxA6758h9o5K8R_6Z0ZJqmxqOhUHUq7gN8UFV_gSZQFRFGQ1b1ZwaHk3jK6DIj1fcYTsn0aajBsxypdYQ7F9SlZkgOQuU0biOh9qYkmA5QLvPYiHUxX_BQG8epl5QfyKc5Eu8WczDlcwcwt8l8exDF5C-et-0ThrNaDEVlxMDULueHhTcC_xV4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary border border-primary/30 uppercase backdrop-blur-md">Director</span>
+</div>
+<div class="p-3.5 space-y-1">
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Christopher Nolan</h3>
+<p class="text-xs text-on-surface-variant">Director &amp; Co-Writer</p>
+<p class="text-[10px] text-tertiary pt-1">Oscar Winner • DGA Nominee</p>
+</div>
+</div>
+<!-- Card 2: Matthew McConaughey -->
+<div class="cast-card min-w-[200px] w-[220px] bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1" data-person="Matthew McConaughey">
+<div class="h-60 w-full relative overflow-hidden bg-surface-container-highest">
+<img alt="Matthew McConaughey as Cooper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAckUD9XBYXKy7E3SWS_X98QBWCZnMGd4YtRMO0AfxmRZFgfqn-dM3quXQohnrQs4T8ohMomL515tH7CHGdHomKQR1FQBJ-WwV8OXU9dJJVkxI-80vFjaAjC9AQnIREPkqW2bdG2GhXnjEHoRvq_aURL8r_0NKcO1PMXfExqKS-g-tPsXL1oGj2fbuCTaQl4u73F6D7lHHR9V-TZcTNvzzZwaMMyUzt1H2gNEUJgSQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-3.5 space-y-1">
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Matthew McConaughey</h3>
+<p class="text-xs text-primary font-medium">Cooper</p>
+<p class="text-[10px] text-tertiary pt-1">Lead Actor • Oscar Winner</p>
+</div>
+</div>
+<!-- Card 3: Anne Hathaway -->
+<div class="cast-card min-w-[200px] w-[220px] bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1" data-person="Anne Hathaway">
+<div class="h-60 w-full relative overflow-hidden bg-surface-container-highest">
+<img alt="Anne Hathaway as Dr. Amelia Brand" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzGXoZWNbYqM9rI6-z2hFK2vQoPfBB_5dC3o_vz3-6LKe3L1wdTcAbCT5L3AC-g9p-PnRP1UUhgTt4val1W-72_CMU64rvFJmuz7qZ6tFcSVGFpMxz99Qqj5r_smNWNKMKchJkl6gZjCIq5GFEgHqbB-iRXEJkMyh2687WN9snahQQoTaNE20FTdhBZ1veHc5kry7IdCD8Beqd_MZk6C2TKHwlnDtSE00G5KoRxUY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-3.5 space-y-1">
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Anne Hathaway</h3>
+<p class="text-xs text-primary font-medium">Dr. Amelia Brand</p>
+<p class="text-[10px] text-tertiary pt-1">Lead Actress • Oscar Winner</p>
+</div>
+</div>
+<!-- Card 4: Jessica Chastain -->
+<div class="cast-card min-w-[200px] w-[220px] bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1" data-person="Jessica Chastain">
+<div class="h-60 w-full relative overflow-hidden bg-surface-container-highest">
+<img alt="Jessica Chastain as adult Murph Cooper" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5j-qwJrnAFc7evoSyueGpwKsRZ3ruI9GrA91xPW_HUo6rfot0GMyxcJfWHLciuU9-qIOjImuFtJRbgIYFMK8JgISNpaaaud5m7e4kWeN7_HkL58yV-uEGlWY-Dgf5nCUg2vKYdtq2WBlYgJwD7_Z1ncYhdoVNeMlbN7Mffo84rXhIB-3pPmz4GWEjR6mNpxOnNbxxs9Su1YVm1gxsWXanQmrnvVmvloQrypi2Pxo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+</div>
+<div class="p-3.5 space-y-1">
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Jessica Chastain</h3>
+<p class="text-xs text-primary font-medium">Murph Cooper (Adult)</p>
+<p class="text-[10px] text-tertiary pt-1">Supporting Actress • Oscar Winner</p>
+</div>
+</div>
+<!-- Card 5: Hans Zimmer -->
+<div class="cast-card min-w-[200px] w-[220px] bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 cursor-pointer transform hover:-translate-y-1" data-person="Hans Zimmer">
+<div class="h-60 w-full relative overflow-hidden bg-surface-container-highest">
+<img alt="Hans Zimmer composer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYExYa9WMslOKSl8bPORao4wiDb9chdKAuXpvdNRcg-kp6_oTpIu4K9FW_-Mhd_edhYjnx_sMxivF1eqJ_uQd5e9c1ehAG_s8cjZaNOpDJXFSoRh-nAh8jJU6HHFVoXPejfR-U2YnJ-SOhGeJSAwHtL97cqAd4vPs7sOZo65VYwNGgoHZHsi5T176cPcd_-CXYQjVezKxCpSgn1VomSWhBPP4ok5FZ2TA4YVrCFeM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"></div>
+<span class="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-primary/20 text-primary border border-primary/30 uppercase backdrop-blur-md">Composer</span>
+</div>
+<div class="p-3.5 space-y-1">
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Hans Zimmer</h3>
+<p class="text-xs text-on-surface-variant">Original Score</p>
+<p class="text-[10px] text-tertiary pt-1">Two-time Oscar Winner • BAFTA</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: COMMUNITY REVIEWS & RATING BREAKDOWN -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<span class="text-xs uppercase tracking-widest text-primary flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-sm">rate_review</span> Cinephile Discourse
+          </span>
+<h2 class="text-2xl font-headline-md text-on-surface font-semibold">Community Critical Reception</h2>
+</div>
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container-high border border-primary/40 hover:border-primary text-primary text-xs font-semibold uppercase tracking-wider transition-all hover:bg-primary-container/10 cursor-pointer" id="open-review-modal-btn">
+<span class="material-symbols-outlined text-base">edit</span>
+<span>Write a Review</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Breakdown Card -->
+<div class="lg:col-span-4 bg-surface-container-low border border-outline-variant/30 rounded-xl p-6 backdrop-blur-md flex flex-col justify-between">
+<div class="space-y-4">
+<div class="flex items-baseline gap-2">
+<span class="text-5xl font-display-hero text-primary font-bold" id="average-score-display">4.9</span>
+<span class="text-on-surface-variant text-sm font-medium">/ 5.0</span>
+</div>
+<p class="text-xs text-tertiary" id="total-reviews-caption">Based on 14,820 Verified Cinephile Members</p>
+<div class="space-y-2 pt-2 text-xs">
+<div class="flex items-center gap-3">
+<span class="w-10 text-on-surface-variant">5 Star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 88%;"></div>
+</div>
+<span class="w-8 text-right font-medium text-on-surface">88%</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-10 text-on-surface-variant">4 Star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary/70 rounded-full" style="width: 9%;"></div>
+</div>
+<span class="w-8 text-right font-medium text-on-surface">9%</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-10 text-on-surface-variant">3 Star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline rounded-full" style="width: 2%;"></div>
+</div>
+<span class="w-8 text-right font-medium text-on-surface">2%</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-10 text-on-surface-variant">2 Star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-outline-variant rounded-full" style="width: 0.6%;"></div>
+</div>
+<span class="w-8 text-right font-medium text-on-surface">&lt;1%</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="w-10 text-on-surface-variant">1 Star</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-error/50 rounded-full" style="width: 0.4%;"></div>
+</div>
+<span class="w-8 text-right font-medium text-on-surface">&lt;1%</span>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 mt-4 text-[11px] text-tertiary">
+            Verified review criteria: Requires logged playback on MINDX Cinema platform or registered 70mm festival ticket.
+          </div>
+</div>
+<!-- Reviews Stream -->
+<div class="lg:col-span-8 space-y-4" id="reviews-stream-container">
+<!-- Review 1 -->
+<article class="review-article bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 backdrop-blur-md space-y-3 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<img alt="Julian Vance" class="w-10 h-10 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGOCW0qSBx52NdLOyXGpO6IJNTWGHppjWiuASS9AMMimQU6QQ32phhPaUV2PUlx0ty8cqgKrRdhh848ZonVheK5H7ooGv4LVjS32_Q3NMj1FfwFFX816qI9-Y_7-NLVryanCsIJYbKtkArGOP9VXwYM7vO8MQl3eiX0qbXz6v1FGoskCCvRfmXZvVqfCX0UFqc4QalF3twWOYsT21YyF5Zszg7FnJUPFyVVAEaw5I"/>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-semibold text-on-surface">Julian Vance</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-primary/20 text-primary border border-primary/40 font-bold uppercase tracking-wider">Verified Cinephile</span>
+</div>
+<span class="text-xs text-outline">Screened on IMAX Dual Laser 70mm Format</span>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              "Interstellar achieves something extraordinary: pairing uncompromising scientific rigor via Kip Thorne’s theoretical astrophysics with an overwhelming spiritual gut-punch. Hans Zimmer’s organ score on 'No Time for Caution' remains one of the greatest synchronization feats in cinema."
+            </p>
+<div class="flex items-center justify-between pt-1 text-xs text-tertiary">
+<span>Published 3 days ago</span>
+<div class="flex items-center gap-4">
+<button class="helpful-vote-btn flex items-center gap-1.5 hover:text-primary transition-colors cursor-pointer" data-voted="false">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+<span>Helpful (<span class="vote-count">412</span>)</span>
+</button>
+<button class="reply-toggle-btn hover:text-primary transition-colors cursor-pointer">Reply</button>
+</div>
+</div>
+<div class="reply-container hidden pt-2 border-t border-outline-variant/20 space-y-2"></div>
+</article>
+<!-- Review 2 -->
+<article class="review-article bg-surface-container-low border border-outline-variant/30 rounded-xl p-5 backdrop-blur-md space-y-3 hover:border-outline-variant/60 transition-colors">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<img alt="Elena Rostova" class="w-10 h-10 rounded-full object-cover ring-1 ring-primary/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT9Hg9lnTrjZLXOYJXDZtHR6hFAqTui5bkFnZ6nlrlYUkKAucptc-Ziy5IC3K60fWFUKu7EmBfvtemaErzO1ahohUuSJFPRDeyvNImsH87LC_UmGdpIMRz3ayXxvBlh6Dq5Ug1Zh70BetX1Q2lbmiBpnjJ_aG6qCAtkbnaDOHqpn2LEUkY2maJ1AxtsiYrKs63clEf8NbyxSmHmIqBEfsnpMbHKiUoxUqo-WjRAPQ"/>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-semibold text-on-surface">Elena Rostova</h4>
+<span class="px-2 py-0.5 rounded-full text-[10px] bg-secondary-container/40 text-secondary border border-secondary/40 font-bold uppercase tracking-wider">Festival Programmer</span>
+</div>
+<span class="text-xs text-outline">Reviewed via MINDX 4K Lossless Stream</span>
+</div>
+</div>
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+              "The water world sequence alone (Miller's planet) embodies sheer cinematic suspense. The sound design’s ruthless contrast between catastrophic vacuum silence and gargantuan tidal waves is pure mastery. Ten years later, it stands taller than ever."
+            </p>
+<div class="flex items-center justify-between pt-1 text-xs text-tertiary">
+<span>Published 1 week ago</span>
+<div class="flex items-center gap-4">
+<button class="helpful-vote-btn flex items-center gap-1.5 hover:text-primary transition-colors cursor-pointer" data-voted="false">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+<span>Helpful (<span class="vote-count">289</span>)</span>
+</button>
+<button class="reply-toggle-btn hover:text-primary transition-colors cursor-pointer">Reply</button>
+</div>
+</div>
+<div class="reply-container hidden pt-2 border-t border-outline-variant/20 space-y-2"></div>
+</article>
+</div>
+</div>
+</section>
+<!-- SECTION 4: RELATED MASTERPIECES -->
+<section class="space-y-4 pt-4">
+<div class="flex items-center justify-between">
+<div class="space-y-1">
+<span class="text-xs uppercase tracking-widest text-primary flex items-center gap-1.5 font-semibold">
+<span class="material-symbols-outlined text-sm">auto_awesome</span> Curated Continuations
+          </span>
+<h2 class="text-2xl font-headline-md text-on-surface font-semibold">Related Masterpieces &amp; Recommendations</h2>
+</div>
+<button class="text-xs uppercase tracking-wider text-primary hover:underline flex items-center gap-1 cursor-pointer font-semibold" id="toggle-curated-collection-btn">
+<span id="collection-btn-text">View Complete Collection</span>
+<span class="material-symbols-outlined text-sm" id="collection-btn-icon">arrow_outward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5" id="recommendations-grid">
+<!-- 2001 -->
+<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer" data-title="2001: A Space Odyssey">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">
+<img alt="2001 A Space Odyssey" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR0zUIwrVuuhi7RWS-BvpZaB9gHI48d5URqxTlmlrSmgHtS6TZUOb0qMVY5O9lcp1Cr7JRGm5b-G5u9Uj7FQHlb9wbTD-GfpaqeaxQrQwMabSlw-IRoaTlQPHmpEC3jT0aDQbrdk_fFwV1HJmT1-AOgW3XDdH3qi1eiat4hSXkmNwyRqc2YpawfOIddJnr2GGqbVCGHjPsz3D5KuUe0oACYZEapgbrkDhj-LFvMnw"/>
+<span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase backdrop-blur-md">4K RESTORED</span>
+</div>
+<div class="p-3.5 space-y-1">
+<div class="flex items-center justify-between text-xs text-outline">
+<span>1968 • Stanley Kubrick</span>
+<span class="text-primary font-semibold">92% Match</span>
+</div>
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">2001: A Space Odyssey</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">The existential genesis of philosophical space exploration and transcendental human destiny.</p>
+</div>
+</div>
+<!-- Arrival -->
+<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer" data-title="Arrival">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">
+<img alt="Arrival" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtyAtrWdsi8loooXofLg3-ifqdnK_FadBHJNunSMRtF1OXgdTu7nJIDRhSPDLp9wdQtZU8oh15PPSfPyoVNlS_KW1HlLPmV8rz-7mpQNS-oIG79kMPRDT11qN7MND6cF1V8q3EnNE3WVvHbd2UZoBUvn6iMY-WA_pg7dzIqMMHQNo7yu3-kMlCyZqf1NIY38JCZKnwRMhrQ9mujTh49Z3vmbcBNpn1yYAORJHo3Y4"/>
+<span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase backdrop-blur-md">DOLBY VISION</span>
+</div>
+<div class="p-3.5 space-y-1">
+<div class="flex items-center justify-between text-xs text-outline">
+<span>2016 • Denis Villeneuve</span>
+<span class="text-primary font-semibold">95% Match</span>
+</div>
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Arrival</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">Non-linear linguistic immersion tackling circular time and profound parental sacrifice.</p>
+</div>
+</div>
+<!-- Blade Runner 2049 -->
+<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer" data-title="Blade Runner 2049">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">
+<img alt="Blade Runner 2049" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZRIHPUeuOI2_aWulj4pk0oOCZHyvaKJrA3USLVzuMdO_i2J4bjCWJ6TLRXUoCVvWriapX3Fik-rcNn6bhoHsR9YBRRx9Bo4Qg1A8dfvNBAe-ghZPHNeio3OjV2n9KQI281yTk7vOb-cqdUx8Gj5VtG0_J5IjxtcZxYVk_4u8pCx6OiIb6_RhfxK2emkuNc3ibPtwEjDgjhwmhE2IPTje81ENo9WSBs0WXGtPYl3g"/>
+<span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase backdrop-blur-md">IMAX 4K</span>
+</div>
+<div class="p-3.5 space-y-1">
+<div class="flex items-center justify-between text-xs text-outline">
+<span>2017 • Denis Villeneuve</span>
+<span class="text-primary font-semibold">89% Match</span>
+</div>
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Blade Runner 2049</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">Visual poetry exploring artificial souls, identity, and sacrifice in an obsidian cyber future.</p>
+</div>
+</div>
+<!-- Solaris -->
+<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all duration-300 hover:scale-[1.02] cursor-pointer" data-title="Solaris">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">
+<img alt="Solaris" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDlpRlVpncIC6ndEf206ccXhD9m6FzNTROBprQsupvLwSIgVFGMgiIlLpXkxZQcg0sFW7pp6l4buuVTXPHUqUbwbcMz7b1jHM7DEVqAy1osxZ78_Znw0T8uMvfU3-oFaYc0WIVoCKthREwR3F0IhtnJ40xy2477l3JqHR8-P1d5_01COz1yHcMJIn8cazsCI_ButWjH_CdluMT2D7aij5fSs2HFZv8r9RztUL3V-Y"/>
+<span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase backdrop-blur-md">CRITERION MASTER</span>
+</div>
+<div class="p-3.5 space-y-1">
+<div class="flex items-center justify-between text-xs text-outline">
+<span>1972 • Andrei Tarkovsky</span>
+<span class="text-primary font-semibold">91% Match</span>
+</div>
+<h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Solaris</h3>
+<p class="text-xs text-on-surface-variant line-clamp-2">A haunting psychological descent into memory, grief, and an uncommunicative sentient cosmic ocean.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FOOTER -->
+<footer class="w-full px-6 md:px-margin py-10 flex flex-col gap-6 border-t border-outline-variant/30 bg-surface-container-lowest text-on-surface-variant">
+<div class="max-w-7xl mx-auto w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+<div>
+<span class="font-headline-lg text-2xl tracking-widest text-primary uppercase font-bold">MINDX CINEMA</span>
+<p class="text-xs text-outline mt-1">The Gallery of Moving Image for Discerning Audiences.</p>
+</div>
+<nav class="flex flex-wrap gap-x-6 gap-y-2 text-xs uppercase tracking-wider font-semibold">
+<a class="hover:text-primary transition-colors" href="explore.html">Curation Philosophy</a>
+<a class="hover:text-primary transition-colors" href="explore.html">Film Festivals</a>
+<a class="hover:text-primary transition-colors" href="explore.html">4K Premieres</a>
+<a class="text-primary hover:underline" href="register.html">VIP Membership</a>
+<a class="hover:text-primary transition-colors" href="policies.html">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="policies.html">Terms of Service</a>
+</nav>
+</div>
+<div class="max-w-7xl mx-auto w-full pt-4 border-t border-outline-variant/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-outline">
+<p>© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</p>
+<div class="flex items-center gap-3">
+<span>EST. 2024</span>
+<span>•</span>
+<span>70MM PRESERVATION ARCHIVE</span>
+</div>
+</div>
+</footer>
+<!-- DYNAMIC MODALS & TOAST INTERFACES -->
+<!-- 1. Universal Cinephile Toast System -->
+<div class="fixed bottom-8 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-3 px-5 py-3.5 rounded-xl bg-surface-container-high/95 border border-primary/50 shadow-2xl backdrop-blur-xl text-on-surface max-w-md" id="cinephile-toast">
+<span class="material-symbols-outlined text-primary text-xl" id="toast-icon-el" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="text-xs font-medium tracking-wide" id="toast-text-el">Notification dispatches here</div>
+</div>
+<!-- 2. Full-Screen Simulated 4K Cinema Player Modal -->
+<div class="fixed inset-0 z-50 hidden bg-surface/95 backdrop-blur-2xl flex items-center justify-center p-3 md:p-8" id="cinema-player-modal">
+<div class="relative w-full max-w-6xl bg-surface-container-lowest border border-outline-variant/60 rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+<!-- Player Top Bar -->
+<div class="flex items-center justify-between px-6 py-3.5 border-b border-outline-variant/30 bg-surface-container-low/90">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" id="player-modal-icon">movie</span>
+<div>
+<h3 class="text-sm font-semibold text-on-surface" id="player-modal-title">INTERSTELLAR (Feature Presentation)</h3>
+<p class="text-[10px] text-tertiary">MINDX Archival 70mm Direct DCI Transfer • Aspect Ratio 1.43:1 / 2.39:1</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 text-[10px] font-bold rounded bg-primary-container/20 text-primary border border-primary/40 uppercase tracking-widest hidden sm:inline-block">Dolby Atmos</span>
+<span class="px-2.5 py-1 text-[10px] font-bold rounded bg-secondary-container/40 text-secondary border border-secondary/40 uppercase tracking-widest hidden sm:inline-block">Native 4K UHD</span>
+<button aria-label="Close" class="p-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="close-cinema-player-btn">
+<span class="material-symbols-outlined text-xl">close</span>
+</button>
+</div>
+</div>
+<!-- Simulated Video Viewport -->
+<div class="relative aspect-video w-full bg-black flex items-center justify-center overflow-hidden select-none">
+<div class="absolute inset-0 bg-cover bg-center opacity-70" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAUEC3nXhX7ctb3ifv14pnTagJX-r5ocdsqmByKmpx_UlSRZozA-lsTESkXOsAymF9lQqQULadcYWzlL7jgca7VkNdZ7trpvkk7pK0tdb62e6O3n2bSwgSPcIIslfiWD7UJVHRMUBGZaD5iwoyuXr8X4YleVU_KFGqVCezcv-PKeIBqt5TwXTv7DNsDk18LnvphULvP9qkETIu7rHmTsHIQOAYU2msFZk0nhYtAuBA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-surface-container-lowest/40"></div>
+<!-- Center Play -->
+<button class="relative z-20 w-16 h-16 rounded-full bg-primary-container/90 hover:bg-primary text-surface-container-lowest flex items-center justify-center shadow-2xl transition-all transform hover:scale-110 cursor-pointer" id="center-play-trigger">
+<span class="material-symbols-outlined text-4xl" id="center-play-icon" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<!-- Watermark -->
+<div class="absolute top-4 left-6 z-10 flex items-center gap-2 text-[11px] bg-surface-container-lowest/70 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant/40 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span id="stream-status-text">70mm Lossless Bitstream Active</span>
+</div>
+<!-- Bottom Control Deck -->
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/90 to-transparent flex flex-col gap-2 z-20">
+<!-- Scrubber -->
+<div class="w-full flex items-center gap-3">
+<span class="text-xs font-mono text-primary font-semibold" id="timecode-current">01:14:28</span>
+<div class="flex-grow h-2 bg-surface-container-highest rounded-full overflow-hidden cursor-pointer relative" id="player-scrubber-track">
+<div class="h-full bg-primary rounded-full" id="player-scrubber-fill" style="width: 44%;"></div>
+</div>
+<span class="text-xs font-mono text-tertiary" id="timecode-duration">02:49:03</span>
+</div>
+<!-- Buttons -->
+<div class="flex items-center justify-between text-on-surface pt-1">
+<div class="flex items-center gap-4">
+<button class="hover:text-primary transition-colors cursor-pointer" id="btn-player-playpause" title="Play/Pause">
+<span class="material-symbols-outlined text-2xl" id="btn-player-playpause-icon">pause</span>
+</button>
+<button class="hover:text-primary transition-colors cursor-pointer" id="btn-player-rewind" title="Rewind 10s">
+<span class="material-symbols-outlined text-xl">replay_10</span>
+</button>
+<button class="hover:text-primary transition-colors cursor-pointer" id="btn-player-forward" title="Forward 10s">
+<span class="material-symbols-outlined text-xl">forward_10</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="hover:text-primary transition-colors cursor-pointer" id="btn-player-volume" title="Mute/Unmute">
+<span class="material-symbols-outlined text-xl" id="btn-player-volume-icon">volume_up</span>
+</button>
+<div class="w-16 h-1.5 bg-surface-container-highest rounded-full overflow-hidden cursor-pointer" id="volume-slider-track">
+<div class="w-4/5 h-full bg-primary rounded-full" id="volume-slider-fill"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-2 py-0.5 text-[10px] rounded border border-outline-variant hover:border-primary text-on-surface uppercase font-semibold cursor-pointer" id="btn-player-aspect">
+              IMAX 1.43:1
+            </button>
+<button class="hover:text-primary transition-colors cursor-pointer" id="btn-player-fullscreen" title="Toggle Fullscreen">
+<span class="material-symbols-outlined text-xl">fullscreen</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 3. Cast Monograph Modal -->
+<div class="fixed inset-0 z-50 hidden bg-surface/85 backdrop-blur-xl flex items-center justify-center p-4" id="cast-monograph-modal">
+<div class="relative w-full max-w-xl bg-surface-container border border-outline-variant/60 rounded-2xl shadow-2xl p-6 space-y-5">
+<div class="flex items-start justify-between pb-3 border-b border-outline-variant/30">
+<div class="flex items-center gap-3.5">
+<img alt="Auteur portrait" class="w-14 h-14 rounded-full object-cover ring-2 ring-primary/60 shadow-lg" id="monograph-avatar" src=""/>
+<div>
+<h3 class="text-xl font-headline-md text-on-surface font-bold" id="monograph-name">Christopher Nolan</h3>
+<p class="text-xs font-semibold text-primary" id="monograph-role">Director &amp; Co-Writer</p>
+</div>
+</div>
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="close-monograph-btn">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<div class="space-y-2">
+<h4 class="text-xs font-semibold text-primary uppercase tracking-widest">Curatorial Monograph &amp; Biography</h4>
+<p class="text-xs text-on-surface-variant leading-relaxed" id="monograph-bio">Biography overview.</p>
+</div>
+<div class="space-y-1.5">
+<h4 class="text-xs font-semibold text-primary uppercase tracking-widest">Key Distinctions</h4>
+<div class="flex flex-wrap gap-1.5" id="monograph-accolades"></div>
+</div>
+<div class="space-y-1.5">
+<h4 class="text-xs font-semibold text-primary uppercase tracking-widest">Curated Works on MINDX</h4>
+<div class="flex flex-wrap gap-1.5" id="monograph-filmography"></div>
+</div>
+<div class="pt-3 border-t border-outline-variant/20 flex justify-between items-center text-[11px] text-outline">
+<span>MINDX Certified Archive</span>
+<button class="text-primary hover:underline font-semibold flex items-center gap-1 cursor-pointer" id="monograph-vault-save">
+<span class="material-symbols-outlined text-sm">bookmark</span> Follow Creator
+      </button>
+</div>
+</div>
+</div>
+<!-- 4. Write Review Form Modal -->
+<div class="fixed inset-0 z-50 hidden bg-surface/85 backdrop-blur-xl flex items-center justify-center p-4" id="write-review-modal">
+<div class="relative w-full max-w-lg bg-surface-container border border-outline-variant/60 rounded-2xl p-6 space-y-4 shadow-2xl">
+<div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">rate_review</span>
+<h3 class="text-lg font-headline-md text-on-surface font-semibold">Publish Cinephile Critique</h3>
+</div>
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-primary transition-colors cursor-pointer" id="close-write-review-btn">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<form class="space-y-3.5 text-xs" id="submission-review-form">
+<div>
+<label class="block uppercase tracking-wider text-outline mb-1 font-semibold">Your Critical Rating</label>
+<div class="flex items-center gap-1.5 text-primary text-2xl select-none cursor-pointer" id="interactive-star-picker">
+<span class="material-symbols-outlined hover:scale-125 transition-transform" data-star="1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined hover:scale-125 transition-transform" data-star="2" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined hover:scale-125 transition-transform" data-star="3" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined hover:scale-125 transition-transform" data-star="4" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined hover:scale-125 transition-transform" data-star="5" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div>
+<label class="block uppercase tracking-wider text-outline mb-1 font-semibold">Critic Name &amp; Affiliation</label>
+<input class="w-full px-3.5 py-2 rounded-lg bg-surface-container-low border border-outline-variant/50 focus:border-primary focus:outline-none text-on-surface text-xs" id="input-critic-name" placeholder="e.g. Maya Chen (Cinematheque Fellow)" required="" type="text"/>
+</div>
+<div>
+<label class="block uppercase tracking-wider text-outline mb-1 font-semibold">Viewing Format Credential</label>
+<select class="w-full px-3.5 py-2 rounded-lg bg-surface-container-low border border-outline-variant/50 focus:border-primary focus:outline-none text-on-surface text-xs" id="input-critic-badge">
+<option value="IMAX 70mm Dual Laser Screening">IMAX 70mm Dual Laser Screening</option>
+<option value="Festival Programmer Archive">Festival Programmer Archive</option>
+<option value="Verified Cinephile • Lossless 4K Stream">Verified Cinephile • Lossless 4K Stream</option>
+</select>
+</div>
+<div>
+<label class="block uppercase tracking-wider text-outline mb-1 font-semibold">Critical Discourse</label>
+<textarea class="w-full px-3.5 py-2 rounded-lg bg-surface-container-low border border-outline-variant/50 focus:border-primary focus:outline-none text-on-surface text-xs leading-relaxed" id="input-critic-text" placeholder="Share your critique of the direction, score, or gravitational dynamics..." required="" rows="3"></textarea>
+</div>
+<div class="flex justify-end gap-2.5 pt-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant text-on-surface-variant hover:text-on-surface font-semibold cursor-pointer" id="cancel-write-review-btn" type="button">Cancel</button>
+<button class="px-5 py-2 rounded-full bg-primary-container text-surface-container-lowest hover:bg-primary font-bold uppercase tracking-wider transition-colors cursor-pointer" type="submit">Publish</button>
+</div>
+</form>
+</div>
+</div>
+<!-- SCRIPTS -->
+<script>
+(function() {
+  // Toast
+  var toastTimer;
+  function showToast(message, icon) {
+    var toast = document.getElementById('cinephile-toast');
+    var textEl = document.getElementById('toast-text-el');
+    var iconEl = document.getElementById('toast-icon-el');
+    if (!toast || !textEl) return;
+    textEl.textContent = message;
+    if (icon && iconEl) iconEl.textContent = icon;
+    toast.classList.remove('opacity-0', 'translate-y-24');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() {
+      toast.classList.remove('opacity-100', 'translate-y-0');
+      toast.classList.add('opacity-0', 'translate-y-24');
+    }, 3200);
+  }
+
+  // Header Nav
+  var searchInput = document.getElementById('header-search-input');
+  if (searchInput) {
+    searchInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') {
+        var val = searchInput.value.trim();
+        showToast(val ? 'Searching archives for "' + val + '"...' : 'Please enter a search query', 'search');
+      }
+    });
+  }
+
+  var notifBtn = document.getElementById('notif-toggle-btn');
+  var notifTray = document.getElementById('notifications-tray');
+  var markReadBtn = document.getElementById('mark-read-btn');
+  var notifBadgeDot = document.getElementById('notif-badge-dot');
+  var vipBtn = document.getElementById('vip-menu-btn');
+  var vipDropdown = document.getElementById('vip-dropdown');
+
+  if (notifBtn && notifTray) {
+    notifBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      notifTray.classList.toggle('hidden');
+      if (vipDropdown) vipDropdown.classList.add('hidden');
+    });
+  }
+  if (markReadBtn) {
+    markReadBtn.addEventListener('click', function() {
+      if (notifBadgeDot) notifBadgeDot.style.display = 'none';
+      showToast('All notifications marked as read', 'done_all');
+      if (notifTray) notifTray.classList.add('hidden');
+    });
+  }
+  if (vipBtn && vipDropdown) {
+    vipBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      vipDropdown.classList.toggle('hidden');
+      if (notifTray) notifTray.classList.add('hidden');
+    });
+  }
+  document.querySelectorAll('.vip-item').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      showToast('Opening ' + item.textContent.trim(), 'folder_special');
+      if (vipDropdown) vipDropdown.classList.add('hidden');
+    });
+  });
+  document.addEventListener('click', function() {
+    if (notifTray) notifTray.classList.add('hidden');
+    if (vipDropdown) vipDropdown.classList.add('hidden');
+  });
+
+  // Hero Actions
+  var watchlistBtn = document.getElementById('hero-watchlist-btn');
+  var isWatchlisted = false;
+  if (watchlistBtn) {
+    watchlistBtn.addEventListener('click', function() {
+      isWatchlisted = !isWatchlisted;
+      var icon = watchlistBtn.querySelector('.material-symbols-outlined');
+      if (icon) icon.textContent = isWatchlisted ? 'bookmark_added' : 'bookmark_add';
+      if (isWatchlisted) {
+        watchlistBtn.classList.add('text-primary', 'border-primary', 'bg-primary-container/20');
+        showToast('Added Interstellar to your Curated Watchlist', 'bookmark_added');
+      } else {
+        watchlistBtn.classList.remove('text-primary', 'border-primary', 'bg-primary-container/20');
+        showToast('Removed from Watchlist', 'bookmark_remove');
+      }
+    });
+  }
+
+  var shareBtn = document.getElementById('hero-share-btn');
+  if (shareBtn) {
+    shareBtn.addEventListener('click', function() {
+      if (navigator.clipboard) navigator.clipboard.writeText(window.location.href).catch(function(){});
+      showToast('Cinematic link copied to clipboard', 'content_copy');
+    });
+  }
+
+  var downloadBtn = document.getElementById('hero-download-btn');
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', function() {
+      showToast('Initiating 4K DCI Archival Master package download... (48.6 GB)', 'downloading');
+    });
+  }
+
+  var archivalBadge = document.getElementById('archival-info-badge');
+  if (archivalBadge) {
+    archivalBadge.addEventListener('click', function() {
+      showToast('Verified: 70mm 15-perf original scanned at 8K resolution', 'verified');
+    });
+  }
+
+  // Cinema Player
+  var playerModal = document.getElementById('cinema-player-modal');
+  var closePlayerBtn = document.getElementById('close-cinema-player-btn');
+  var playerTitle = document.getElementById('player-modal-title');
+  var centerPlayTrigger = document.getElementById('center-play-trigger');
+  var centerPlayIcon = document.getElementById('center-play-icon');
+  var btnPlayerPlayPause = document.getElementById('btn-player-playpause');
+  var btnPlayerPlayPauseIcon = document.getElementById('btn-player-playpause-icon');
+  var scrubberTrack = document.getElementById('player-scrubber-track');
+  var scrubberFill = document.getElementById('player-scrubber-fill');
+  var timecodeCurrent = document.getElementById('timecode-current');
+  var timecodeDuration = document.getElementById('timecode-duration');
+  var btnVolume = document.getElementById('btn-player-volume');
+  var btnVolumeIcon = document.getElementById('btn-player-volume-icon');
+  var volumeTrack = document.getElementById('volume-slider-track');
+  var volumeFill = document.getElementById('volume-slider-fill');
+  var btnRewind = document.getElementById('btn-player-rewind');
+  var btnForward = document.getElementById('btn-player-forward');
+  var btnFullscreen = document.getElementById('btn-player-fullscreen');
+  var btnAspect = document.getElementById('btn-player-aspect');
+  var streamStatusText = document.getElementById('stream-status-text');
+
+  var isCinemaPlaying = false;
+  var isMuted = false;
+  var currentSeconds = 4468;
+  var totalSeconds = 10143;
+  var playbackInterval = null;
+  var isTrailerMode = false;
+
+  function formatTime(sec) {
+    var h = Math.floor(sec / 3600);
+    var m = Math.floor((sec % 3600) / 60);
+    var s = Math.floor(sec % 60);
+    return (h < 10 ? '0' + h : h) + ':' + (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+  }
+
+  function updateScrubberUI() {
+    var pct = (currentSeconds / totalSeconds) * 100;
+    if (scrubberFill) scrubberFill.style.width = pct + '%';
+    if (timecodeCurrent) timecodeCurrent.textContent = formatTime(currentSeconds);
+  }
+
+  function toggleCinemaPlay(forceState) {
+    isCinemaPlaying = (typeof forceState === 'boolean') ? forceState : !isCinemaPlaying;
+    var icon = isCinemaPlaying ? 'pause' : 'play_arrow';
+    if (centerPlayIcon) centerPlayIcon.textContent = icon;
+    if (btnPlayerPlayPauseIcon) btnPlayerPlayPauseIcon.textContent = icon;
+
+    if (isCinemaPlaying) {
+      clearInterval(playbackInterval);
+      playbackInterval = setInterval(function() {
+        if (currentSeconds < totalSeconds) {
+          currentSeconds += 1;
+          updateScrubberUI();
+        } else {
+          toggleCinemaPlay(false);
+        }
+      }, 1000);
+      showToast(isTrailerMode ? 'Playing Theatrical Teaser Trailer' : 'Resumed 4K Feature Master Playback', 'play_arrow');
+    } else {
+      clearInterval(playbackInterval);
+      showToast('Playback Paused', 'pause');
+    }
+  }
+
+  function launchPlayer(mode) {
+    isTrailerMode = (mode === 'trailer');
+    if (!playerModal) return;
+    if (isTrailerMode) {
+      if (playerTitle) playerTitle.textContent = 'INTERSTELLAR (Official Theatrical 4K Teaser Trailer)';
+      if (timecodeDuration) timecodeDuration.textContent = '00:02:34';
+      currentSeconds = 12;
+      totalSeconds = 154;
+      if (streamStatusText) streamStatusText.textContent = 'Dolby Theatrical Trailer Stream';
+    } else {
+      if (playerTitle) playerTitle.textContent = 'INTERSTELLAR (Feature Presentation)';
+      if (timecodeDuration) timecodeDuration.textContent = '02:49:03';
+      currentSeconds = 4468;
+      totalSeconds = 10143;
+      if (streamStatusText) streamStatusText.textContent = '70mm Lossless Bitstream Active';
+    }
+    updateScrubberUI();
+    playerModal.classList.remove('hidden');
+    toggleCinemaPlay(true);
+  }
+
+  function closeCinemaPlayer() {
+    if (!playerModal) return;
+    playerModal.classList.add('hidden');
+    toggleCinemaPlay(false);
+  }
+
+  var heroWatchMovieBtn = document.getElementById('hero-watch-movie-btn');
+  if (heroWatchMovieBtn) heroWatchMovieBtn.addEventListener('click', function() { launchPlayer('full'); });
+
+  var heroPlayTrailerBtn = document.getElementById('hero-play-trailer-btn');
+  if (heroPlayTrailerBtn) heroPlayTrailerBtn.addEventListener('click', function() { launchPlayer('trailer'); });
+
+  if (closePlayerBtn) closePlayerBtn.addEventListener('click', closeCinemaPlayer);
+  if (centerPlayTrigger) centerPlayTrigger.addEventListener('click', function() { toggleCinemaPlay(); });
+  if (btnPlayerPlayPause) btnPlayerPlayPause.addEventListener('click', function() { toggleCinemaPlay(); });
+
+  if (btnRewind) {
+    btnRewind.addEventListener('click', function() {
+      currentSeconds = Math.max(0, currentSeconds - 10);
+      updateScrubberUI();
+      showToast('Rewound 10 seconds', 'replay_10');
+    });
+  }
+  if (btnForward) {
+    btnForward.addEventListener('click', function() {
+      currentSeconds = Math.min(totalSeconds, currentSeconds + 10);
+      updateScrubberUI();
+      showToast('Advanced 10 seconds', 'forward_10');
+    });
+  }
+  if (scrubberTrack) {
+    scrubberTrack.addEventListener('click', function(e) {
+      var rect = scrubberTrack.getBoundingClientRect();
+      var ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+      currentSeconds = Math.floor(ratio * totalSeconds);
+      updateScrubberUI();
+      showToast('Jumped to ' + formatTime(currentSeconds), 'timer');
+    });
+  }
+  if (btnVolume) {
+    btnVolume.addEventListener('click', function() {
+      isMuted = !isMuted;
+      if (isMuted) {
+        if (btnVolumeIcon) btnVolumeIcon.textContent = 'volume_off';
+        if (volumeFill) volumeFill.style.width = '0%';
+        showToast('Audio Muted', 'volume_off');
+      } else {
+        if (btnVolumeIcon) btnVolumeIcon.textContent = 'volume_up';
+        if (volumeFill) volumeFill.style.width = '80%';
+        showToast('Audio Restored (Dolby Atmos)', 'volume_up');
+      }
+    });
+  }
+  if (volumeTrack) {
+    volumeTrack.addEventListener('click', function(e) {
+      var rect = volumeTrack.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+      if (volumeFill) volumeFill.style.width = pct + '%';
+      isMuted = (pct === 0);
+      if (btnVolumeIcon) btnVolumeIcon.textContent = isMuted ? 'volume_off' : (pct > 50 ? 'volume_up' : 'volume_down');
+      showToast('Master volume: ' + Math.round(pct) + '%', 'volume_up');
+    });
+  }
+  var isImaxAspect = true;
+  if (btnAspect) {
+    btnAspect.addEventListener('click', function() {
+      isImaxAspect = !isImaxAspect;
+      btnAspect.textContent = isImaxAspect ? 'IMAX 1.43:1' : 'CinemaScope 2.39:1';
+      showToast('Projection aspect set to ' + btnAspect.textContent, 'aspect_ratio');
+    });
+  }
+  if (btnFullscreen) {
+    btnFullscreen.addEventListener('click', function() {
+      if (!document.fullscreenElement) {
+        if (playerModal.requestFullscreen) playerModal.requestFullscreen().catch(function(){});
+        showToast('Entering Fullscreen Mode', 'fullscreen');
+      } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        showToast('Exited Fullscreen', 'fullscreen_exit');
+      }
+    });
+  }
+
+  // Cast Monograph
+  var castTrack = document.getElementById('cast-track');
+  var castScrollPrev = document.getElementById('cast-scroll-prev');
+  var castScrollNext = document.getElementById('cast-scroll-next');
+  if (castTrack && castScrollPrev) {
+    castScrollPrev.addEventListener('click', function() { castTrack.scrollBy({ left: -240, behavior: 'smooth' }); });
+  }
+  if (castTrack && castScrollNext) {
+    castScrollNext.addEventListener('click', function() { castTrack.scrollBy({ left: 240, behavior: 'smooth' }); });
+  }
+
+  var auteurProfiles = {
+    'Christopher Nolan': {
+      role: 'Director & Co-Writer',
+      bio: 'Visionary filmmaker known for practical realism, nonlinear narratives, and fierce advocacy for 70mm IMAX exhibition. Collaborated with Caltech physicist Kip Thorne to accurately render Gargantua’s gravitational lensing.',
+      accolades: ['Academy Award Winner: Best Director', 'Academy Award Winner: Best Picture', 'DGA Award Winner'],
+      filmography: ['Oppenheimer (2023)', 'Dunkirk (2017)', 'Inception (2010)', 'The Dark Knight (2008)']
+    },
+    'Matthew McConaughey': {
+      role: 'Lead Actor (Cooper)',
+      bio: 'Dramatic powerhouse who anchored the cosmic narrative in raw paternal grief, portraying an ex-pilot risking eternity to save his children.',
+      accolades: ['Academy Award Winner: Best Actor', 'Golden Globe Award Winner'],
+      filmography: ['Dallas Buyers Club (2013)', 'True Detective (2014)', 'Mud (2012)']
+    },
+    'Anne Hathaway': {
+      role: 'Lead Actress (Dr. Amelia Brand)',
+      bio: 'Oscar-winning actress who embodied theoretical brilliance and deep philosophical conviction in her iconic speech on love transcending dimensions.',
+      accolades: ['Academy Award Winner: Best Supporting Actress', 'BAFTA Winner'],
+      filmography: ['Les Misérables (2012)', 'The Dark Knight Rises (2012)', 'Rachel Getting Married (2008)']
+    },
+    'Jessica Chastain': {
+      role: 'Supporting Actress (Murph Cooper - Adult)',
+      bio: 'Renowned for emotional depth and intellectual rigor, portraying adult Murph decoding quantum gravitational secrets transmitted across spacetime.',
+      accolades: ['Academy Award Winner: Best Actress', 'Golden Globe Award Winner'],
+      filmography: ['Zero Dark Thirty (2012)', 'The Tree of Life (2011)', 'The Martian (2015)']
+    },
+    'Hans Zimmer': {
+      role: 'Maestro & Original Composer',
+      bio: 'Pioneering composer who abandoned traditional brass and percussion, utilizing the 1926 pipe organ at Temple Church in London to represent humanity’s breath in space.',
+      accolades: ['Two-time Oscar Winner', 'Three-time Grammy Winner', 'BAFTA Lifetime Honor'],
+      filmography: ['Dune: Part One & Two', 'Blade Runner 2049', 'Inception (2010)']
+    }
+  };
+
+  var monographModal = document.getElementById('cast-monograph-modal');
+  var closeMonographBtn = document.getElementById('close-monograph-btn');
+  var monographAvatar = document.getElementById('monograph-avatar');
+  var monographName = document.getElementById('monograph-name');
+  var monographRole = document.getElementById('monograph-role');
+  var monographBio = document.getElementById('monograph-bio');
+  var monographAccolades = document.getElementById('monograph-accolades');
+  var monographFilmography = document.getElementById('monograph-filmography');
+  var monographVaultSave = document.getElementById('monograph-vault-save');
+
+  document.querySelectorAll('.cast-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var name = card.getAttribute('data-person');
+      var profile = auteurProfiles[name];
+      var img = card.querySelector('img');
+      if (!profile) return;
+      if (monographName) monographName.textContent = name;
+      if (monographRole) monographRole.textContent = profile.role;
+      if (monographBio) monographBio.textContent = profile.bio;
+      if (monographAvatar && img) monographAvatar.src = img.src;
+
+      if (monographAccolades) {
+        monographAccolades.innerHTML = '';
+        profile.accolades.forEach(function(item) {
+          var tag = document.createElement('span');
+          tag.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-primary-container/20 text-primary border border-primary/40';
+          tag.textContent = item;
+          monographAccolades.appendChild(tag);
+        });
+      }
+      if (monographFilmography) {
+        monographFilmography.innerHTML = '';
+        profile.filmography.forEach(function(film) {
+          var tag = document.createElement('span');
+          tag.className = 'px-2.5 py-0.5 rounded-full text-[10px] bg-surface-container-high text-on-surface border border-outline-variant/50 hover:border-primary cursor-pointer transition-colors';
+          tag.textContent = film;
+          tag.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showToast('Loading archive for ' + film, 'movie');
+          });
+          monographFilmography.appendChild(tag);
+        });
+      }
+      if (monographModal) monographModal.classList.remove('hidden');
+    });
+  });
+
+  if (closeMonographBtn) closeMonographBtn.addEventListener('click', function() { monographModal.classList.add('hidden'); });
+  if (monographVaultSave) {
+    monographVaultSave.addEventListener('click', function() {
+      showToast('Added ' + monographName.textContent + ' to your Followed Auteurs', 'bookmark_added');
+    });
+  }
+
+  // Reviews
+  var openReviewModalBtn = document.getElementById('open-review-modal-btn');
+  var writeReviewModal = document.getElementById('write-review-modal');
+  var closeWriteReviewBtn = document.getElementById('close-write-review-btn');
+  var cancelWriteReviewBtn = document.getElementById('cancel-write-review-btn');
+  var reviewForm = document.getElementById('submission-review-form');
+  var starPicker = document.getElementById('interactive-star-picker');
+  var reviewsContainer = document.getElementById('reviews-stream-container');
+  var selectedStarCount = 5;
+
+  if (openReviewModalBtn && writeReviewModal) {
+    openReviewModalBtn.addEventListener('click', function() { writeReviewModal.classList.remove('hidden'); });
+  }
+  function closeReviewModal() { if (writeReviewModal) writeReviewModal.classList.add('hidden'); }
+  if (closeWriteReviewBtn) closeWriteReviewBtn.addEventListener('click', closeReviewModal);
+  if (cancelWriteReviewBtn) cancelWriteReviewBtn.addEventListener('click', closeReviewModal);
+
+  if (starPicker) {
+    var starSpans = starPicker.querySelectorAll('span');
+    starSpans.forEach(function(star) {
+      star.addEventListener('click', function() {
+        var val = parseInt(star.getAttribute('data-star'), 10);
+        selectedStarCount = val;
+        starSpans.forEach(function(s, idx) {
+          if (idx < val) {
+            s.style.fontVariationSettings = "'FILL' 1";
+            s.classList.remove('opacity-30');
+          } else {
+            s.style.fontVariationSettings = "'FILL' 0";
+            s.classList.add('opacity-30');
+          }
+        });
+      });
+    });
+  }
+
+  function initReviewInteractions(articleEl) {
+    var voteBtn = articleEl.querySelector('.helpful-vote-btn');
+    var voteCountEl = articleEl.querySelector('.vote-count');
+    if (voteBtn && voteCountEl) {
+      voteBtn.addEventListener('click', function() {
+        var isVoted = voteBtn.getAttribute('data-voted') === 'true';
+        var currentVotes = parseInt(voteCountEl.textContent, 10) || 0;
+        if (!isVoted) {
+          voteBtn.setAttribute('data-voted', 'true');
+          voteBtn.classList.add('text-primary');
+          voteCountEl.textContent = currentVotes + 1;
+          showToast('Marked critique as helpful', 'thumb_up');
+        } else {
+          voteBtn.setAttribute('data-voted', 'false');
+          voteBtn.classList.remove('text-primary');
+          voteCountEl.textContent = Math.max(0, currentVotes - 1);
+          showToast('Helpful endorsement removed', 'thumb_down');
+        }
+      });
+    }
+
+    var replyBtn = articleEl.querySelector('.reply-toggle-btn');
+    var replyContainer = articleEl.querySelector('.reply-container');
+    if (replyBtn && replyContainer) {
+      replyBtn.addEventListener('click', function() {
+        if (replyContainer.classList.contains('hidden')) {
+          replyContainer.classList.remove('hidden');
+          replyContainer.innerHTML = [
+            '<div class="flex gap-2">',
+            '  <input type="text" placeholder="Write your cinephile reply..." class="reply-input flex-grow bg-surface-container-highest px-3 py-1.5 rounded-full text-xs text-on-surface border border-outline-variant/40 focus:border-primary focus:outline-none">',
+            '  <button class="post-reply-btn px-3 py-1.5 bg-primary-container text-surface-container-lowest font-bold uppercase rounded-full hover:bg-primary transition-colors text-[10px] cursor-pointer">Submit</button>',
+            '</div>'
+          ].join('');
+          var postBtn = replyContainer.querySelector('.post-reply-btn');
+          var inputField = replyContainer.querySelector('.reply-input');
+          inputField.focus();
+          postBtn.addEventListener('click', function() {
+            var val = inputField.value.trim();
+            if (!val) return;
+            var replyDiv = document.createElement('div');
+            replyDiv.className = 'p-2 rounded bg-surface-container/60 border border-outline-variant/30 text-xs';
+            replyDiv.innerHTML = '<span class="text-primary font-semibold text-[11px]">You (Verified Cinephile):</span><p class="text-on-surface-variant mt-0.5">' + val + '</p>';
+            replyContainer.innerHTML = '';
+            replyContainer.appendChild(replyDiv);
+            showToast('Reply published', 'forum');
+          });
+        } else {
+          replyContainer.classList.add('hidden');
+        }
+      });
+    }
+  }
+
+  document.querySelectorAll('.review-article').forEach(initReviewInteractions);
+
+  if (reviewForm) {
+    reviewForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var criticName = document.getElementById('input-critic-name').value.trim();
+      var criticBadge = document.getElementById('input-critic-badge').value;
+      var criticText = document.getElementById('input-critic-text').value.trim();
+      if (!criticName || !criticText) return;
+
+      var newArticle = document.createElement('article');
+      newArticle.className = 'review-article bg-surface-container-low border border-primary/40 rounded-xl p-5 backdrop-blur-md space-y-3 hover:border-outline-variant/60 transition-colors animate-fadeInReview';
+      var starsHTML = '';
+      for (var i = 0; i < selectedStarCount; i++) {
+        starsHTML += '<span class="material-symbols-outlined text-sm" style="font-variation-settings: \'FILL\' 1;">star</span>';
+      }
+      newArticle.innerHTML = [
+        '<div class="flex items-start justify-between">',
+        '  <div class="flex items-center gap-3">',
+        '    <div class="w-10 h-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold ring-1 ring-primary/40 text-sm">' + criticName.charAt(0).toUpperCase() + '</div>',
+        '    <div>',
+        '      <div class="flex items-center gap-2">',
+        '        <h4 class="text-sm font-semibold text-on-surface">' + criticName + '</h4>',
+        '        <span class="px-2 py-0.5 rounded-full text-[10px] bg-primary/20 text-primary border border-primary/40 font-bold uppercase tracking-wider">Verified Cinephile</span>',
+        '      </div>',
+        '      <span class="text-xs text-outline">' + criticBadge + '</span>',
+        '    </div>',
+        '  </div>',
+        '  <div class="flex text-primary">' + starsHTML + '</div>',
+        '</div>',
+        '<p class="text-sm text-on-surface-variant leading-relaxed">' + criticText + '</p>',
+        '<div class="flex items-center justify-between pt-1 text-xs text-tertiary">',
+        '  <span>Published Just now</span>',
+        '  <div class="flex items-center gap-4">',
+        '    <button class="helpful-vote-btn flex items-center gap-1.5 hover:text-primary transition-colors cursor-pointer" data-voted="false">',
+        '      <span class="material-symbols-outlined text-base">thumb_up</span>',
+        '      <span>Helpful (<span class="vote-count">1</span>)</span>',
+        '    </button>',
+        '    <button class="reply-toggle-btn hover:text-primary transition-colors cursor-pointer">Reply</button>',
+        '  </div>',
+        '</div>',
+        '<div class="reply-container hidden pt-2 border-t border-outline-variant/20 space-y-2"></div>'
+      ].join('');
+
+      reviewsContainer.prepend(newArticle);
+      initReviewInteractions(newArticle);
+      var totalReviewsCaption = document.getElementById('total-reviews-caption');
+      if (totalReviewsCaption) totalReviewsCaption.textContent = 'Based on 14,821 Verified Cinephile Members';
+      closeReviewModal();
+      reviewForm.reset();
+      showToast('Your critique has been published!', 'rate_review');
+    });
+  }
+
+  // Recommendations expand
+  var toggleCollectionBtn = document.getElementById('toggle-curated-collection-btn');
+  var collectionBtnText = document.getElementById('collection-btn-text');
+  var recsGrid = document.getElementById('recommendations-grid');
+  var isExpandedCollection = false;
+  var extraCardsContainer = null;
+
+  if (toggleCollectionBtn && recsGrid) {
+    toggleCollectionBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      isExpandedCollection = !isExpandedCollection;
+      if (isExpandedCollection) {
+        if (!extraCardsContainer) {
+          extraCardsContainer = document.createElement('div');
+          extraCardsContainer.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 col-span-full pt-2 animate-fadeInReview';
+          extraCardsContainer.innerHTML = [
+            '<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all cursor-pointer">',
+            '  <div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">',
+            '    <img alt="Contact" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR0zUIwrVuuhi7RWS-BvpZaB9gHI48d5URqxTlmlrSmgHtS6TZUOb0qMVY5O9lcp1Cr7JRGm5b-G5u9Uj7FQHlb9wbTD-GfpaqeaxQrQwMabSlw-IRoaTlQPHmpEC3jT0aDQbrdk_fFwV1HJmT1-AOgW3XDdH3qi1eiat4hSXkmNwyRqc2YpawfOIddJnr2GGqbVCGHjPsz3D5KuUe0oACYZEapgbrkDhj-LFvMnw">',
+            '    <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase">4K HDR</span>',
+            '  </div>',
+            '  <div class="p-3.5 space-y-1">',
+            '    <div class="flex items-center justify-between text-xs text-outline"><span>1997 • Robert Zemeckis</span><span class="text-primary font-semibold">94% Match</span></div>',
+            '    <h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Contact</h3>',
+            '    <p class="text-xs text-on-surface-variant line-clamp-2">Carl Sagan’s poetic exploration of deep space radio mathematics and transcendental faith.</p>',
+            '  </div>',
+            '</div>',
+            '<div class="recommendation-card bg-surface-container-low border border-outline-variant/40 rounded-xl overflow-hidden group hover:border-primary/50 transition-all cursor-pointer">',
+            '  <div class="aspect-[16/10] relative overflow-hidden bg-surface-container-highest">',
+            '    <img alt="Ad Astra" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDlpRlVpncIC6ndEf206ccXhD9m6FzNTROBprQsupvLwSIgVFGMgiIlLpXkxZQcg0sFW7pp6l4buuVTXPHUqUbwbcMz7b1jHM7DEVqAy1osxZ78_Znw0T8uMvfU3-oFaYc0WIVoCKthREwR3F0IhtnJ40xy2477l3JqHR8-P1d5_01COz1yHcMJIn8cazsCI_ButWjH_CdluMT2D7aij5fSs2HFZv8r9RztUL3V-Y">',
+            '    <span class="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-bold bg-surface-container-lowest/80 text-primary border border-primary/30 uppercase">DIRECTOR CUT</span>',
+            '  </div>',
+            '  <div class="p-3.5 space-y-1">',
+            '    <div class="flex items-center justify-between text-xs text-outline"><span>2019 • James Gray</span><span class="text-primary font-semibold">87% Match</span></div>',
+            '    <h3 class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Ad Astra</h3>',
+            '    <p class="text-xs text-on-surface-variant line-clamp-2">A meditative solar odyssey probing deep loneliness and the distant psychological echoes of fatherhood.</p>',
+            '  </div>',
+            '</div>'
+          ].join('');
+          recsGrid.appendChild(extraCardsContainer);
+        } else {
+          extraCardsContainer.classList.remove('hidden');
+        }
+        collectionBtnText.textContent = 'Collapse Collection';
+        showToast('Expanded 2 additional sci-fi masterworks', 'auto_awesome');
+      } else {
+        if (extraCardsContainer) extraCardsContainer.classList.add('hidden');
+        collectionBtnText.textContent = 'View Complete Collection';
+      }
+    });
+  }
+
+  document.querySelectorAll('.recommendation-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      var title = card.getAttribute('data-title');
+      if (title) showToast('Loading archival catalogue for ' + title, 'movie');
+    });
+  });
+
+})();
+</script>
+<script src="js/site-navigation.js"></script></body></html>

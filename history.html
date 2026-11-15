@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MINDX CINEMA - Viewing History &amp; Activity</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface": "#111318",
+            "error": "#ffb4ab",
+            "on-tertiary": "#29313d",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#4f4538",
+            "surface-tint": "#efbf73",
+            "tertiary": "#c3cbdb",
+            "error-container": "#93000a",
+            "primary-fixed-dim": "#efbf73",
+            "surface-container-highest": "#33353a",
+            "tertiary-container": "#a8b0bf",
+            "on-tertiary-container": "#3b4350",
+            "surface-container": "#1e1f25",
+            "surface-container-high": "#282a2f",
+            "primary-fixed": "#ffdeae",
+            "secondary-fixed": "#ffdea9",
+            "on-secondary": "#422d00",
+            "primary-container": "#d6a85f",
+            "secondary-container": "#5c420c",
+            "inverse-surface": "#e2e2e9",
+            "secondary": "#e7c180",
+            "on-tertiary-fixed": "#141c27",
+            "on-secondary-container": "#d5b070",
+            "on-primary": "#432c00",
+            "on-primary-fixed-variant": "#604100",
+            "tertiary-fixed-dim": "#bfc7d6",
+            "outline": "#9b8f7f",
+            "surface-container-low": "#1a1b21",
+            "surface-dim": "#111318",
+            "on-surface-variant": "#d2c4b3",
+            "inverse-on-surface": "#2e3036",
+            "inverse-primary": "#7c5816",
+            "on-secondary-fixed": "#271900",
+            "primary": "#f4c377",
+            "on-error": "#690005",
+            "surface-variant": "#33353a",
+            "on-primary-container": "#5b3d00",
+            "on-secondary-fixed-variant": "#5c420c",
+            "on-tertiary-fixed-variant": "#3f4754",
+            "surface-container-lowest": "#0c0e13",
+            "on-surface": "#e2e2e9",
+            "background": "#111318",
+            "tertiary-fixed": "#dbe3f3",
+            "on-background": "#e2e2e9",
+            "on-primary-fixed": "#281800",
+            "secondary-fixed-dim": "#e7c180",
+            "surface-bright": "#37393f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1.25rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "title-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "display-hero-mobile": ["Playfair Display"],
+            "display-hero": ["Playfair Display"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "title-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.015em", "fontWeight": "400" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.1em", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- Top Navigation Bar (Shared Component) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-margin-mobile md:px-margin py-space-md bg-surface/75 backdrop-blur-xl border-b border-outline-variant/40">
+<div class="flex items-center gap-space-xl">
+<a class="font-headline-md text-headline-md tracking-wider text-primary uppercase font-bold flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-28px" data-icon="movie_filter">movie_filter</span>
+        MINDX CINEMA
+      </a>
+<nav class="hidden md:flex items-center gap-space-lg text-label-md font-label-md">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="index.html">Home</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="explore.html">Explore</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="explore.html">Movies</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors pb-1" href="explore.html">Series</a>
+<a class="text-primary border-b-2 border-primary pb-1" href="watch-list.html">Watchlist</a>
+</nav>
+</div>
+<!-- Right Side Actions & Profile -->
+<div class="flex items-center gap-space-md">
+<!-- Search Input Trigger -->
+<div class="relative hidden sm:block w-48 lg:w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-full pl-9 pr-3 py-1.5 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-primary focus:outline-none focus:ring-0 transition-colors" placeholder="Search archive..." type="text"/>
+</div>
+<!-- Trailing Action -->
+<button aria-label="Notifications" class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-container-high/60">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<!-- VIP Profile Avatar with active status badge -->
+<div class="relative flex items-center cursor-pointer group">
+<div class="w-9 h-9 rounded-full ring-1 ring-primary/40 p-0.5 overflow-hidden bg-surface-container-high">
+<img alt="User VIP profile avatar with active status badge" class="w-full h-full object-cover rounded-full" data-alt="A distinguished cinephile VIP member avatar portrait illuminated with soft gold edge lighting in a dark cinematic photography studio. Deep warm amber reflections enhance the minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8VRN7b8Ez6krD2gZD0n5swfK0XXgk1d2CwrHXhDbJpLrpiWy4SeZWqMiDnW4opakkbufU9ezkFAc4EqVsXgGlVqrTjGAUamvXoND5PVZfDrz4rqhiFCZlaiWm1HVQwP8yU2obwQBy0wDORTva5vszi3CmvFMoVANIsJTxsZaNwFHVQUI36G6hCZsGtr-MHJPRpW14iw-ljE2rXe8FdzVg1ej3rL3bmDe2ZwdgFA0"/>
+</div>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface"></span>
+</div>
+</div>
+</header>
+<!-- Main Content Space -->
+<main class="flex-grow pt-28 pb-space-xl px-margin-mobile md:px-margin max-w-7xl mx-auto w-full">
+<!-- Page Header Section -->
+<div class="border-b border-outline-variant/30 pb-space-lg mb-space-xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-label-sm font-label-sm uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[14px]" data-icon="history">history</span>
+            Curated Screening Log
+          </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Viewing History &amp; Activity</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Resume your cinematic experiences or review your archival screening history.</p>
+</div>
+<!-- Danger Action: Clear All -->
+<div>
+<button class="px-4 py-2 rounded-lg bg-surface-container border border-outline-variant/60 hover:border-error/60 text-on-surface-variant hover:text-error transition-all duration-200 flex items-center gap-2 text-label-md font-label-md group" id="clearHistoryTrigger">
+<span class="material-symbols-outlined text-[18px] group-hover:rotate-12 transition-transform" data-icon="delete_sweep">delete_sweep</span>
+            Clear All History
+          </button>
+</div>
+</div>
+<!-- Action Bar: Filtering & Search -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-md pt-space-sm">
+<!-- Date Filters -->
+<div class="flex items-center gap-2 p-1 bg-surface-container-low rounded-lg border border-outline-variant/30 w-fit">
+<button class="px-4 py-1.5 rounded text-label-md font-label-md bg-primary-container text-on-primary-container shadow-sm">All Time</button>
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">This Month</button>
+<button class="px-4 py-1.5 rounded text-label-md font-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">This Week</button>
+</div>
+<!-- History Search -->
+<div class="relative w-full sm:w-72">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg pl-9 pr-8 py-2 text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:border-primary focus:outline-none transition-colors" placeholder="Filter recorded sessions..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline-variant text-[16px] cursor-pointer hover:text-on-surface" data-icon="tune">tune</span>
+</div>
+</div>
+</div>
+<!-- Timeline Wrapper -->
+<div class="space-y-space-xl">
+<!-- SECTION 1: Yesterday -->
+<section aria-labelledby="yesterday-heading">
+<div class="flex items-center gap-space-md mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-primary flex items-center gap-2 font-semibold" id="yesterday-heading">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+            Yesterday
+          </h2>
+<div class="h-px flex-1 bg-gradient-to-r from-outline-variant/40 to-transparent"></div>
+<span class="text-label-sm font-label-sm text-outline">3 ENTRIES</span>
+</div>
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Entry 1: Interstellar (In-Progress) -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail Frame with Aspect Ratio -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Interstellar movie frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A wide cinematic frame of deep outer space featuring a swirling accretion disk around a luminous black hole. Atmospheric golden flares contrast against the infinite velvet darkness of the universe in a pristine 4K editorial frame." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyRQ2bXxSH3IncvTAUh335o3p9enXya5v95KCaq_OroiuijBtxWNMO-PzDwOrfDpc4kNZFyVwpscXaQSO-C0LyvhfKU-fnS8dCldkZ2enbWYUAb9l6MVEB79fEggS00jF4obY8gwepaSsF_00UKg514rJ1e77y2Z19xkwy29XfSb4m3NyAZRjR9-0-DXhx_DYk9veLYRKgxME1nFeobdpmXReCt7ABEI-ZdxaCkd0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<!-- Play Icon Hover Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Timestamp Badge -->
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 border border-outline-variant/40 text-label-sm font-label-sm text-on-surface tracking-wider">
+                  1h 14m left
+                </div>
+<!-- Progress Bar Bar -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary-container" style="width: 44%;"></div>
+</div>
+</div>
+<!-- Metadata & Film Info -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">4K HDR</span>
+<span class="text-body-sm font-body-sm text-outline">• Sci-Fi / Drama • 2h 49m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Interstellar</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Christopher Nolan
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Yesterday, 10:45 PM
+                  </span>
+<span class="text-primary/90 font-medium">44% watched</span>
+</div>
+</div>
+<!-- Item Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center gap-1.5 hover:bg-primary transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  Resume Playing
+                </button>
+<button aria-label="Remove Interstellar from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Entry 2: Dune: Part Two (Completed) -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail Frame with Aspect Ratio -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Dune: Part Two movie frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A panoramic wide frame of an austere desert planet with towering sand dunes lit by a blinding twin-sun daylight. Warm burnt sienna and deep atmospheric shadows dominate the refined cinematic scenery with minimalist composition." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx0bcKjuj8xefrfIOuTqkKB-9eL8uG2NshUMsbh1M7izZck8W_tKjavUxTYWeLqiTW28IRhGRL78mYMgYy80OAGzpOcddn7ZJEn_722cPA4j1rN-tTYRb7Yhqx5uIqMf4QWHFZEabTNi3Dn2yk1TXRDm3D1wAYls3f4EYu_KhAexM_tuG9-8p5vsIzKiQFw6x4XYTR6I_43CkxbTMwM_zWAszthbBoLSvYWWxbzJo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="replay">replay</span>
+</div>
+</div>
+<!-- Timestamp Badge Completed -->
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 border border-outline-variant/40 text-label-sm font-label-sm text-primary tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Completed
+                </div>
+<!-- Progress Bar Completed 100% -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary-container"></div>
+</div>
+<!-- Metadata & Film Info -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">IMAX Enhanced</span>
+<span class="text-body-sm font-body-sm text-outline">• Epic / Sci-Fi • 2h 46m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Dune: Part Two</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Denis Villeneuve
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Yesterday, 6:15 PM
+                  </span>
+<span class="text-on-surface-variant">Completed (100%)</span>
+</div>
+</div>
+<!-- Item Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high border border-outline-variant/60 hover:border-primary/40 text-on-surface font-title-md text-title-md flex items-center gap-1.5 transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="replay">replay</span>
+                  Watch Again
+                </button>
+<button aria-label="Remove Dune: Part Two from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Entry 3: Anatomy of a Fall (In-Progress) -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail Frame with Aspect Ratio -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Anatomy of a Fall frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="An ethereal French Alpine chalet surrounded by cold pristine white snow under a hazy overcast winter sky. Elegant geometric architectural lines blend with minimalist high-contrast French cinema photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeS-DosndGao_smRRM8OGX5tt0Iio5S6EgzRXS7c-BhTA9QcK1XE7EETb7F0-pbAN8FjjODLo1ZkE6yuQs2aL69vtsn6Oy4CZcB21KGSjLWY2t7OXr8_xl1oSiIujpHhl7ti3bisbnv5nb87L4JtFTD6vbiuveHD_dH6VUXFwaiNbKSMj0nA6SC0ftk35uqMmxAUYg_WrK3_CCStoSnHbx3ynnR6uFa7oOY7FyCys"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Timestamp Badge -->
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 border border-outline-variant/40 text-label-sm font-label-sm text-on-surface tracking-wider">
+                  42m left
+                </div>
+<!-- Progress Bar -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary-container" style="width: 72%;"></div>
+</div>
+</div>
+<!-- Metadata & Film Info -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">Palme d'Or</span>
+<span class="text-body-sm font-body-sm text-outline">• Courtroom / Mystery • 2h 31m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Anatomy of a Fall</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Justine Triet
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Yesterday, 2:10 PM
+                  </span>
+<span class="text-primary/90 font-medium">72% watched</span>
+</div>
+</div>
+<!-- Item Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center gap-1.5 hover:bg-primary transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  Resume Playing
+                </button>
+<button aria-label="Remove Anatomy of a Fall from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- SECTION 2: Last Week -->
+<section aria-labelledby="last-week-heading">
+<div class="flex items-center gap-space-md mb-space-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2 font-semibold" id="last-week-heading">
+<span class="material-symbols-outlined text-[20px] text-outline" data-icon="date_range">date_range</span>
+            Last Week
+          </h2>
+<div class="h-px flex-1 bg-gradient-to-r from-outline-variant/40 to-transparent"></div>
+<span class="text-label-sm font-label-sm text-outline">3 ENTRIES</span>
+</div>
+<div class="grid grid-cols-1 gap-space-md">
+<!-- Entry 4: The Zone of Interest -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="The Zone of Interest frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A masterfully composed idyllic domestic European garden bathed in sharp natural sunlight, characterized by rigorous symmetry and hauntingly sterile order. Deep obsidian blacks and soft pale tones create an intense editorial atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCey-Mljc7DonTJ4g1BU3zMyWimLn_kSDQfzcW5pIt4qRku0vAZRGsOcaRlQcU2r8Fe39zJIMvAHji2uOPeRmK_v4x7BtdWmPWm4ngOC5I5Og8wPCKVBM4Uh6bsowXHWfxFGFBySpCOec0teD6bx3jNTtkkM9qFaSbn8UWUfeUQ4y8j2EAcTkO2-OD0soJg9quqaa_xvrNXYp_0N6-j2Ojk-aHqPBTG5NEZITVIhYg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 border border-outline-variant/40 text-label-sm font-label-sm text-on-surface tracking-wider">
+                  28m left
+                </div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary-container" style="width: 75%;"></div>
+</div>
+</div>
+<!-- Metadata -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">Cannes Grand Prix</span>
+<span class="text-body-sm font-body-sm text-outline">• Historical Drama • 1h 45m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">The Zone of Interest</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Jonathan Glazer
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Oct 24, 9:20 PM
+                  </span>
+<span class="text-primary/90 font-medium">75% watched</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center gap-1.5 hover:bg-primary transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  Resume Playing
+                </button>
+<button aria-label="Remove The Zone of Interest from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Entry 5: Poor Things -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Poor Things film frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="Surreal Victorian architectural fantasy aesthetic featuring exaggerated deep cobalt blue skies and amber street lamps in a vintage dreamscape European city square, cinematic lighting and rich rich velvet shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7-04DZW92JUbJyU9Xgqyxh4CEZf7yfLAaXZiDlBsNMg-IhRfjtRhX22ZjxRomm_E0spJQcZUoobh2mv-edPhPCWed3srAw87nZBmPYeB2oYox-qkRgE1h6Pi5W1wtoTFrrMOFOL-oyOkf2-g0rZuWfPro2aIF6xY6RT7BS50LI2eU0iL1vAWjBhv3ehE8urGvmmndpyNsiMl8kvYY0WIiqpLCUMcNVl2MVDiFmc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="replay">replay</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/90 border border-outline-variant/40 text-label-sm font-label-sm text-primary tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Completed
+                </div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-primary-container"></div>
+</div>
+<!-- Metadata -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">Venice Golden Lion</span>
+<span class="text-body-sm font-body-sm text-outline">• Surrealist Comedy • 2h 21m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Poor Things</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Yorgos Lanthimos
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Oct 22, 11:15 PM
+                  </span>
+<span class="text-on-surface-variant">Completed (100%)</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high border border-outline-variant/60 hover:border-primary/40 text-on-surface font-title-md text-title-md flex items-center gap-1.5 transition-all duration-200">
+<span class="material-symbols-outlined text-[18px]" data-icon="replay">replay</span>
+                  Watch Again
+                </button>
+<button aria-label="Remove Poor Things from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Entry 6: Solaris -->
+<article class="group relative rounded-xl bg-surface-container-low/70 border border-outline-variant/30 hover:border-primary/50 transition-all duration-300 p-3 sm:p-4 backdrop-blur-md hover:shadow-[0_12px_32px_-8px_rgba(214,168,95,0.18)]">
+<div class="flex flex-col md:flex-row gap-space-md items-start md:items-center">
+<!-- Thumbnail -->
+<div class="relative w-full md:w-64 aspect-video rounded-lg overflow-hidden bg-surface-container flex-shrink-0">
+<img alt="Solaris film frame" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out" data-alt="A poetic philosophical space station interior with misted circular observation windows overlooking a sentient oceanic planet with swirling viscous currents. Moody low-key lighting with deep shadows and muted monochromatic teal-gold highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6kgfN2c4Cvy3jAKo4nOSBYInnoT5yaE5foDHGmzewayZi7ANmNGBwNB6gKYzf82AYgeyJ_usSIBa3-dQU0L0_a5I9zDt6T0MlyWVpX3HR63QQpKK86-7Er9T6tU3HulUcrtEVbU5jTj5g_JMsH3Fu5t132Pm6ubqmBf8oL3Wsw9cGXv9TtyZzSB-zUgK7cOF4i5cJSzhPw7XSjU21jRnfZR4We_8EK43Wmwdbzxo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-surface-container-lowest/30 backdrop-blur-xs">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[22px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<div class="absolute bottom-2 right-2 px-1.5 py-0.5 rounded bg-surface-container-lowest/80 border border-outline-variant/40 text-label-sm font-label-sm text-on-surface tracking-wider">
+                  1h 05m left
+                </div>
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-surface-container-highest">
+<div class="h-full bg-primary-container" style="width: 60%;"></div>
+</div>
+</div>
+<!-- Metadata -->
+<div class="flex-grow min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary/10 border border-primary/25 text-primary text-label-sm font-label-sm uppercase">Criterion Master</span>
+<span class="text-body-sm font-body-sm text-outline">• Soviet Sci-Fi • 2h 47m total</span>
+</div>
+<h3 class="font-headline-md text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors">Solaris</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="text-outline">Director:</span> Andrei Tarkovsky
+                </p>
+<div class="flex items-center gap-4 mt-2 text-body-sm font-body-sm text-outline">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                    Oct 20, 8:00 PM
+                  </span>
+<span class="text-primary/90 font-medium">60% watched</span>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-2 w-full md:w-auto justify-end border-t md:border-t-0 border-outline-variant/30 pt-3 md:pt-0 mt-1 md:mt-0">
+<button class="px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-title-md text-title-md flex items-center gap-1.5 hover:bg-primary transition-all duration-200 shadow-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="play_arrow" data-weight="fill" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+                  Resume Playing
+                </button>
+<button aria-label="Remove Solaris from history" class="w-10 h-10 rounded-lg border border-outline-variant/40 flex items-center justify-center text-outline hover:text-error hover:border-error/40 transition-colors" title="Remove from history">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</div>
+</main>
+<!-- Clear History Confirmation Modal (Hidden by Default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md hidden transition-opacity duration-300 opacity-0 p-4" id="clearHistoryModal">
+<div class="bg-surface-container border border-outline-variant/60 rounded-xl p-space-lg max-w-md w-full shadow-2xl relative">
+<div class="w-12 h-12 rounded-full bg-error/10 text-error flex items-center justify-center mb-4 border border-error/20">
+<span class="material-symbols-outlined text-[24px]" data-icon="warning">warning</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Clear Archival History?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+        This will permanently erase all logged timestamps, resume positions, and screening milestones across all linked theater devices. This action is irreversible.
+      </p>
+<div class="flex items-center justify-end gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-title-md text-title-md" id="cancelModalBtn">
+          Cancel
+        </button>
+<button class="px-4 py-2 rounded-lg bg-error text-on-error hover:bg-error/90 transition-colors font-title-md text-title-md flex items-center gap-1.5" id="confirmClearBtn">
+<span class="material-symbols-outlined text-[18px]" data-icon="delete_forever">delete_forever</span>
+          Confirm Deletion
+        </button>
+</div>
+<button aria-label="Close dialog" class="absolute top-4 right-4 text-outline hover:text-on-surface transition-colors" id="closeModalCross">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="w-full px-margin py-space-xl flex flex-col gap-space-lg border-t border-outline-variant/30 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div>
+<a class="font-headline-lg text-headline-lg tracking-widest text-primary uppercase font-bold flex items-center gap-2" href="index.html">
+<span class="material-symbols-outlined text-primary text-[32px]" data-icon="movie_filter">movie_filter</span>
+          MINDX CINEMA
+        </a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Curated for the discerning cinephile.</p>
+</div>
+<nav class="flex flex-wrap gap-x-6 gap-y-2 text-label-sm font-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Curation Philosophy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">Film Festivals</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="explore.html">4K Premieres</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="register.html">VIP Membership</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200" href="policies.html">Terms of Service</a>
+</nav>
+</div>
+<div class="h-px bg-outline-variant/20 w-full"></div>
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="font-body-sm text-body-sm text-on-surface-variant">© 2025 MINDX CINEMA INC. ALL RIGHTS RESERVED. CURATED FOR THE DISCERNING CINEPHILE.</p>
+<div class="flex items-center gap-3 text-outline">
+<span class="material-symbols-outlined text-[18px] hover:text-primary cursor-pointer transition-colors" data-icon="videocam">videocam</span>
+<span class="material-symbols-outlined text-[18px] hover:text-primary cursor-pointer transition-colors" data-icon="theater_comedy">theater_comedy</span>
+<span class="material-symbols-outlined text-[18px] hover:text-primary cursor-pointer transition-colors" data-icon="local_movies">local_movies</span>
+</div>
+</div>
+</footer>
+<!-- Modal Interactivity Script -->
+<script>
+    const modal = document.getElementById('clearHistoryModal');
+    const openBtn = document.getElementById('clearHistoryTrigger');
+    const closeBtn = document.getElementById('cancelModalBtn');
+    const closeCross = document.getElementById('closeModalCross');
+    const confirmClear = document.getElementById('confirmClearBtn');
+
+    function openModal() {
+      modal.classList.remove('hidden');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        modal.classList.add('opacity-100');
+      }, 10);
+    }
+
+    function closeModal() {
+      modal.classList.remove('opacity-100');
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+      }, 300);
+    }
+
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeCross) closeCross.addEventListener('click', closeModal);
+    if (confirmClear) {
+      confirmClear.addEventListener('click', () => {
+        closeModal();
+      });
+    }
+
+    // Close on backdrop click
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+  </script>
+<script src="js/site-navigation.js"></script></body></html>
